@@ -1,6 +1,5 @@
 package com.jamieholdstock.crossworddictionary;
 
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
@@ -14,22 +13,12 @@ public class MainMenuActivity extends AppCompatActivity {
 
         DatabaseHelper myDbHelper = new DatabaseHelper(getBaseContext());
 
-        Cursor cursor = myDbHelper.getAllWords();
-        WordList items = new WordList();
-
-        if (cursor.moveToFirst()) {
-            do {
-                String word = cursor.getString(cursor.getColumnIndex("Word"));
-                items.add(new Word(word, null));
-            } while (cursor.moveToNext());
-        }
-        L.l("read from Db");
-
-        items.sort();
+        WordTableRow row = myDbHelper.getAllWords();
 
         ListView list = (ListView) findViewById(R.id.listView);
-        WordsAdapter adapter = new WordsAdapter(this, items);
+        WordsAdapter adapter = new WordsAdapter(this, row.getWordList());
 
         list.setAdapter(adapter);
     }
+
 }

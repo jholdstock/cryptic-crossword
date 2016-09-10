@@ -18,22 +18,21 @@ public class WordsAdapter extends ArrayAdapter<Word> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
-            convertView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), DisplayWordActivity.class);
-                    TextView text = (TextView) v.findViewById(android.R.id.text1);
-                    String message = text.getText().toString();
-                    intent.putExtra("text", message);
-                    v.getContext().startActivity(intent);
-                }
-            });
         }
 
+        final Word word = this.getItem(position);
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DisplayWordActivity.class);
+                intent.putExtra("word_id", word);
+                v.getContext().startActivity(intent);
+            }
+        });
         TextView text = (TextView) convertView.findViewById(android.R.id.text1);
-        Word word = this.getItem(position);
         text.setText(word.getWord());
 
         return convertView;

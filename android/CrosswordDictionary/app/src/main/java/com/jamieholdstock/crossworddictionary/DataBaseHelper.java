@@ -15,7 +15,10 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         setForcedUpgrade();
     }
 
-    public Cursor getAllWords() {
-        return this.getReadableDatabase().rawQuery("SELECT * FROM 'Word';", null);
+    public WordTableRow getAllWords() {
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM 'Word';", null);
+        WordTableRow tr = new WordTableRow(cursor);
+        cursor.close();
+        return tr;
     }
 }
