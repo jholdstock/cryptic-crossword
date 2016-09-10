@@ -27,7 +27,7 @@ public class WordsAdapter extends ArrayAdapter<Word> {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplayWordActivity.class);
+                Intent intent = new Intent(v.getContext(), WordDetailsActivity.class);
                 intent.putExtra("word_id", word);
                 v.getContext().startActivity(intent);
             }
