@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class WordsAdapter extends ArrayAdapter<String> {
+public class WordsAdapter extends ArrayAdapter<Word> {
 
-    public WordsAdapter(Context context, List<String> words) {
+    public WordsAdapter(Context context, List<Word> words) {
         super(context, 0, words);
     }
 
@@ -33,7 +33,8 @@ public class WordsAdapter extends ArrayAdapter<String> {
         }
 
         TextView text = (TextView) convertView.findViewById(android.R.id.text1);
-        text.setText(this.getItem(position));
+        Word word = this.getItem(position);
+        text.setText(word.getWord());
 
         return convertView;
     }
