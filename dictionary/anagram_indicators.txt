@@ -263,7 +263,7 @@ FRENZIED
 FRESH
 FRISKY
 FROLICKING
-&lt;soln&gt; FROM &lt;fodder&gt;
+<soln> FROM <fodder>
 FUDGE
 FUNCTION
 FUNNILY
@@ -354,7 +354,7 @@ INJURED
 INORDINATELY
 INSANELY
 INTERFERED WITH
-&lt;fodder&gt; INTO &lt;soln&gt;
+<fodder> INTO <soln>
 INTRICATE
 INVOLVED
 IRREGULAR
@@ -711,7 +711,7 @@ UNWONTED
 UPHEAVAL
 UPSET
 USAGE
-USE &lt;fodder&gt; FOR &lt;soln&gt;
+USE <fodder> FOR <soln>
 VACILLATING
 VAGUE
 VANDALISE
