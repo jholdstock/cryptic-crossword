@@ -14,6 +14,7 @@ public class WordTableRow {
         cursor.moveToFirst();
         do {
             String word = cursor.getString(cursor.getColumnIndex("Word"));
+            String abbr = cursor.getString(cursor.getColumnIndex("Abbr"));
             indicators = new ArrayList<String>();
 
             isIndicator(cursor, "Acrostic");
@@ -29,7 +30,7 @@ public class WordTableRow {
             isIndicator(cursor, "ReversalAcross");
             isIndicator(cursor, "ReversalDown");
 
-            items.add(new Word(word, indicators));
+            items.add(new Word(word, indicators, abbr));
         } while (cursor.moveToNext());
 
         items.sort();
