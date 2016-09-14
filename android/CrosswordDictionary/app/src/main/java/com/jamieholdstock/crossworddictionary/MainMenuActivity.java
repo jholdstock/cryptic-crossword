@@ -23,5 +23,15 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
+        Button searchButton = (Button) findViewById(R.id.search_button);
+        assert searchButton != null;
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), SearchActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
     }
 }

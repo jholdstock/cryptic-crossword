@@ -15,7 +15,7 @@ public class WordTableRow {
         do {
             String word = cursor.getString(cursor.getColumnIndex("Word"));
             String abbr = cursor.getString(cursor.getColumnIndex("Abbr"));
-            indicators = new ArrayList<String>();
+            indicators = new ArrayList<>();
 
             isIndicator(cursor, "Acrostic");
             isIndicator(cursor, "Anagram");
