@@ -9,71 +9,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.jamieholdstock.crossworddictionary.WordListActivity">
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="The Word"
+        android:id="@+id/textView"
+        android:textStyle="bold"
+        android:textIsSelectable="false"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="0.04"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="40dp" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1"
-        android:id="@+id/root_layout">
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="The Word"
-            android:id="@+id/textView"
-            android:textStyle="bold"
-            android:textIsSelectable="false"
-            android:textSize="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_weight="0.04"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="40dp" />
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:id="@+id/indactors_panel"
-            android:layout_marginBottom="30dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="May Indicate:"
-                android:id="@+id/textView3"
-                android:layout_alignBottom="@+id/webView"
-                android:layout_alignLeft="@+id/textView"
-                android:layout_alignStart="@+id/textView"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:textColor="#191717" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:id="@+id/abbr_panel"
-            android:layout_marginBottom="30dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Abbreviations:"
-                android:id="@+id/textView2"
-                android:layout_alignBottom="@+id/webView"
-                android:layout_alignLeft="@+id/textView"
-                android:layout_alignStart="@+id/textView"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_marginBottom="10dp"
-                android:textColor="#191717" />
-        </LinearLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/indictors_panel"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
     </LinearLayout>
 

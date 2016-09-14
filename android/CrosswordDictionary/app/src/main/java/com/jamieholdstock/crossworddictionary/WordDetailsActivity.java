@@ -16,28 +16,22 @@ public class WordDetailsActivity extends AppCompatActivity {
         TextView wordView = (TextView) findViewById(R.id.textView);
         wordView.setText(word.getWord());
 
-        LinearLayout rootLayout = (LinearLayout) findViewById(R.id.root_layout);
-        LinearLayout indicatorContainer = (LinearLayout) findViewById(R.id.indactors_panel);
+        LinearLayout indicatorContainer = (LinearLayout) findViewById(R.id.indictors_panel);
         if (word.hasIndicators()) {
             for (String indicator : word.getIndicators()) {
-                TextView indicatorView = new TextView(indicatorContainer.getContext());
-                indicatorView.setText(indicator);
+                IndicatorView indicatorView = new IndicatorView(indicatorContainer.getContext());
+                indicatorView.setMainText(indicator);
+                indicatorView.setHeader("May Indicate");
                 indicatorContainer.addView(indicatorView);
             }
         }
-        else {
-            rootLayout.removeView(indicatorContainer);
-        }
 
-        LinearLayout abbreviationContainer = (LinearLayout) findViewById(R.id.abbr_panel);
         if (word.hasAbbreviations())
         {
-            TextView abbrView = new TextView(abbreviationContainer.getContext());
-            abbrView.setText(word.getAbbreviations());
-            abbreviationContainer.addView(abbrView);
-        }
-        else {
-            rootLayout.removeView(abbreviationContainer);
+            IndicatorView abbrView = new IndicatorView(indicatorContainer.getContext());
+            abbrView.setMainText(word.getAbbreviations());
+            abbrView.setHeader("Abbreviation:");
+            indicatorContainer.addView(abbrView);
         }
     }
 }
