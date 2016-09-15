@@ -8,15 +8,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainMenuActivity">
+        <activity android:name=".activities.MainMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WordDetailsActivity" />
-        <activity android:name=".WordListActivity" />
-        <activity android:name=".SearchActivity" />
+        <activity android:name=".activities.WordDetailsActivity" />
+        <activity android:name=".activities.WordListActivity" />
+        <activity android:name=".activities.SearchActivity" />
     </application>
 
 </manifest>

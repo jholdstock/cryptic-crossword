@@ -10,7 +10,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/header_text"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Example:"
+            android:text="@string/example"
             android:layout_row="0"
             android:layout_column="0" />
 
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/main_text"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Sample"
+            android:text="@string/sample"
             android:layout_row="1"
             android:layout_column="0"
             android:gravity="center"

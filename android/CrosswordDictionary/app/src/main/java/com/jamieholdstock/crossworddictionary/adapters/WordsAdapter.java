@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary;
+package com.jamieholdstock.crossworddictionary.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.jamieholdstock.crossworddictionary.Word;
+import com.jamieholdstock.crossworddictionary.activities.WordDetailsActivity;
 
 import java.util.List;
 

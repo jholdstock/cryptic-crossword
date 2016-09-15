@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary;
+package com.jamieholdstock.crossworddictionary.activities;
 
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
@@ -7,6 +7,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+
+import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossworddictionary.WordList;
+import com.jamieholdstock.crossworddictionary.adapters.SearchAdapter;
+import com.jamieholdstock.crossworddictionary.database.DatabaseHelper;
+import com.jamieholdstock.crossworddictionary.database.WordTableRow;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -46,7 +52,6 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
-
                 return false;
             }
 
@@ -61,14 +66,12 @@ public class SearchActivity extends AppCompatActivity {
         MenuItemCompat.setOnActionExpandListener(searchItem, new MenuItemCompat.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                // Do something when collapsed
-                return true;  // Return true to collapse action view
+                return true;
             }
 
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
-                // Do something when expanded
-                return true;  // Return true to expand action view
+                return true;
             }
         });
         return true;
@@ -83,7 +86,6 @@ public class SearchActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
-
             return true;
         }
         return super.onOptionsItemSelected(item);

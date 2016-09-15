@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CrosswordDictionary</string>
+    <string name="title">Title</string>
+    <string name="search">Search</string>
+    <string name="example">Example:</string>
+    <string name="sample">Sample</string>
+    <string name="search2">Search</string>
+    <string name="full_list">Full list</string>
 </resources>

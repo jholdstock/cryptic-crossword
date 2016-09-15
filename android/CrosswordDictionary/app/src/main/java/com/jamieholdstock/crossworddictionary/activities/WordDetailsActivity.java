@@ -1,8 +1,12 @@
-package com.jamieholdstock.crossworddictionary;
+package com.jamieholdstock.crossworddictionary.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
+
+import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossworddictionary.Word;
+import com.jamieholdstock.crossworddictionary.views.WordView;
 
 public class WordDetailsActivity extends AppCompatActivity {
 

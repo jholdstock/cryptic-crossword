@@ -1,28 +1,32 @@
-package com.jamieholdstock.crossworddictionary;
+package com.jamieholdstock.crossworddictionary.adapters;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.jamieholdstock.crossworddictionary.Word;
+import com.jamieholdstock.crossworddictionary.WordList;
+import com.jamieholdstock.crossworddictionary.views.WordView;
+
 import java.util.Locale;
 
 public class SearchAdapter extends BaseAdapter {
 
-    public Context context;
-    public WordList parkingList;
-    public WordList arraylist;
+    private Context context;
+    private WordList currentlyDisplayedList;
+    private WordList fullList;
 
     public SearchAdapter(WordList apps, Context context) {
-        this.parkingList = apps;
+        this.currentlyDisplayedList = apps;
         this.context = context;
-        arraylist = new WordList();
-        arraylist.addAll(parkingList);
+        fullList = new WordList();
+        fullList.addAll(currentlyDisplayedList);
     }
 
     @Override
     public int getCount() {
-        return parkingList.size();
+        return currentlyDisplayedList.size();
     }
 
     @Override
@@ -42,7 +46,7 @@ public class SearchAdapter extends BaseAdapter {
         }
 
         WordView wv = (WordView) convertView;
-        Word word = parkingList.get(position);
+        Word word = currentlyDisplayedList.get(position);
         wv.displayWord(word);
 
         return wv;
@@ -52,20 +56,20 @@ public class SearchAdapter extends BaseAdapter {
 
         charText = charText.toLowerCase(Locale.getDefault());
 
-        parkingList.clear();
+        currentlyDisplayedList.clear();
         if (charText.length() == 0) {
-            parkingList.addAll(arraylist);
+            currentlyDisplayedList.addAll(fullList);
         } else {
-            for (Word word : arraylist) {
+            for (Word word : fullList) {
                 String theWord = word.getWord().toLowerCase(Locale.getDefault());
                 if (theWord.startsWith(charText)) {
-                    parkingList.add(word);
+                    currentlyDisplayedList.add(word);
                 }
             }
-            for (Word word : arraylist) {
+            for (Word word : fullList) {
                 String theWord = word.getWord().toLowerCase(Locale.getDefault());
                 if (theWord.contains(charText) && theWord.startsWith(charText) == false) {
-                    parkingList.add(word);
+                    currentlyDisplayedList.add(word);
                 }
             }
         }

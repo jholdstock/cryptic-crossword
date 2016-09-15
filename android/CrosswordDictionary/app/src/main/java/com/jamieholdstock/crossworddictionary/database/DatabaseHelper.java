@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary;
+package com.jamieholdstock.crossworddictionary.database;
 
 import android.content.Context;
 import android.database.Cursor;
