@@ -11,7 +11,6 @@ import com.jamieholdstock.crossworddictionary.R;
 import com.jamieholdstock.crossworddictionary.WordList;
 import com.jamieholdstock.crossworddictionary.adapters.SearchAdapter;
 import com.jamieholdstock.crossworddictionary.database.DatabaseHelper;
-import com.jamieholdstock.crossworddictionary.database.WordTableRow;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -24,12 +23,10 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         DatabaseHelper myDbHelper = new DatabaseHelper(getBaseContext());
-        WordTableRow row = myDbHelper.getAllWords();
+        WordList allWords = myDbHelper.getAllWords();
+        myAppAdapter = new SearchAdapter(allWords, SearchActivity.this);
 
         listView = (ListView) findViewById(R.id.listView);
-        WordList wordList = row.getWordList();
-
-        myAppAdapter = new SearchAdapter(wordList, SearchActivity.this);
         listView.setAdapter(myAppAdapter);
 
         EditText search = (EditText) findViewById(R.id.search_box);

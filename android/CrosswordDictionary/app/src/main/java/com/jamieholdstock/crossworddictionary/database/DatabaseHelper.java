@@ -3,6 +3,7 @@ package com.jamieholdstock.crossworddictionary.database;
 import android.content.Context;
 import android.database.Cursor;
 
+import com.jamieholdstock.crossworddictionary.WordList;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 public class DatabaseHelper extends SQLiteAssetHelper {
@@ -15,10 +16,10 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         setForcedUpgrade();
     }
 
-    public WordTableRow getAllWords() {
+    public WordList getAllWords() {
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM 'Word';", null);
         WordTableRow tr = new WordTableRow(cursor);
         cursor.close();
-        return tr;
+        return tr.getWordList();
     }
 }

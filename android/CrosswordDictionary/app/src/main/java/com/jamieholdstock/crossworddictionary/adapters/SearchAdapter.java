@@ -17,11 +17,13 @@ public class SearchAdapter extends BaseAdapter {
     private WordList currentlyDisplayedList;
     private WordList fullList;
 
-    public SearchAdapter(WordList apps, Context context) {
-        this.currentlyDisplayedList = apps;
+    public SearchAdapter(WordList allWords, Context context) {
         this.context = context;
+
+        currentlyDisplayedList = new WordList();
+
         fullList = new WordList();
-        fullList.addAll(currentlyDisplayedList);
+        fullList.addAll(allWords);
     }
 
     @Override
@@ -58,7 +60,7 @@ public class SearchAdapter extends BaseAdapter {
 
         currentlyDisplayedList.clear();
         if (charText.length() == 0) {
-            currentlyDisplayedList.addAll(fullList);
+
         } else {
             for (Word word : fullList) {
                 String theWord = word.getWord().toLowerCase(Locale.getDefault());

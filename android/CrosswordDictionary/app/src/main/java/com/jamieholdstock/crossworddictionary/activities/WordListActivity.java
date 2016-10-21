@@ -5,9 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossworddictionary.WordList;
 import com.jamieholdstock.crossworddictionary.adapters.WordsAdapter;
 import com.jamieholdstock.crossworddictionary.database.DatabaseHelper;
-import com.jamieholdstock.crossworddictionary.database.WordTableRow;
 
 public class WordListActivity extends AppCompatActivity {
 
@@ -18,10 +18,10 @@ public class WordListActivity extends AppCompatActivity {
 
         DatabaseHelper myDbHelper = new DatabaseHelper(getBaseContext());
 
-        WordTableRow row = myDbHelper.getAllWords();
+        WordList allWords = myDbHelper.getAllWords();
 
         ListView list = (ListView) findViewById(R.id.listView);
-        WordsAdapter adapter = new WordsAdapter(this, row.getWordList());
+        WordsAdapter adapter = new WordsAdapter(this, allWords);
 
         list.setAdapter(adapter);
     }
