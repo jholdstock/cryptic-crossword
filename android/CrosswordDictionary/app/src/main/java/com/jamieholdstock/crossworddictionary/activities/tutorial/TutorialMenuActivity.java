@@ -1,27 +1,28 @@
-package com.jamieholdstock.crossworddictionary.activities;
+package com.jamieholdstock.crossworddictionary.activities.tutorial;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import com.jamieholdstock.crossworddictionary.R;
 
-public class TutorialMenuActivity extends AppCompatActivity {
+public class TutorialMenuActivity extends TutorialActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial_menu);
 
-        Button useAppButton = (Button) findViewById(R.id.use_app_button);
+        Button useAppButton = (Button) findViewById(R.id.how_to_use_button);
         assert useAppButton != null;
         useAppButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), WordListActivity.class);
+                Intent intent = new Intent(v.getContext(), HowToUseAppActivity.class);
                 v.getContext().startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
             }
         });
 
@@ -30,10 +31,11 @@ public class TutorialMenuActivity extends AppCompatActivity {
         solveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SearchActivity.class);
+                Intent intent = new Intent(v.getContext(), SolveCrypticsActivity.class);
                 v.getContext().startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
             }
         });
-
     }
 }

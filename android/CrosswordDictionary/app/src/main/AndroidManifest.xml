@@ -15,9 +15,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.WordDetailsActivity" />
-        <activity android:name=".activities.TutorialMenuActivity" />
+        <activity android:name=".activities.tutorial.SolveCrypticsActivity" />
+        <activity android:name=".activities.tutorial.TutorialMenuActivity" />
+        <activity android:name=".activities.tutorial.HowToUseAppActivity" />
         <activity android:name=".activities.WordListActivity" />
-        <activity android:name=".activities.SearchActivity" />
+        <activity android:name=".activities.SearchActivity"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

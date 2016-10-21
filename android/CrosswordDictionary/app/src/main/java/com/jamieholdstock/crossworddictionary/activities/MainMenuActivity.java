@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossworddictionary.activities.tutorial.TutorialMenuActivity;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -22,6 +23,8 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), TutorialMenuActivity.class);
                 v.getContext().startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
             }
         });
 
@@ -32,6 +35,8 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), WordListActivity.class);
                 v.getContext().startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,
+                        R.anim.slide_out_right);
             }
         });
 
@@ -42,6 +47,8 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), SearchActivity.class);
                 v.getContext().startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,
+                        R.anim.slide_out_right);
             }
         });
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,21 +7,48 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activities.MainMenuActivity">
+    tools:context=".activities.tutorial.TutorialMenuActivity"
+    android:orientation="vertical"
+    android:background="@color/Amethyst"
+    android:gravity="center">
+
+    <TextView
+        android:text="Tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textStyle="normal|bold"
+        android:textColor="@color/White"
+        android:textSize="40sp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="10dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/how_to_solve"
         android:id="@+id/solve_cryptics_button"
-        android:layout_marginTop="85dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:background="@drawable/menu_button"
+        android:textColor="@color/White"
+        android:layout_marginBottom="20dp"
+        android:minWidth="120dip"
+        android:typeface="sans"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:textStyle="normal|bold" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/how_to_use"
-        android:id="@+id/use_app_button"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/how_to_use_button"
+        android:background="@drawable/menu_button"
+        android:textColor="@color/White"
+        android:layout_marginBottom="20dp"
+        android:minWidth="120dip"
+        android:typeface="sans"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:textStyle="normal|bold" />
 
-</RelativeLayout>
+</LinearLayout>
