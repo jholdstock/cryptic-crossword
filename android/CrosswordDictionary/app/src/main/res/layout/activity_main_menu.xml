@@ -16,7 +16,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/title_container">
 
         <ImageView
             android:layout_width="112dp"
@@ -37,47 +38,54 @@
             android:layout_marginBottom="40dp" />
     </LinearLayout>
 
-    <Button
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tutorial"
-        android:id="@+id/tutorial_button"
-        android:background="@drawable/menu_button"
-        android:textColor="@color/White"
-        android:layout_marginBottom="20dp"
-        android:minWidth="120dip"
-        android:typeface="sans"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        android:textStyle="normal|bold"
-        android:elevation="0dp" />
+        android:id="@+id/button_panel">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/full_list"
-        android:id="@+id/full_list_button"
-        android:background="@drawable/menu_button"
-        android:textColor="@color/White"
-        android:layout_marginBottom="20dp"
-        android:minWidth="120dip"
-        android:typeface="sans"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        android:textStyle="normal|bold" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tutorial"
+            android:id="@+id/tutorial_button"
+            android:background="@drawable/menu_button"
+            android:textColor="@color/White"
+            android:layout_marginBottom="20dp"
+            android:minWidth="120dip"
+            android:typeface="sans"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:textStyle="normal|bold"
+            android:elevation="0dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/search2"
-        android:id="@+id/search_button"
-        android:background="@drawable/menu_button"
-        android:textColor="@color/White"
-        android:layout_marginBottom="20dp"
-        android:minWidth="120dip"
-        android:typeface="sans"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        android:textStyle="normal|bold" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/full_list"
+            android:id="@+id/full_list_button"
+            android:background="@drawable/menu_button"
+            android:textColor="@color/White"
+            android:layout_marginBottom="20dp"
+            android:minWidth="120dip"
+            android:typeface="sans"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:textStyle="normal|bold" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search2"
+            android:id="@+id/search_button"
+            android:background="@drawable/menu_button"
+            android:textColor="@color/White"
+            android:layout_marginBottom="20dp"
+            android:minWidth="120dip"
+            android:typeface="sans"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:textStyle="normal|bold" />
+    </LinearLayout>
 
 </LinearLayout>

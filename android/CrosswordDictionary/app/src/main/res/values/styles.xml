@@ -16,6 +16,7 @@
         <item name="colorControlNormal">@color/Gray</item>
         <item name="colorControlActivated">@color/Gray</item>
         <item name="android:textColorHint">@color/Gray</item>
+        <item name="android:inputType">textNoSuggestions|textVisiblePassword</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

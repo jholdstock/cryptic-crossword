@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.jamieholdstock.crossworddictionary.R;
@@ -51,5 +53,12 @@ public class MainMenuActivity extends AppCompatActivity {
                         R.anim.slide_out_right);
             }
         });
+
+        Animation fade = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        fade.setStartOffset(500);
+        findViewById(R.id.title_container).startAnimation(fade);
+        Animation slowfade = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        slowfade.setStartOffset(1250);
+        findViewById(R.id.button_panel).startAnimation(slowfade);
     }
 }
