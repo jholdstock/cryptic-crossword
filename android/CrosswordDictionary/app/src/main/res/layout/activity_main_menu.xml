@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,16 +13,29 @@
     android:background="@color/Alizarin"
     android:gravity="center">
 
-    <TextView
-        android:text="Cryptic\nCrossword\nTutor"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textStyle="normal|bold"
-        android:textColor="@color/White"
-        android:textSize="40sp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="112dp"
+            android:layout_height="129dp"
+            app:srcCompat="@drawable/logo"
+            android:id="@+id/imageView" />
+
+        <TextView
+            android:text="Cryptic\nCrossword\nTutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textStyle="normal|bold"
+            android:textColor="@color/White"
+            android:textSize="40sp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="40dp" />
+    </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
@@ -35,7 +49,8 @@
         android:typeface="sans"
         android:textSize="18sp"
         android:textAllCaps="false"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:elevation="0dp" />
 
     <Button
         android:layout_width="wrap_content"
