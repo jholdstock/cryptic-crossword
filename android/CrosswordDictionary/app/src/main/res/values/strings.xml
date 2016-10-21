@@ -2,8 +2,11 @@
     <string name="app_name">CrosswordDictionary</string>
     <string name="title">Title</string>
     <string name="search">Search</string>
-    <string name="example">Example:</string>
-    <string name="sample">Sample</string>
+    <string name="example">May indicate:</string>
+    <string name="sample">Anagram</string>
     <string name="search2">Search</string>
     <string name="full_list">Full list</string>
+    <string name="how_to_use">How to use this app</string>
+    <string name="how_to_solve">How to solve cryptics</string>
+    <string name="tutorial">Tutorial</string>
 </resources>

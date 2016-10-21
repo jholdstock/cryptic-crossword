@@ -15,6 +15,16 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+        Button tutorialButton = (Button) findViewById(R.id.tutorial_button);
+        assert tutorialButton != null;
+        tutorialButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), TutorialMenuActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
         Button fullListButton = (Button) findViewById(R.id.full_list_button);
         assert fullListButton != null;
         fullListButton.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +44,5 @@ public class MainMenuActivity extends AppCompatActivity {
                 v.getContext().startActivity(intent);
             }
         });
-
     }
 }
