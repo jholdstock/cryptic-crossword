@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.SearchActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:id="@+id/list_header"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/Alizarin"
+        android:layout_height="80dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_search"
+                android:id="@+id/imageView2"
+                android:layout_weight="0.00"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:theme="@style/MyEditText"
+                android:layout_height="wrap_content"
+                android:id="@+id/search_box"
+                android:textColor="@android:color/white"
+                android:hint="Search..."
+                android:selectAllOnFocus="true"
+                android:textSize="24sp"
+                android:layout_width="250dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
     <ListView
         android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@color/Alizarin"
+        android:dividerHeight="10dp"
+        android:layout_below="@+id/list_header"
+        android:layout_alignLeft="@+id/list_header"
+        android:layout_alignStart="@+id/list_header" >
     </ListView>
 
-
 </RelativeLayout>
+

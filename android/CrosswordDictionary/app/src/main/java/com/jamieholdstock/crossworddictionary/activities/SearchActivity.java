@@ -1,11 +1,10 @@
 package com.jamieholdstock.crossworddictionary.activities;
 
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.jamieholdstock.crossworddictionary.R;
@@ -32,66 +31,28 @@ public class SearchActivity extends AppCompatActivity {
 
         myAppAdapter = new SearchAdapter(wordList, SearchActivity.this);
         listView.setAdapter(myAppAdapter);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_search, menu);
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        android.support.v7.widget.SearchView searchView = (android.support.v7.widget.SearchView) MenuItemCompat.getActionView(searchItem);
-        //*** setOnQueryTextFocusChangeListener ***
-        searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
-
+        EditText search = (EditText) findViewById(R.id.search_box);
+        search.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-            }
-        });
-
-        searchView.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
-
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String searchQuery) {
-                myAppAdapter.filter(searchQuery.trim());
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                myAppAdapter.filter(charSequence.toString().trim());
                 listView.invalidate();
-                return true;
-            }
-        });
-
-        MenuItemCompat.setOnActionExpandListener(searchItem, new MenuItemCompat.OnActionExpandListener() {
-            @Override
-            public boolean onMenuItemActionCollapse(MenuItem item) {
-                return true;
             }
 
             @Override
-            public boolean onMenuItemActionExpand(MenuItem item) {
-                return true;
+            public void afterTextChanged(Editable editable) {
+
             }
         });
-        return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
+   @Override
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
