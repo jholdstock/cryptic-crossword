@@ -1,7 +1,9 @@
 package com.jamieholdstock.crossworddictionary.views;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,11 +15,25 @@ public class WordView extends LinearLayout {
     public WordView(Context context) {
         super(context);
         LayoutInflater.from(context).inflate(R.layout.view_word, this);
-
+        setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("jamie.log", "Clicked");
+                View indicators = view.findViewById(R.id.indicators_panel);
+                if (indicators.getVisibility() == VISIBLE) {
+                    Log.e("jamie.log", "Setting gone");
+                    indicators.setVisibility(GONE);
+                }
+                else {
+                    Log.e("jamie.log", "Setting visible");
+                    indicators.setVisibility(VISIBLE);
+                }
+            }
+        });
     }
 
     public void displayWord(Word word) {
-        TextView txtTitle = (TextView) findViewById(R.id.title);
+        TextView txtTitle = (TextView) findViewById(R.id.the_word);
 
         txtTitle.setText(word.getWord());
 

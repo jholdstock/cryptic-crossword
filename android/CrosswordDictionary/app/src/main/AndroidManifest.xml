@@ -14,11 +14,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.WordDetailsActivity" />
         <activity android:name=".activities.tutorial.SolveCrypticsActivity" />
         <activity android:name=".activities.tutorial.TutorialMenuActivity" />
         <activity android:name=".activities.tutorial.HowToUseAppActivity" />
-        <activity android:name=".activities.WordListActivity" />
         <activity android:name=".activities.SearchActivity" />
     </application>
 

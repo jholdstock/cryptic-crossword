@@ -59,9 +59,7 @@ public class SearchAdapter extends BaseAdapter {
         charText = charText.toLowerCase(Locale.getDefault());
 
         currentlyDisplayedList.clear();
-        if (charText.length() == 0) {
-
-        } else {
+        if (charText.length() > 0) {
             for (Word word : fullList) {
                 String theWord = word.getWord().toLowerCase(Locale.getDefault());
                 if (theWord.startsWith(charText)) {

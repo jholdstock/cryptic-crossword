@@ -30,18 +30,6 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        Button fullListButton = (Button) findViewById(R.id.full_list_button);
-        assert fullListButton != null;
-        fullListButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), WordListActivity.class);
-                v.getContext().startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
-
         Button searchButton = (Button) findViewById(R.id.search_button);
         assert searchButton != null;
         searchButton.setOnClickListener(new View.OnClickListener() {
