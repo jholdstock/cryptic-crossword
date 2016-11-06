@@ -13,7 +13,7 @@ import com.jamieholdstock.crossword.adapters.SwipeAdapter;
 
 import java.util.ArrayList;
 
-public class AnagramActivity extends SwipeTutorialActivity {
+public class HiddenWordActivity extends SwipeTutorialActivity {
 
     private ViewPager mPager;
     private RadioGroup radioGroup;

@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.widget.RadioGroup;
 
 import com.jamieholdstock.crossword.R;
+import com.jamieholdstock.crossword.activities.tutorial.TutorialFragment;
 import com.jamieholdstock.crossword.activities.tutorial.SwipeTutorialActivity;
 import com.jamieholdstock.crossword.adapters.SwipeAdapter;
 
@@ -24,11 +25,11 @@ public class BasicsActivity extends SwipeTutorialActivity {
 
         mPager = (ViewPager) findViewById(R.id.tutorial_pager);
         ArrayList<Fragment> frags = new ArrayList<Fragment>() {{
-            add(new FragCrosswordGrid());
-            add(new FragQuickClue());
-            add(new FragCrypticClue());
-            add(new FragIndicators());
-            add(new FragQuestionMark());
+            add(new FragCrosswordGrid(R.layout.fragment_crossword_grid));
+            add(new TutorialFragment(R.layout.fragment_quick_clue));
+            add(new TutorialFragment(R.layout.fragment_cryptic_clue));
+            add(new TutorialFragment(R.layout.fragment_indicators));
+            add(new TutorialFragment(R.layout.fragment_question_mark));
         }};
 
         PagerAdapter mPagerAdapter = new SwipeAdapter(getSupportFragmentManager(), frags);

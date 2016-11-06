@@ -4,19 +4,23 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.jamieholdstock.crossword.R;
+import com.jamieholdstock.crossword.activities.tutorial.TutorialFragment;
 
-public class FragCrosswordGrid extends Fragment {
+public class FragCrosswordGrid extends TutorialFragment {
+
+    public FragCrosswordGrid(int layoutId) {
+        super(layoutId);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_crossword_grid, container, false);
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ImageView imageView = (ImageView) rootView.findViewById(R.id.imageView3);
         imageView.setImageResource(0);
         Drawable draw = getResources().getDrawable(R.drawable.grid);
