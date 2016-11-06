@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary;
+package com.jamieholdstock.crossword;
 
 import java.io.Serializable;
 import java.util.List;

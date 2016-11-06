@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary.views;
+package com.jamieholdstock.crossword.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
-import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossword.R;
 
 public class IndicatorView extends GridLayout {
     public IndicatorView(Context context) {

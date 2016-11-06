@@ -1,8 +1,8 @@
-package com.jamieholdstock.crossworddictionary.activities.tutorial;
+package com.jamieholdstock.crossword.activities.tutorial;
 
 import android.support.v7.app.AppCompatActivity;
 
-import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossword.R;
 
 public class TutorialActivity extends AppCompatActivity {
     @Override

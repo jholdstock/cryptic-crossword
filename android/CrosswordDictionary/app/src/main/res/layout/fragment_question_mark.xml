@@ -16,7 +16,7 @@
         android:background="@color/Amethyst"
         android:gravity="center">
 
-        <com.jamieholdstock.crossworddictionary.views.ClueView
+        <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:clue="Two in chemical water? (9)"
@@ -34,13 +34,13 @@
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
-        <com.jamieholdstock.crossworddictionary.views.ClueView
+        <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:clue="Spirited community? (5,4)"
             app:solution="RENT"/>
 
-        <com.jamieholdstock.crossworddictionary.views.ClueView
+        <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:clue="Dollars for quarters? (4)"

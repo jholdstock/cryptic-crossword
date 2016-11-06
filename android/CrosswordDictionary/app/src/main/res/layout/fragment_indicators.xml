@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
-        <com.jamieholdstock.crossworddictionary.views.ClueView
+        <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:clue="Disorderly piper eats canapé (9)"

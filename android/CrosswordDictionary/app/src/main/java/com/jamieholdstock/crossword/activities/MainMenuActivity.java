@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary.activities;
+package com.jamieholdstock.crossword.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import com.jamieholdstock.crossworddictionary.R;
-import com.jamieholdstock.crossworddictionary.activities.tutorial.TutorialMenuActivity;
+import com.jamieholdstock.crossword.R;
+import com.jamieholdstock.crossword.activities.tutorial.TutorialMenuActivity;
 
 public class MainMenuActivity extends AppCompatActivity {
 

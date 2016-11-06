@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary.activities;
+package com.jamieholdstock.crossword.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,10 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.jamieholdstock.crossworddictionary.R;
-import com.jamieholdstock.crossworddictionary.WordList;
-import com.jamieholdstock.crossworddictionary.adapters.SearchAdapter;
-import com.jamieholdstock.crossworddictionary.database.DatabaseHelper;
+import com.jamieholdstock.crossword.R;
+import com.jamieholdstock.crossword.WordList;
+import com.jamieholdstock.crossword.adapters.SearchAdapter;
+import com.jamieholdstock.crossword.database.DatabaseHelper;
 
 public class SearchActivity extends AppCompatActivity {
 

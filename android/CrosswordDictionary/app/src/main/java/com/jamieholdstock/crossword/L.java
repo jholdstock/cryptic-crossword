@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary;
+package com.jamieholdstock.crossword;
 
 import android.util.Log;
 

@@ -1,12 +1,12 @@
-package com.jamieholdstock.crossworddictionary.views;
+package com.jamieholdstock.crossword.views;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.jamieholdstock.crossworddictionary.R;
-import com.jamieholdstock.crossworddictionary.Word;
+import com.jamieholdstock.crossword.R;
+import com.jamieholdstock.crossword.Word;
 
 public class WordView extends LinearLayout {
 

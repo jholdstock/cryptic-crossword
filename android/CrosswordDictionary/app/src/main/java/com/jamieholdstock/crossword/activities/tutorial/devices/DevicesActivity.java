@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary.activities.tutorial;
+package com.jamieholdstock.crossword.activities.tutorial.devices;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.RadioGroup;
 
-import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossword.R;
+import com.jamieholdstock.crossword.activities.tutorial.SwipeTutorialActivity;
 
 public class DevicesActivity extends SwipeTutorialActivity {
 

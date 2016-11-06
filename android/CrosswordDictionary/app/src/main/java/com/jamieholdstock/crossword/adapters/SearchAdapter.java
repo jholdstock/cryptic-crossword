@@ -1,13 +1,13 @@
-package com.jamieholdstock.crossworddictionary.adapters;
+package com.jamieholdstock.crossword.adapters;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.jamieholdstock.crossworddictionary.Word;
-import com.jamieholdstock.crossworddictionary.WordList;
-import com.jamieholdstock.crossworddictionary.views.WordView;
+import com.jamieholdstock.crossword.Word;
+import com.jamieholdstock.crossword.WordList;
+import com.jamieholdstock.crossword.views.WordView;
 
 import java.util.Locale;
 

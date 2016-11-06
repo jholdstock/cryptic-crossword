@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary.activities.tutorial;
+package com.jamieholdstock.crossword.activities.tutorial.basics;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossword.R;
 
 public class FragCrosswordGrid extends Fragment {
 

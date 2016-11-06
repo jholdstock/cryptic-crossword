@@ -1,9 +1,9 @@
-package com.jamieholdstock.crossworddictionary.database;
+package com.jamieholdstock.crossword.database;
 
 import android.content.Context;
 import android.database.Cursor;
 
-import com.jamieholdstock.crossworddictionary.WordList;
+import com.jamieholdstock.crossword.WordList;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 public class DatabaseHelper extends SQLiteAssetHelper {

@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary.views;
+package com.jamieholdstock.crossword.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
-import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossword.R;
 
 public class ClueView extends GridLayout {
     public ClueView(Context context) {

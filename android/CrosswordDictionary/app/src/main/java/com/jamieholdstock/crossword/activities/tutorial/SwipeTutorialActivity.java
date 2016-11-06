@@ -1,8 +1,8 @@
-package com.jamieholdstock.crossworddictionary.activities.tutorial;
+package com.jamieholdstock.crossword.activities.tutorial;
 
 import android.support.v4.app.FragmentActivity;
 
-import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossword.R;
 
 public abstract class SwipeTutorialActivity extends FragmentActivity {
 

@@ -1,9 +1,9 @@
-package com.jamieholdstock.crossworddictionary.database;
+package com.jamieholdstock.crossword.database;
 
 import android.database.Cursor;
 
-import com.jamieholdstock.crossworddictionary.Word;
-import com.jamieholdstock.crossworddictionary.WordList;
+import com.jamieholdstock.crossword.Word;
+import com.jamieholdstock.crossword.WordList;
 
 import java.util.ArrayList;
 import java.util.List;

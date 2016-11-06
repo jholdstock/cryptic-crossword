@@ -13,7 +13,7 @@
     </style>
 
     <style name="Clue" parent="Theme.AppCompat.Light">
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">16dp</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginRight">20dp</item>
@@ -21,10 +21,9 @@
     </style>
 
     <style name="Solution" parent="Theme.AppCompat.Light">
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">16dp</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:layout_margin">10dp</item>
-
     </style>
 
     <style name="TutorialParagraph" parent="Theme.AppCompat.Light">

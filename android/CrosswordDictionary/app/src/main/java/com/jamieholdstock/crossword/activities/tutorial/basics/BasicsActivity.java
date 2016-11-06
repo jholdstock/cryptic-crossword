@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossworddictionary.activities.tutorial;
+package com.jamieholdstock.crossword.activities.tutorial.basics;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,9 +8,10 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.RadioGroup;
 
-import com.jamieholdstock.crossworddictionary.R;
+import com.jamieholdstock.crossword.R;
+import com.jamieholdstock.crossword.activities.tutorial.SwipeTutorialActivity;
 
-public class TheBasicsActivity extends SwipeTutorialActivity {
+public class BasicsActivity extends SwipeTutorialActivity {
 
     private static final int NUM_PAGES = 5;
     private ViewPager mPager;
