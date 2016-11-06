@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_crossword_grid"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
@@ -17,22 +16,11 @@
         android:gravity="center">
 
         <TextView
-            android:text="A cryptic crossword is set in a normal crossword grid which looks something like this:"
+            android:text="Anagram"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="270dp"
-            app:srcCompat="@drawable/grid"
-            android:id="@+id/imageView3" />
-
-        <TextView
-            android:text="What makes cryptics different is their clues. Each clue is itself a miniature wordplay puzzle."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
 
     </LinearLayout>
 

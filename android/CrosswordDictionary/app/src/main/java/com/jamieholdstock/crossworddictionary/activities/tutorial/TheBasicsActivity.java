@@ -2,7 +2,6 @@ package com.jamieholdstock.crossworddictionary.activities.tutorial;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
@@ -11,7 +10,7 @@ import android.widget.RadioGroup;
 
 import com.jamieholdstock.crossworddictionary.R;
 
-public class TheBasicsActivity extends FragmentActivity {
+public class TheBasicsActivity extends SwipeTutorialActivity {
 
     private static final int NUM_PAGES = 5;
     private ViewPager mPager;
