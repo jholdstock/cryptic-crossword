@@ -31,7 +31,7 @@ public class TutorialMenuActivity extends TutorialActivity {
         solveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SolveCrypticsActivity.class);
+                Intent intent = new Intent(v.getContext(), TheBasicsActivity.class);
                 v.getContext().startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

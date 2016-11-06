@@ -14,7 +14,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.tutorial.SolveCrypticsActivity" />
+        <activity android:name=".activities.tutorial.TheBasicsActivity" />
         <activity android:name=".activities.tutorial.TutorialMenuActivity" />
         <activity android:name=".activities.tutorial.HowToUseAppActivity" />
         <activity android:name=".activities.SearchActivity" />

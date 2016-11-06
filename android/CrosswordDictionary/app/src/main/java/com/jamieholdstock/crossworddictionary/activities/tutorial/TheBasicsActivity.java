@@ -7,34 +7,43 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.widget.RadioGroup;
 
 import com.jamieholdstock.crossworddictionary.R;
 
-public class SolveCrypticsActivity  extends FragmentActivity {
+public class TheBasicsActivity extends FragmentActivity {
 
-    private static final int NUM_PAGES = 2;
+    private static final int NUM_PAGES = 4;
     private ViewPager mPager;
-
+    private RadioGroup radioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_solve_cryptics);
+        setContentView(R.layout.activity_the_basics);
 
         mPager = (ViewPager) findViewById(R.id.tutorial_pager);
         PagerAdapter mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-    }
 
-    @Override
-    public void onBackPressed() {
-        if (mPager.getCurrentItem() == 0) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
-            super.onBackPressed();
-        } else {
-            // Otherwise, select the previous step.
-            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
-        }
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup.check(radioGroup.getChildAt(0).getId());
+        mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                radioGroup.clearCheck();
+                radioGroup.check(radioGroup.getChildAt(position).getId());
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
@@ -48,6 +57,10 @@ public class SolveCrypticsActivity  extends FragmentActivity {
                 case 0:
                     return new FragCrosswordGrid();
                 case 1:
+                    return new FragQuickClue();
+                case 2:
+                    return new FragCrosswordGrid();
+                case 3:
                     return new FragQuickClue();
                 default:
                     return null;

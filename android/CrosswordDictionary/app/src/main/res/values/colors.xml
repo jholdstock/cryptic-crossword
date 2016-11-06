@@ -4,6 +4,9 @@
     <color name="Gray">#DDD</color>
     <color name="Black">#000</color>
 
+    <color name="selected">#CCFFFFFF</color>
+    <color name="unselected">#4DFFFFFF</color>
+
     <color name="Amethyst">#9B59B6</color>
     <color name="Wisteria">#8E44AD</color>
     <color name="Alizarin">#E74C3C</color>
