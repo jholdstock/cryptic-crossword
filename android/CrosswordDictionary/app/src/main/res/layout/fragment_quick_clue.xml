@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_crossword_grid"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,39 +22,11 @@
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
-        <LinearLayout
-            android:orientation="vertical"
+        <com.jamieholdstock.crossworddictionary.views.ClueView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/white_border">
-
-            <TextView
-                android:text="Consumes (4)"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Clue"/>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:text="Solution:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/Solution"/>
-
-                <TextView
-                    android:text="EATS"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal|bold"
-                    style="@style/Solution" />
-            </LinearLayout>
-
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            app:clue="Consumes (4)"
+            app:solution="EATS"/>
 
         <TextView
             android:text="The solution is a literal definition of the clue - another word which has the same meaning. The number in bracker tells you how many letters are in the solution. Sometimes there may be multiple numbers in the brackets indicating that the solution contains multiple words."

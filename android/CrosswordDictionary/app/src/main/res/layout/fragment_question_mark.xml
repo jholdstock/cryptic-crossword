@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_crossword_grid"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
@@ -15,39 +16,11 @@
         android:background="@color/Amethyst"
         android:gravity="center">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <com.jamieholdstock.crossworddictionary.views.ClueView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/white_border">
-
-            <TextView
-                android:text="Two in chemical water? (9)"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Clue" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:text="Solution:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/Solution" />
-
-                <TextView
-                    android:text="SUBSCRIPT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal|bold"
-                    style="@style/Solution" />
-            </LinearLayout>
-
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            app:clue="Two in chemical water? (9)"
+            app:solution="SUBSCRIPT"/>
 
         <TextView
             android:text="Punctuation in cryptic clues is usually added to distract the solver so can often be ignored. One exception to this rule is the question mark. A question mark often means that you have a clue which demands particular lateral thought, or a quirky interpretation of the words. In this example the clue is referring to 'chemical water' - usually written as H₂O containing a subscript 'two'"
@@ -61,73 +34,18 @@
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
-        <LinearLayout
-            android:orientation="vertical"
+        <com.jamieholdstock.crossworddictionary.views.ClueView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/white_border">
+            android:layout_height="wrap_content"
+            app:clue="Spirited community? (5,4)"
+            app:solution="RENT"/>
 
-            <TextView
-                android:text="Dollars for quarters? (4)"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Clue"/>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:text="Solution:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/Solution"/>
-
-                <TextView
-                    android:text="RENT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal|bold"
-                    style="@style/Solution" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
+        <com.jamieholdstock.crossworddictionary.views.ClueView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/white_border">
+            android:layout_height="wrap_content"
+            app:clue="Dollars for quarters? (4)"
+            app:solution="GHOST TOWN"/>
 
-            <TextView
-                android:text="Spirited community? (5,4)"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Clue" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:text="Solution:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/Solution" />
-
-                <TextView
-                    android:text="GHOST TOWN"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal|bold"
-                    style="@style/Solution" />
-            </LinearLayout>
-
-        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

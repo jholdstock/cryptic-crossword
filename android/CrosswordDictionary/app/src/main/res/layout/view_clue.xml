@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_border">
+
+    <TextView
+        android:text="Consumes a portion meat stew (4)"
+        android:id="@+id/clue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Clue"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:text="Solution:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Solution"/>
+
+        <TextView
+            android:text="EATS"
+            android:id="@+id/solution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal|bold"
+            style="@style/Solution" />
+    </LinearLayout>
+
+</LinearLayout>
