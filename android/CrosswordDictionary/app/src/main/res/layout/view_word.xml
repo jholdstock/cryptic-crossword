@@ -9,7 +9,7 @@
         android:id="@+id/the_word"
         android:padding="8dp"
         android:textColor="#212121"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:text="@string/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -19,7 +19,6 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
     />
 
 </LinearLayout>
