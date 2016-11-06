@@ -2,10 +2,10 @@
 <resources>
     <color name="White">#FFF</color>
     <color name="Gray">#DDD</color>
-    <color name="Black">#000</color>
+    <color name="Black">#000000</color>
 
-    <color name="selected">#CCFFFFFF</color>
-    <color name="unselected">#4DFFFFFF</color>
+    <color name="Selected_Page_Dot">#CCFFFFFF</color>
+    <color name="Unselected_Page_Dot">#4DFFFFFF</color>
 
     <color name="Amethyst">#9B59B6</color>
     <color name="Wisteria">#8E44AD</color>
