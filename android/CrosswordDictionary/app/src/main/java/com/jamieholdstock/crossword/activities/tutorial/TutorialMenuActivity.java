@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.activities.tutorial.basics.BasicsActivity;
-import com.jamieholdstock.crossword.activities.tutorial.devices.DevicesActivity;
+import com.jamieholdstock.crossword.activities.tutorial.devices.AnagramActivity;
 
 public class TutorialMenuActivity extends TutorialActivity {
 
@@ -21,7 +21,7 @@ public class TutorialMenuActivity extends TutorialActivity {
         useAppButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DevicesActivity.class);
+                Intent intent = new Intent(v.getContext(), AnagramActivity.class);
                 v.getContext().startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

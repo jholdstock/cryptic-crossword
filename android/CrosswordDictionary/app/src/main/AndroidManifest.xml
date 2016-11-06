@@ -16,7 +16,7 @@
         </activity>
         <activity android:name="com.jamieholdstock.crossword.activities.tutorial.basics.BasicsActivity" />
         <activity android:name="com.jamieholdstock.crossword.activities.tutorial.TutorialMenuActivity" />
-        <activity android:name="com.jamieholdstock.crossword.activities.tutorial.devices.DevicesActivity" />
+        <activity android:name="com.jamieholdstock.crossword.activities.tutorial.devices.AnagramActivity" />
         <activity android:name="com.jamieholdstock.crossword.activities.SearchActivity" />
     </application>
 

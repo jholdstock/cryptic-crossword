@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossword.activities.tutorial.basics;
+package com.jamieholdstock.crossword.activities.tutorial.devices;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,7 +12,7 @@ import com.jamieholdstock.crossword.adapters.SwipeAdapter;
 
 import java.util.ArrayList;
 
-public class BasicsActivity extends SwipeTutorialActivity {
+public class AnagramActivity extends SwipeTutorialActivity {
 
     private ViewPager mPager;
     private RadioGroup radioGroup;
@@ -20,15 +20,13 @@ public class BasicsActivity extends SwipeTutorialActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_the_basics);
+        setContentView(R.layout.activity_devices);
 
         mPager = (ViewPager) findViewById(R.id.tutorial_pager);
         ArrayList<Fragment> frags = new ArrayList<Fragment>() {{
-            add(new FragCrosswordGrid());
-            add(new FragQuickClue());
-            add(new FragCrypticClue());
-            add(new FragIndicators());
-            add(new FragQuestionMark());
+            add(new FragAnagram());
+            add(new FragAnagram());
+            add(new FragAnagram());
         }};
 
         PagerAdapter mPagerAdapter = new SwipeAdapter(getSupportFragmentManager(), frags);
