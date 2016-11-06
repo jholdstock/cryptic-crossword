@@ -8,7 +8,6 @@ import android.widget.Button;
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.activities.tutorial.devices.AcrosticActivity;
 import com.jamieholdstock.crossword.activities.tutorial.devices.AnagramActivity;
-import com.jamieholdstock.crossword.activities.tutorial.devices.HiddenWordActivity;
 
 public class DevicesMenuActivity extends TutorialActivity {
 
@@ -23,18 +22,6 @@ public class DevicesMenuActivity extends TutorialActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), AcrosticActivity.class);
-                v.getContext().startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        Button hiddenWordButton = (Button) findViewById(R.id.hidden_words_button);
-        assert hiddenWordButton != null;
-        hiddenWordButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), HiddenWordActivity.class);
                 v.getContext().startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

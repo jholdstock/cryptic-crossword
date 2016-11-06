@@ -17,42 +17,29 @@
         android:gravity="center">
 
         <TextView
-            android:text="Here is a cryptic version of the same clue:"
+            android:text="The acrostic device asks the solver to take the initial letters of a string of words in the clue to form the solution."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TutorialParagraph"/>
+            style="@style/TutorialParagraph" />
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="Consumes a portion of meat stew (4)"
-            app:solution="EATS"/>
-
-              <TextView
-            android:text="A cryptic clue normally consists of two parts: a literal definition and an additional hint or cryptic indication of the solution - usually involving some form of wordplay.
-
-The definition part will normally occur at the beginning or end of the clue. Part of the fun is analysing the clue to discover which part is definition and which part is cryptic indication."
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              style="@style/TutorialParagraph"/>
+            app:clue="Black and white lamb starts to cry (4)"
+            app:solution="BAWL"/>
 
         <TextView
-            android:text="The literal defintion in this clue is at the start, 'Consumes'"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TutorialParagraph"/>
-
-        <TextView
-            android:text="The rest of the clue 'a portion of meat stew' is a wordplay puzzle. The solution is literally a portion of the letters 'm EATS tew'"
+            android:text="BAWL means 'to cry'. 'starts' is an indicator suggesting to take the first letters of the words 'Black and white lamb'."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
-            android:text="Cryptic clues can be trickier to solve, but because two mini-clues both to point the solution EATS, you can be quite sure that it is correct."
+            android:text="Acrostic indicators will often reference the top, initial, start, beginning or head."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
+
     </LinearLayout>
 
 </ScrollView>

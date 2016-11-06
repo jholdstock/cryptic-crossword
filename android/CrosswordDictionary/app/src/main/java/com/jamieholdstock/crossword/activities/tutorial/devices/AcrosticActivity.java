@@ -25,9 +25,9 @@ public class AcrosticActivity extends SwipeTutorialActivity {
 
         mPager = (ViewPager) findViewById(R.id.tutorial_pager);
         ArrayList<Fragment> frags = new ArrayList<Fragment>() {{
-            add(new TutorialFragment(R.layout.fragment_anagram));
-            add(new TutorialFragment(R.layout.fragment_anagram));
-            add(new TutorialFragment(R.layout.fragment_anagram));
+            add(new TutorialFragment(R.layout.fragment_acrostic));
+            add(new TutorialFragment(R.layout.fragment_acrostic_examples));
+            add(new TutorialFragment(R.layout.fragment_acrostic_indicators));
         }};
 
         PagerAdapter mPagerAdapter = new SwipeAdapter(getSupportFragmentManager(), frags);

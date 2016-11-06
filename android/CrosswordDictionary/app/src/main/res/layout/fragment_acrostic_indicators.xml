@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_crossword_grid"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
@@ -14,13 +15,6 @@
         android:orientation="vertical"
         android:background="@color/Amethyst"
         android:gravity="center">
-
-        <TextView
-            android:text="Anagrams are words formed by re-arranging the letters of other words or phrases. For example TALE can become LATE, OUTSIDE can be turned into TEDIOUS, and NICE LOVE can be re-arranged into VIOLENCE."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
-
 
     </LinearLayout>
 
