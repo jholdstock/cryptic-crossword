@@ -14,12 +14,12 @@ public class TutorialMenuActivity extends TutorialActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial_menu);
 
-        Button useAppButton = (Button) findViewById(R.id.how_to_use_button);
+        Button useAppButton = (Button) findViewById(R.id.devices_button);
         assert useAppButton != null;
         useAppButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), HowToUseAppActivity.class);
+                Intent intent = new Intent(v.getContext(), DevicesActivity.class);
                 v.getContext().startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

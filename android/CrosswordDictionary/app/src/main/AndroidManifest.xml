@@ -16,7 +16,7 @@
         </activity>
         <activity android:name=".activities.tutorial.TheBasicsActivity" />
         <activity android:name=".activities.tutorial.TutorialMenuActivity" />
-        <activity android:name=".activities.tutorial.HowToUseAppActivity" />
+        <activity android:name=".activities.tutorial.DevicesActivity" />
         <activity android:name=".activities.SearchActivity" />
     </application>
 

@@ -16,10 +16,10 @@
         android:gravity="center">
 
         <TextView
-            android:text="This is a traditional crossword clue:"
+            android:text="Cryptic clues employ a variety of wordplay devices, the cryptic part of the previous clue used a 'hidden word' device - the solution was hidden inside the clue. Sometimes 'indicator' words can aid the solver in identifying which device is in use."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
+            style="@style/TutorialParagraph"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -28,10 +28,10 @@
             android:background="@drawable/white_border">
 
             <TextView
-                android:text="Consumes (4)"
+                android:text="Disorderly piper eats canapé (9)"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Clue"/>
+                style="@style/Clue" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -46,7 +46,7 @@
                     style="@style/Solution"/>
 
                 <TextView
-                    android:text="EATS"
+                    android:text="APPETISER"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="normal|bold"
@@ -56,13 +56,19 @@
         </LinearLayout>
 
         <TextView
-            android:text="The solution is a literal definition of the clue - another word which has the same meaning. The number in bracker tells you how many letters are in the solution. Sometimes there may be multiple numbers in the brackets indicating that the solution contains multiple words."
+            android:text="In this example, the literal definition part of the clue is 'canapé'."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <TextView
-            android:text="In a traditional crossword, USES is another potential solution to this clue, so you would probably want to confirm the correct answer using an overlapping solution before writing your answer in."
+            android:text="The word 'disorderly' is indicating that an anagram device has been used. The remaining letters of the clue 'piper eats' are an anagram of APPETISER."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="The word 'disorderly' is just one example of a word which might indicate that an anagram. The words 'crazy', 'drunk', 'confused', or 'rearranged' could also have been used in this clue. There are hundreds of potential anagram indicators so it is best to try and identify the intent of the word in the clue, rather than attempt to memorize the full list,"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />

@@ -48,6 +48,13 @@
             android:button="@null"
             android:clickable="false"
             android:layout_margin="5dp" />
+        <RadioButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/button_selector"
+            android:button="@null"
+            android:clickable="false"
+            android:layout_margin="5dp" />
     </RadioGroup>
 
     <android.support.v4.view.ViewPager

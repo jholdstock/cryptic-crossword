@@ -13,7 +13,7 @@ import com.jamieholdstock.crossworddictionary.R;
 
 public class TheBasicsActivity extends FragmentActivity {
 
-    private static final int NUM_PAGES = 3;
+    private static final int NUM_PAGES = 5;
     private ViewPager mPager;
     private RadioGroup radioGroup;
     @Override
@@ -30,7 +30,6 @@ public class TheBasicsActivity extends FragmentActivity {
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
@@ -41,7 +40,6 @@ public class TheBasicsActivity extends FragmentActivity {
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
     }
@@ -60,6 +58,10 @@ public class TheBasicsActivity extends FragmentActivity {
                     return new FragQuickClue();
                 case 2:
                     return new FragCrypticClue();
+                case 3:
+                    return new FragIndicators();
+                case 4:
+                    return new FragQuestionMark();
                 default:
                     return null;
             }

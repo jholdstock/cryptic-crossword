@@ -19,25 +19,19 @@
             android:text="Here is a cryptic version of the same clue:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TutorialParagraph"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="30dp" />
+            style="@style/TutorialParagraph"/>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/menu_button">
+            android:background="@drawable/white_border">
 
             <TextView
                 android:text="Consumes a portion of meat stew (4)"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="normal"
-                android:textColor="@color/White"
-                android:textSize="18sp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="10dp" />
+                style="@style/Clue" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -49,23 +43,14 @@
                     android:text="Solution:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="normal"
-                    android:textColor="@color/White"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp" />
+                    style="@style/Solution" />
 
                 <TextView
                     android:text="EATS"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="normal|bold"
-                    android:textColor="@color/White"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp" />
+                    style="@style/Solution" />
             </LinearLayout>
 
         </LinearLayout>
@@ -74,16 +59,19 @@
             android:text="Typical cryptic clues will either start or end with a literal definition of the solution. In this case it's 'Consumes'"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TutorialParagraph"
-            android:layout_marginTop="30dp" />
+            style="@style/TutorialParagraph"/>
 
         <TextView
             android:text="The rest of the clue 'a portion of meat stew' is a wordplay puzzle. The solution is literally a portion of the letters 'm EATS tew'"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TutorialParagraph"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="30dp" />
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="Cryptic clues can be trickier to solve, but because two mini-clues both to point the solution EATS, you can be quite sure that it is correct."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
     </LinearLayout>
 
 </ScrollView>
