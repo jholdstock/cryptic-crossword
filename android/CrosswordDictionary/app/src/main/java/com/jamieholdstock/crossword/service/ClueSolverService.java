@@ -27,7 +27,7 @@ public class ClueSolverService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         String action = intent.getAction();
         if (action.equals(MyIntents.SOLVE_CLUE)) {
-            String clue = "clue here";
+            String clue = intent.getStringExtra(IntentExtras.SEARCH_TERM);
             solveClue(clue);
         }
     }
@@ -38,10 +38,10 @@ public class ClueSolverService extends IntentService {
         LocalBroadcastManager.getInstance(this).sendBroadcast(i);
     }
 
-    private void sendSolutionsToActivity(Solutions solutions) {
+    private void sendSolutionsToActivity(SolverSearchResults solverSearchResults) {
         Intent i = new Intent(this.getApplicationContext(), ClueSolverActivity.class);
         i.setAction(MyIntents.DRAW_SOLUTIONS);
-        i.putExtra(IntentExtras.SOLUTIONS, solutions);
+        i.putExtra(IntentExtras.SOLUTIONS, solverSearchResults);
 
         LocalBroadcastManager.getInstance(this).sendBroadcast(i);
     }
@@ -57,9 +57,9 @@ public class ClueSolverService extends IntentService {
 
         try {
             L.l("Service sending GET to " + solverUrl + query);
-            String html= Jsoup.connect(solverUrl + query).execute().body();
+            String html = Jsoup.connect(solverUrl + query).execute().body();
             L.l("Service received non-error response");
-            Solutions stats = new Solutions(html);
+            SolverSearchResults stats = new SolverSearchResults(html);
             sendSolutionsToActivity(stats);
         } catch (IOException e) {
             sendErrorToActivity();

@@ -9,10 +9,14 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.jamieholdstock.crossword.R;
+import com.jamieholdstock.crossword.intents.IntentExtras;
 import com.jamieholdstock.crossword.intents.MyIntents;
 import com.jamieholdstock.crossword.service.ClueSolverService;
+import com.jamieholdstock.crossword.service.SolverSearchResults;
 
 public class ClueSolverActivity extends AppCompatActivity {
 
@@ -27,17 +31,21 @@ public class ClueSolverActivity extends AppCompatActivity {
                 waitingForService = false;
             }
             else if(intent.getAction().equals(MyIntents.DRAW_SOLUTIONS)) {
-                findViewById(R.id.clue_view).setVisibility(View.VISIBLE);
+                SolverSearchResults solverSearchResults = (SolverSearchResults) intent.getExtras().get(IntentExtras.SOLUTIONS);
+
+                View clueView = findViewById(R.id.clue_view);
+                clueView.setVisibility(View.VISIBLE);
+
+                TextView clue = (TextView) clueView.findViewById(R.id.clue);
+                TextView solution = (TextView) clueView.findViewById(R.id.solution);
+
+                clue.setText(solverSearchResults.getClues().get(0));
+                solution.setText(solverSearchResults.getSolutions().get(0));
+
                 waitingForService = false;
             }
         }
     };
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        bManager.unregisterReceiver(bReceiver);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +67,24 @@ public class ClueSolverActivity extends AppCompatActivity {
             public void onClick(View v) {
                 findViewById(R.id.clue_view).setVisibility(View.GONE);
                 findViewById(R.id.error_panel).setVisibility(View.GONE);
-                sendIntentToService(v.getContext());
+                EditText searchBox = (EditText) findViewById(R.id.search_box);
+                String searchTerm = searchBox.getText().toString();
+                sendIntentToService(searchTerm, v.getContext());
             }
         });
     }
 
-    private void sendIntentToService(Context context) {
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        bManager.unregisterReceiver(bReceiver);
+    }
+
+    private void sendIntentToService(String searchTerm, Context context) {
         if (waitingForService) return;
         Intent msgIntent = new Intent(context, ClueSolverService.class);
         msgIntent.setAction(MyIntents.SOLVE_CLUE);
+        msgIntent.putExtra(IntentExtras.SEARCH_TERM, searchTerm);
         context.startService(msgIntent);
         waitingForService = true;
     }
