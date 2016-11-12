@@ -23,7 +23,7 @@ public class ClueSolverActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             if(intent.getAction().equals(MyIntents.DRAW_ERROR)) {
-                findViewById(R.id.clue_view).setVisibility(View.VISIBLE);
+                findViewById(R.id.error_panel).setVisibility(View.VISIBLE);
                 waitingForService = false;
             }
             else if(intent.getAction().equals(MyIntents.DRAW_SOLUTIONS)) {
@@ -44,6 +44,9 @@ public class ClueSolverActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clue_solver);
 
+        findViewById(R.id.clue_view).setVisibility(View.GONE);
+        findViewById(R.id.error_panel).setVisibility(View.GONE);
+
         bManager = LocalBroadcastManager.getInstance(this);
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(MyIntents.DRAW_ERROR);
@@ -54,6 +57,8 @@ public class ClueSolverActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                findViewById(R.id.clue_view).setVisibility(View.GONE);
+                findViewById(R.id.error_panel).setVisibility(View.GONE);
                 sendIntentToService(v.getContext());
             }
         });
