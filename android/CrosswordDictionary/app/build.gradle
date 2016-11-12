@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.0.0'
     //    Added by Jamie below here:
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
+    compile 'org.jsoup:jsoup:1.9.2'
 }

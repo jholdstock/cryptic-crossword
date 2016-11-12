@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Nephritis"
+    tools:context=".activities.ClueSolverActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:theme="@style/MyEditText"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_box"
+        android:textColor="@android:color/white"
+        android:hint="Clue..."
+        android:selectAllOnFocus="true"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:padding="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/solve_clue_button"
+        android:text="Solve"
+        style="@style/MenuButton"
+        android:layout_gravity="center" />
+
+    <com.jamieholdstock.crossword.views.ClueView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:clue="Consumes (4)"
+        app:solution="EATS"
+        android:visibility="gone"
+        android:id="@+id/clue_view" />
+
+</LinearLayout>
+
