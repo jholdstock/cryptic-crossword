@@ -1,9 +1,11 @@
-package com.jamieholdstock.crossword;
+package com.jamieholdstock.crossword.activities.utilities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+
+import com.jamieholdstock.crossword.R;
 
 public class ButtonPressAnimator {
     private Activity srcActivity;

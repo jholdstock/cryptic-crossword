@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/white_border">
+
+    <ImageView
+        android:layout_width="71dp"
+        android:layout_height="89dp"
+        android:id="@+id/error_img"
+        app:srcCompat="@mipmap/warning"
+        android:cropToPadding="false"
+        android:adjustViewBounds="false" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Error!"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_margin="10dp"
+            android:gravity="center_vertical|center" />
+
+        <TextView
+            android:text="Check internet connection and try again."
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/White"
+            android:textSize="14dp"
+            android:gravity="center_vertical|center" />
+
+    </LinearLayout>
+</LinearLayout>

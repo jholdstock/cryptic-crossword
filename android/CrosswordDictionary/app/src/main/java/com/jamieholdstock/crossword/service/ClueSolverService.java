@@ -60,7 +60,10 @@ public class ClueSolverService extends IntentService {
             String html = Jsoup.connect(solverUrl + query).execute().body();
             L.l("Service received non-error response");
             SolverSearchResults stats = new SolverSearchResults(html);
-            sendSolutionsToActivity(stats);
+            sendErrorToActivity();
+            return;
+//            sendSolutionsToActivity(stats);
+//            return;
         } catch (IOException e) {
             sendErrorToActivity();
             L.l("Service received error response");

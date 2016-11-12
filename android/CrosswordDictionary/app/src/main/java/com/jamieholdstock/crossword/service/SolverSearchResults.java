@@ -28,7 +28,18 @@ public class SolverSearchResults implements Parcelable {
         return document;
     }
 
-    public ArrayList<String> getSolutions() {
+    public ArrayList<SolvedClue> getResults() {
+        ArrayList<String> solutions = getSolutions();
+        ArrayList<String> clues = getClues();
+
+        ArrayList<SolvedClue> solvedClues = new ArrayList<>();
+        for(int i = 0; i < solutions.size(); i++) {
+            solvedClues.add(new SolvedClue(clues.get(i), solutions.get(i)));
+        }
+        return solvedClues;
+    }
+
+    private ArrayList<String> getSolutions() {
         Element table = getDoc().select("tbody[class=wp-widget-content]").first();
 
         Iterator<Element> ite = table.select("td a").iterator();
@@ -43,7 +54,7 @@ public class SolverSearchResults implements Parcelable {
         return solutions;
     }
 
-    public ArrayList<String> getClues() {
+    private ArrayList<String> getClues() {
         Element table = getDoc().select("tbody[class=wp-widget-content]").first();
 
         Iterator<Element> ite = table.select("td[class=clue]").iterator();

@@ -26,19 +26,26 @@ public class ClueView extends GridLayout {
                 attrs,
                 R.styleable.ClueView,
                 0, 0);
-
+        String clue = null;
+        String solution = null;
         try {
-            String mShowText = a.getString(R.styleable.ClueView_clue);
-            String mTextPos = a.getString(R.styleable.ClueView_solution);
-
-            TextView clue = (TextView) findViewById(R.id.clue);
-            TextView solution = (TextView) findViewById(R.id.solution);
-
-            clue.setText(mShowText);
-            solution.setText(mTextPos);
-
+            clue = a.getString(R.styleable.ClueView_clue);
+            solution = a.getString(R.styleable.ClueView_solution);
         } finally {
             a.recycle();
         }
+
+        setClue(clue);
+        setSolution(solution);
+    }
+
+    public void setClue(String clue) {
+        TextView clueView = (TextView) findViewById(R.id.clue);
+        clueView.setText(clue);
+    }
+
+    public void setSolution(String solution) {
+        TextView solutionView = (TextView) findViewById(R.id.solution);
+        solutionView.setText(solution);
     }
 }

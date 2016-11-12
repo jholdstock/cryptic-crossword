@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.jamieholdstock.crossword.ButtonPressAnimator;
+import com.jamieholdstock.crossword.activities.utilities.ButtonPressAnimator;
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.activities.tutorial.TutorialMenuActivity;
 
