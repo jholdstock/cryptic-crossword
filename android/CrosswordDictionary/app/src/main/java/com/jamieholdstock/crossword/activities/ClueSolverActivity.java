@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -37,11 +38,13 @@ public class ClueSolverActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             if(intent.getAction().equals(MyIntents.DRAW_NETWORK_ERROR)) {
                 displayError("Error!", "Check internet connection and try again.");
+                stopText();
                 waitingForService = false;
             }
             else if(intent.getAction().equals(MyIntents.DRAW_SOLUTIONS)) {
                 SolverSearchResults solverSearchResults = (SolverSearchResults) intent.getExtras().get(IntentExtras.SOLUTIONS);
                 displaySolvedClues(solverSearchResults.getResults());
+                stopText();
                 waitingForService = false;
             }
         }
@@ -106,6 +109,38 @@ public class ClueSolverActivity extends AppCompatActivity {
             }
         });
     }
+    private String loadingText = "●●●●";
+    private int mIndex = 1;
+    private int delay = 300;
+    private Handler mHandler = new Handler();
+
+    public void animateText() {
+        mIndex = 1;
+        Button button = (Button) findViewById(R.id.solve_clue_button);
+
+        button.setText("●");
+        mHandler.removeCallbacks(characterAdder);
+        mHandler.postDelayed(characterAdder, 0);
+    }
+
+    private Runnable characterAdder = new Runnable() {
+        @Override
+        public void run() {
+            Button button = (Button) findViewById(R.id.solve_clue_button);
+            button.setText(loadingText.subSequence(0, mIndex++));
+            if(mIndex <= loadingText.length()) {
+                mHandler.postDelayed(characterAdder, delay);
+            } else {
+                animateText();
+            }
+        }
+    };
+
+    public void stopText() {
+        Button button = (Button) findViewById(R.id.solve_clue_button);
+        button.setText("Solve");
+        mHandler.removeCallbacks(characterAdder);
+    }
 
     @Override
     protected void onDestroy() {
@@ -120,5 +155,6 @@ public class ClueSolverActivity extends AppCompatActivity {
         msgIntent.putExtra(IntentExtras.SEARCH_TERM, searchTerm);
         context.startService(msgIntent);
         waitingForService = true;
+        animateText();
     }
 }

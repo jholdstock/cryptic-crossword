@@ -17,7 +17,8 @@ import java.net.URLEncoder;
 
 public class ClueSolverService extends IntentService {
 
-    private String solverUrl = "http://www.wordplays.com/crossword-solver/";
+    //private String solverUrl = "http://www.wordplays.com/crossword-solver/";
+    private String solverUrl = "http://10.0.2.2:8090/crossword-solver/";
 
     public ClueSolverService() {
         super("ClueSolverService");
@@ -55,17 +56,18 @@ public class ClueSolverService extends IntentService {
             System.exit(1);
         }
 
+        L.l("Service sending GET to " + solverUrl + query);
+        String html = null;
         try {
-            L.l("Service sending GET to " + solverUrl + query);
-            String html = Jsoup.connect(solverUrl + query).execute().body();
+            html = Jsoup.connect(solverUrl + query).timeout(5000).execute().body();
             L.l("Service received non-error response");
-            SolverSearchResults stats = new SolverSearchResults(html);
-            sendSolutionsToActivity(stats);
-            return;
         } catch (IOException e) {
             sendErrorToActivity();
             L.l("Service received error response");
             return;
         }
+
+        SolverSearchResults stats = new SolverSearchResults(html);
+        sendSolutionsToActivity(stats);
     }
 }
