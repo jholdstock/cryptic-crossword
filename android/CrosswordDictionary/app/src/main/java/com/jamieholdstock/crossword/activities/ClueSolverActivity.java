@@ -30,50 +30,68 @@ public class ClueSolverActivity extends AppCompatActivity {
     private boolean waitingForService = false;
     private LinearLayout resultsPanel;
     private LocalBroadcastManager bManager;
+    private LayoutInflater lInf;
     private BroadcastReceiver bReceiver = new BroadcastReceiver() {
+
         @Override
         public void onReceive(Context context, Intent intent) {
-            LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            if(intent.getAction().equals(MyIntents.DRAW_ERROR)) {
-                View v = vi.inflate(R.layout.view_network_warning, null);
-                resultsPanel.addView(v, 0, new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                ImageBugFixer.fix(R.id.error_img, R.mipmap.warning, v, getResources());
-
+            if(intent.getAction().equals(MyIntents.DRAW_NETWORK_ERROR)) {
+                displayError("Error!", "Check internet connection and try again.");
                 waitingForService = false;
             }
             else if(intent.getAction().equals(MyIntents.DRAW_SOLUTIONS)) {
                 SolverSearchResults solverSearchResults = (SolverSearchResults) intent.getExtras().get(IntentExtras.SOLUTIONS);
-                ArrayList<SolvedClue> solvedClues = solverSearchResults.getResults();
-                for (SolvedClue clue: solvedClues) {
-                    View v = vi.inflate(R.layout.view_clue, null);
-
-                    TextView solutionView = (TextView) v.findViewById(R.id.solution);
-                    TextView clueView = (TextView) v.findViewById(R.id.clue);
-
-                    solutionView.setText(clue.getSolution());
-                    clueView.setText(clue.getClue());
-
-                    resultsPanel.addView(v, 0, new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                }
-
+                displaySolvedClues(solverSearchResults.getResults());
                 waitingForService = false;
             }
         }
     };
+
+    private void displayError(String topMessage, String bottomMessage) {
+        View v = lInf.inflate(R.layout.view_warning, null);
+        TextView topText = (TextView) v.findViewById(R.id.top_message);
+        topText.setText(topMessage);
+
+        TextView bottomText = (TextView) v.findViewById(R.id.bottom_message);
+        bottomText.setText(bottomMessage);
+
+        resultsPanel.addView(v, 0, new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        ImageBugFixer.fix(R.id.error_img, R.mipmap.warning, v, getResources());
+    }
+
+    private void displaySolvedClues(ArrayList<SolvedClue> solvedClues) {
+        if (solvedClues.size() == 0) {
+            displayError("No results found", "Check spelling and wording carefully");
+            return;
+        }
+
+        for (SolvedClue clue: solvedClues) {
+            View v = lInf.inflate(R.layout.view_clue, null);
+
+            TextView solutionView = (TextView) v.findViewById(R.id.solution);
+            TextView clueView = (TextView) v.findViewById(R.id.clue);
+
+            solutionView.setText(clue.getSolution());
+            clueView.setText(clue.getClue());
+
+            resultsPanel.addView(v, 0, new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clue_solver);
         resultsPanel = (LinearLayout) findViewById(R.id.results_panel);
-
         resultsPanel.removeAllViews();
+
+        lInf = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         bManager = LocalBroadcastManager.getInstance(this);
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(MyIntents.DRAW_ERROR);
+        intentFilter.addAction(MyIntents.DRAW_NETWORK_ERROR);
         intentFilter.addAction(MyIntents.DRAW_SOLUTIONS);
         bManager.registerReceiver(bReceiver, intentFilter);
 

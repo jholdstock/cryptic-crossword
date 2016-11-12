@@ -6,7 +6,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/Nephritis"
     tools:context=".activities.ClueSolverActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <EditText
         android:theme="@style/MyEditText"
@@ -27,21 +31,26 @@
         style="@style/MenuButton"
         android:layout_gravity="center" />
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/results_panel">
-
-        <com.jamieholdstock.crossword.views.ClueView
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:clue="Example (4)"
-            app:solution="Example" />
+            android:layout_height="match_parent"
+            android:id="@+id/results_panel">
 
-        <com.jamieholdstock.crossword.views.NetworkWarningView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            <com.jamieholdstock.crossword.views.ClueView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:clue="Example (4)"
+                app:solution="Example" />
+
+            <com.jamieholdstock.crossword.views.NetworkWarningView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
 

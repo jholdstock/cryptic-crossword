@@ -3,8 +3,6 @@ package com.jamieholdstock.crossword.service;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.jamieholdstock.crossword.L;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,6 +14,7 @@ public class SolverSearchResults implements Parcelable {
 
     private final String rawHtml;
     private Document document;
+    private Element table;
 
     public SolverSearchResults(String rawHtml) {
         this.rawHtml = rawHtml;
@@ -29,10 +28,16 @@ public class SolverSearchResults implements Parcelable {
     }
 
     public ArrayList<SolvedClue> getResults() {
+        table = getDoc().select("tbody[class=wp-widget-content]").first();
+        ArrayList<SolvedClue> solvedClues = new ArrayList<>();
+
+        if (table == null) {
+            return solvedClues;
+        }
+
         ArrayList<String> solutions = getSolutions();
         ArrayList<String> clues = getClues();
 
-        ArrayList<SolvedClue> solvedClues = new ArrayList<>();
         for(int i = 0; i < solutions.size(); i++) {
             solvedClues.add(new SolvedClue(clues.get(i), solutions.get(i)));
         }
@@ -40,32 +45,22 @@ public class SolverSearchResults implements Parcelable {
     }
 
     private ArrayList<String> getSolutions() {
-        Element table = getDoc().select("tbody[class=wp-widget-content]").first();
-
-        Iterator<Element> ite = table.select("td a").iterator();
-
         ArrayList<String> solutions = new ArrayList<>();
+        Iterator<Element> ite = table.select("td a").iterator();
         while(ite.hasNext()) {
             String value = ite.next().text();
             solutions.add(value);
-            L.l("Solution: " + value);
         }
-
         return solutions;
     }
 
     private ArrayList<String> getClues() {
-        Element table = getDoc().select("tbody[class=wp-widget-content]").first();
-
         Iterator<Element> ite = table.select("td[class=clue]").iterator();
-
         ArrayList<String> clues = new ArrayList<>();
         while(ite.hasNext()) {
             String value = ite.next().text();
             clues.add(value);
-            L.l("Clue: " + value);
         }
-
         return clues;
     }
 

@@ -34,7 +34,7 @@ public class ClueSolverService extends IntentService {
 
     private void sendErrorToActivity() {
         Intent i = new Intent(this.getApplicationContext(), ClueSolverActivity.class);
-        i.setAction(MyIntents.DRAW_ERROR);
+        i.setAction(MyIntents.DRAW_NETWORK_ERROR);
         LocalBroadcastManager.getInstance(this).sendBroadcast(i);
     }
 
@@ -60,10 +60,8 @@ public class ClueSolverService extends IntentService {
             String html = Jsoup.connect(solverUrl + query).execute().body();
             L.l("Service received non-error response");
             SolverSearchResults stats = new SolverSearchResults(html);
-            sendErrorToActivity();
+            sendSolutionsToActivity(stats);
             return;
-//            sendSolutionsToActivity(stats);
-//            return;
         } catch (IOException e) {
             sendErrorToActivity();
             L.l("Service received error response");

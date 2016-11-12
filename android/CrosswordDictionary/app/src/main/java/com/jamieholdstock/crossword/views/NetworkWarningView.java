@@ -18,6 +18,6 @@ public class NetworkWarningView extends LinearLayout {
 
     public NetworkWarningView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        LayoutInflater.from(context).inflate(R.layout.view_network_warning, this);
+        LayoutInflater.from(context).inflate(R.layout.view_warning, this);
     }
 }
