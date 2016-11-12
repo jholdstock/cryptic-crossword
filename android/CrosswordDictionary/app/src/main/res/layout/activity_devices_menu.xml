@@ -28,27 +28,13 @@
         android:layout_height="wrap_content"
         android:text="Anagrams"
         android:id="@+id/anagrams_button"
-        android:background="@drawable/white_border"
-        android:textColor="@color/White"
-        android:layout_marginBottom="20dp"
-        android:minWidth="120dip"
-        android:typeface="sans"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        android:textStyle="normal|bold" />
+        style="@style/MenuButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Acrostics"
         android:id="@+id/acrostics_button"
-        android:background="@drawable/white_border"
-        android:textColor="@color/White"
-        android:layout_marginBottom="20dp"
-        android:minWidth="120dip"
-        android:typeface="sans"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        android:textStyle="normal|bold" />
+        style="@style/MenuButton" />
 
 </LinearLayout>

@@ -21,15 +21,15 @@ public class BasicsActivity extends SwipeTutorialActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_the_basics);
+        setContentView(R.layout.basics_activity);
 
         mPager = (ViewPager) findViewById(R.id.tutorial_pager);
         ArrayList<Fragment> frags = new ArrayList<Fragment>() {{
-            add(new FragCrosswordGrid(R.layout.fragment_crossword_grid));
-            add(new TutorialFragment(R.layout.fragment_quick_clue));
-            add(new TutorialFragment(R.layout.fragment_cryptic_clue));
+            add(new FragCrosswordGrid(R.layout.basics_frag_crossword_grid));
+            add(new TutorialFragment(R.layout.basics_frag_quick_clue));
+            add(new TutorialFragment(R.layout.basics_frag_cryptic_clue));
             add(new TutorialFragment(R.layout.fragment_indicators));
-            add(new TutorialFragment(R.layout.fragment_question_mark));
+            add(new TutorialFragment(R.layout.basics_frag_question_mark));
         }};
 
         PagerAdapter mPagerAdapter = new SwipeAdapter(getSupportFragmentManager(), frags);
