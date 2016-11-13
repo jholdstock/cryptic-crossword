@@ -59,7 +59,6 @@ public class ClueSolverActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clue_solver);
         resultsPanel = (LinearLayout) findViewById(R.id.results_panel);
-        resultsPanel.removeAllViews();
 
         lInf = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -83,9 +82,13 @@ public class ClueSolverActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultsPanel.removeAllViews();
                 EditText searchBox = (EditText) findViewById(R.id.search_box);
                 String searchTerm = searchBox.getText().toString();
+
+                if (searchTerm.trim().equals("")) {
+                    return;
+                }
+                resultsPanel.removeAllViews();
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(searchBox.getWindowToken(), 0);
 

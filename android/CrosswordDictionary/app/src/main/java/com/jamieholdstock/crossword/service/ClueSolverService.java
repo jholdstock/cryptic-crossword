@@ -17,8 +17,8 @@ import java.net.URLEncoder;
 
 public class ClueSolverService extends IntentService {
 
-    //private String solverUrl = "http://www.wordplays.com/crossword-solver/";
-    private String solverUrl = "http://10.0.2.2:8090/crossword-solver/";
+    private String solverUrl = "http://www.wordplays.com/crossword-solver/";
+//    private String solverUrl = "http://10.0.2.2:8090/crossword-solver/";
 
     public ClueSolverService() {
         super("ClueSolverService");

@@ -22,7 +22,9 @@
         <activity android:name=".activities.tutorial.devices.AnagramActivity" />
         <activity android:name=".activities.tutorial.devices.AcrosticActivity" />
         <activity android:name=".activities.SearchActivity" />
-        <activity android:name=".activities.ClueSolverActivity" />
+        <activity android:name=".activities.ClueSolverActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
 
         <service
             android:name=".service.ClueSolverService"
