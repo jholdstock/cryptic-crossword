@@ -21,15 +21,17 @@
         android:selectAllOnFocus="true"
         android:textSize="18sp"
         android:layout_width="match_parent"
-        android:padding="20dp" />
+        android:padding="10dp"
+        android:paddingBottom="10dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="143dp"
         android:layout_height="wrap_content"
         android:id="@+id/solve_clue_button"
         android:text="Solve"
         style="@style/MenuButton"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" />
 
     <ScrollView
         android:layout_width="match_parent"

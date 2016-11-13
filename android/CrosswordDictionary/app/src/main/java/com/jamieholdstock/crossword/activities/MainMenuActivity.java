@@ -22,10 +22,10 @@ public class MainMenuActivity extends AppCompatActivity {
         anim.slideLeftToActivity(R.id.search_button, SearchActivity.class);
 
         Animation fade = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        fade.setStartOffset(500);
+        fade.setStartOffset(550);
         findViewById(R.id.title_container).startAnimation(fade);
         Animation slowFade = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        slowFade.setStartOffset(1250);
+        slowFade.setStartOffset(1350);
         findViewById(R.id.button_panel).startAnimation(slowFade);
     }
 
