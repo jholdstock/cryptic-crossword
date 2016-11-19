@@ -1,52 +1,20 @@
 package com.jamieholdstock.crossword.activities.tutorial.devices;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.widget.RadioGroup;
 
 import com.jamieholdstock.crossword.R;
-import com.jamieholdstock.crossword.activities.tutorial.SwipeTutorialActivity;
 import com.jamieholdstock.crossword.activities.tutorial.TutorialFragment;
-import com.jamieholdstock.crossword.adapters.SwipeAdapter;
 
 import java.util.ArrayList;
 
-public class AnagramActivity extends SwipeTutorialActivity {
-
-    private ViewPager mPager;
-    private RadioGroup radioGroup;
+public class AnagramActivity extends DevicesActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_devices);
-
-        mPager = (ViewPager) findViewById(R.id.pager);
-        ArrayList<Fragment> frags = new ArrayList<Fragment>() {{
-            add(new TutorialFragment(R.layout.fragment_anagram));
-            add(new TutorialFragment(R.layout.fragment_anagram_examples));
-            add(new TutorialFragment(R.layout.fragment_anagram_indicators));
+    protected ArrayList<Fragment> getFragments() {
+        return new ArrayList<Fragment>() {{
+            add(new TutorialFragment(R.layout.devices_frag_anagram));
+            add(new TutorialFragment(R.layout.devices_frag_anagram_examples));
+            add(new TutorialFragment(R.layout.devices_frag_anagram_indicators));
         }};
-
-        PagerAdapter mPagerAdapter = new SwipeAdapter(getSupportFragmentManager(), frags);
-        mPager.setAdapter(mPagerAdapter);
-
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioGroup.check(radioGroup.getChildAt(0).getId());
-        mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
-
-            @Override
-            public void onPageSelected(int position) {
-                radioGroup.clearCheck();
-                radioGroup.check(radioGroup.getChildAt(position).getId());
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {}
-        });
     }
 }
