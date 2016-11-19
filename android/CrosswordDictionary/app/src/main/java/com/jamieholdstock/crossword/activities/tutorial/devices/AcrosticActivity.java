@@ -14,7 +14,7 @@ public class AcrosticActivity extends DevicesActivity {
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_acrostic));
             add(new TutorialFragment(R.layout.devices_frag_acrostic_examples));
-            add(new TutorialFragment(R.layout.devices_frag_acrostic_indicators));
+            add(new FragAcrosticIndicators(R.layout.devices_frag_acrostic_indicators));
         }};
     }
 }
