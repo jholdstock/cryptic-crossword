@@ -23,7 +23,7 @@ public class BasicsActivity extends SwipeTutorialActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.basics_activity);
 
-        mPager = (ViewPager) findViewById(R.id.tutorial_pager);
+        mPager = (ViewPager) findViewById(R.id.pager);
         ArrayList<Fragment> frags = new ArrayList<Fragment>() {{
             add(new FragCrosswordGrid(R.layout.basics_frag_crossword_grid));
             add(new TutorialFragment(R.layout.basics_frag_quick_clue));

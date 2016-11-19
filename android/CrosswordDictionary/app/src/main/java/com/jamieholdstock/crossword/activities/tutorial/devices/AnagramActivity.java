@@ -21,9 +21,9 @@ public class AnagramActivity extends SwipeTutorialActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anagram);
+        setContentView(R.layout.activity_devices);
 
-        mPager = (ViewPager) findViewById(R.id.tutorial_pager);
+        mPager = (ViewPager) findViewById(R.id.pager);
         ArrayList<Fragment> frags = new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.fragment_anagram));
             add(new TutorialFragment(R.layout.fragment_anagram_examples));
