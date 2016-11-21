@@ -68,7 +68,7 @@ public class ClueSolverActivity extends AppCompatActivity {
         intentFilter.addAction(MyIntents.DRAW_SOLUTIONS);
         bManager.registerReceiver(bReceiver, intentFilter);
 
-        EditText searchBox = (EditText) findViewById(R.id.search_box);
+        final EditText searchBox = (EditText) findViewById(R.id.search_box);
         searchBox.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -82,7 +82,6 @@ public class ClueSolverActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText searchBox = (EditText) findViewById(R.id.search_box);
                 String searchTerm = searchBox.getText().toString();
 
                 if (searchTerm.trim().equals("")) {
@@ -96,6 +95,17 @@ public class ClueSolverActivity extends AppCompatActivity {
             }
         });
         animator = new LoadingAnimator(button);
+
+        Button clearButton = (Button) findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchBox.setText("");
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(searchBox, InputMethodManager.SHOW_IMPLICIT);
+            }
+        });
+
     }
 
     @Override
