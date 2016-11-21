@@ -15,26 +15,26 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Sketch] a [one-all score] (4)"
+            app:solution="DRAW"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Uses axe] on [meat cutlets] (5)"
+            app:solution="CHOPS"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Eastern European] [buff] (6)"
+            app:solution="POLISH"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Put up with] [large animal] (4)"
+            app:solution="BEAR"/>
 
     </LinearLayout>
 

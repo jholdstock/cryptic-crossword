@@ -15,25 +15,25 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="Biting heads off tarantulas, eating even tiny hairs (5)"
+            app:clue="[Biting] heads off [t]arantulas, [e]ating [e]ven [t]iny [h]airs (5)"
             app:solution="TEETH"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="Teams beginners stuck in depressing early slump (5)"
+            app:clue="[Teams] beginners [s]tuck [i]n [d]epressing [e]arly slump (5)"
             app:solution="SIDES"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="Initially amiable person eats primate (3)"
+            app:clue="Initially [a]miable [p]erson [e]ats [primate] (3)"
             app:solution="APE"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="Some URLs recommended for beginners to explore online (4)"
+            app:clue="[S]ome [U]RLs [r]ecommended [f]or beginners to [explore online] (4)"
             app:solution="SURF"/>
 
     </LinearLayout>

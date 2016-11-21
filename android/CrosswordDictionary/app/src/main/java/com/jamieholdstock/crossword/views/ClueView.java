@@ -2,6 +2,8 @@ package com.jamieholdstock.crossword.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.Html;
+import android.text.Spanned;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.GridLayout;
@@ -41,11 +43,16 @@ public class ClueView extends GridLayout {
 
     public void setClue(String clue) {
         TextView clueView = (TextView) findViewById(R.id.clue);
-        clueView.setText(clue);
+        clueView.setText(underline(clue));
     }
 
     public void setSolution(String solution) {
         TextView solutionView = (TextView) findViewById(R.id.solution);
-        solutionView.setText(solution);
+        solutionView.setText(underline(solution));
+    }
+
+    private Spanned underline(String src) {
+        src = src.replaceAll("\\[", "<u>").replaceAll("\\]", "</u>");
+        return Html.fromHtml(src);
     }
 }

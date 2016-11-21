@@ -21,7 +21,7 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="Black and white lamb starts to cry (4)"
+            app:clue="[B]lack [a]nd [w]hite [l]amb starts to [cry] (4)"
             app:solution="BAWL"/>
 
         <TextView

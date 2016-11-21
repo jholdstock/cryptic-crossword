@@ -12,35 +12,6 @@
         android:background="@color/Amethyst"
         android:gravity="center">
 
-        <TextView
-            android:text="HIDDEN WORD. HIDDEN WORD. HIDDEN WORD. HIDDEN WORD. HIDDEN WORD. HIDDEN WORD. HIDDEN WORD. HIDDEN WORD."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
-
-        <com.jamieholdstock.crossword.views.ClueView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:clue="Black and white lamb starts to cry (4)"
-            app:solution="BAWL"/>
-
-        <TextView
-            android:text="BAWL means 'to cry'. 'starts' is an indicator suggesting to take the first letters of the words 'Black and white lamb'."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
-
-        <TextView
-            android:text="Acrostic indicators will often reference the top, initial, start, beginning or head."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
-
-        <TextView
-            android:text="Note that similarly, words like “last”, “ultimate” or “final” could indicate an acrostic using the last letters."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
     </LinearLayout>
 
 </ScrollView>
