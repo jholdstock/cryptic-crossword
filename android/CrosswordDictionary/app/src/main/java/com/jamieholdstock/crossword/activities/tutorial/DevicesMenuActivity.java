@@ -2,6 +2,9 @@ package com.jamieholdstock.crossword.activities.tutorial;
 
 import android.os.Bundle;
 
+import com.jamieholdstock.crossword.activities.tutorial.devices.DoubleDefinitionActivity;
+import com.jamieholdstock.crossword.activities.tutorial.devices.HiddenWordActivity;
+import com.jamieholdstock.crossword.activities.tutorial.devices.HomophoneActivity;
 import com.jamieholdstock.crossword.activities.utilities.ButtonPressAnimator;
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.activities.tutorial.devices.AcrosticActivity;
@@ -17,5 +20,8 @@ public class DevicesMenuActivity extends TutorialActivity {
         ButtonPressAnimator anim = new ButtonPressAnimator(this);
         anim.slideRightToActivity(R.id.acrostics_button, AcrosticActivity.class);
         anim.slideRightToActivity(R.id.anagrams_button, AnagramActivity.class);
+        anim.slideRightToActivity(R.id.hiddenword_button, HiddenWordActivity.class);
+        anim.slideRightToActivity(R.id.homophone_button, HomophoneActivity.class);
+        anim.slideRightToActivity(R.id.doubledef_button, DoubleDefinitionActivity.class);
     }
 }

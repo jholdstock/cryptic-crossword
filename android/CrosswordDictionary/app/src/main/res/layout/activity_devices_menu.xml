@@ -37,4 +37,24 @@
         android:id="@+id/acrostics_button"
         style="@style/MenuButton" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hidden Words"
+        android:id="@+id/hiddenword_button"
+        style="@style/MenuButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Homophones"
+        android:id="@+id/homophone_button"
+        style="@style/MenuButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Double definitions"
+        android:id="@+id/doubledef_button"
+        style="@style/MenuButton" />
 </LinearLayout>

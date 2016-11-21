@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_crossword_grid"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
@@ -10,6 +11,13 @@
         android:orientation="vertical"
         android:background="@color/Amethyst"
         android:gravity="center">
+
+        <TextView
+            android:text="HOMOPHONE HOMOPHONE HOMOPHONE HOMOPHONE HOMOPHONE HOMOPHONE HOMOPHONE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
 
     </LinearLayout>
 

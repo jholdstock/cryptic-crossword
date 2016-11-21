@@ -17,14 +17,27 @@ public class DatabaseHelper extends SQLiteAssetHelper {
     }
 
     public WordList getAllWords() {
-        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM Word;", null);
-        WordTableRow tr = new WordTableRow(cursor);
-        cursor.close();
-        return tr.getWordList();
+        return runQuery("SELECT * FROM Word;");
     }
 
     public WordList getAcrosticIndicators() {
-        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM Word WHERE Word.Acrostic = 1;", null);
+        return runQuery("SELECT * FROM Word WHERE Word.Acrostic = 1;");
+    }
+
+    public WordList getAnagramIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.Anagram = 1;");
+    }
+
+    public WordList getHiddenWordIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.HiddenWord = 1;");
+    }
+
+    public WordList getHomophoneIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.Homophone = 1;");
+    }
+
+    private WordList runQuery(String query) {
+        Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
         WordTableRow tr = new WordTableRow(cursor);
         cursor.close();
         return tr.getWordList();

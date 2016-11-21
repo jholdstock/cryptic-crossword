@@ -20,6 +20,9 @@
         <activity android:name=".activities.tutorial.TutorialMenuActivity" />
         <activity android:name=".activities.tutorial.DevicesMenuActivity" />
         <activity android:name=".activities.tutorial.devices.AnagramActivity" />
+        <activity android:name=".activities.tutorial.devices.HiddenWordActivity" />
+        <activity android:name=".activities.tutorial.devices.DoubleDefinitionActivity" />
+        <activity android:name=".activities.tutorial.devices.HomophoneActivity" />
         <activity android:name=".activities.tutorial.devices.AcrosticActivity" />
         <activity android:name=".activities.SearchActivity" />
         <activity android:name=".activities.ClueSolverActivity"

@@ -14,7 +14,7 @@ public class AnagramActivity extends DevicesActivity {
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_anagram));
             add(new TutorialFragment(R.layout.devices_frag_anagram_examples));
-            add(new TutorialFragment(R.layout.devices_frag_anagram_indicators));
+            add(IndicatorFragments.anagramFragment(getBaseContext()));
         }};
     }
 }

@@ -7,14 +7,14 @@ import com.jamieholdstock.crossword.activities.tutorial.TutorialFragment;
 
 import java.util.ArrayList;
 
-public class AcrosticActivity extends DevicesActivity {
+public class HomophoneActivity extends DevicesActivity {
 
     @Override
     protected ArrayList<Fragment> getFragments() {
         return new ArrayList<Fragment>() {{
-            add(new TutorialFragment(R.layout.devices_frag_acrostic));
-            add(new TutorialFragment(R.layout.devices_frag_acrostic_examples));
-            add(IndicatorFragments.acrosticFragment(getBaseContext()));
+            add(new TutorialFragment(R.layout.devices_frag_homophone));
+            add(new TutorialFragment(R.layout.devices_frag_homophone_examples));
+            add(IndicatorFragments.homophoneFragment(getBaseContext()));
         }};
     }
 }
