@@ -1,59 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.SearchIndicatorsActivity"
     android:background="@color/Alizarin"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:id="@+id/list_header"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_height="50dp"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_search" />
+
+        <EditText
+            android:theme="@style/MyEditText"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+            android:id="@+id/search_box"
+            android:textColor="@android:color/white"
+            android:hint="Indicator..."
+            android:selectAllOnFocus="true"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_search" />
-
-            <EditText
-                android:theme="@style/MyEditText"
-                android:layout_height="wrap_content"
-                android:id="@+id/search_box"
-                android:textColor="@android:color/white"
-                android:hint="Indicator..."
-                android:selectAllOnFocus="true"
-                android:textSize="18sp"
-                android:layout_width="match_parent"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/clear_button"
-                android:background="@drawable/delete"
-                android:layout_width="25dp"
-                android:layout_height="25dp" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/clear_button"
+            android:background="@drawable/delete"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/help_panel" >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/white_border">
+
+                <ImageView
+                    android:layout_width="71dp"
+                    android:layout_height="89dp"
+                    android:id="@+id/error_img"
+                    app:srcCompat="@drawable/info"
+                    android:cropToPadding="false"
+                    android:adjustViewBounds="false" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="How to use the indicator lookup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/White"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical|center" />
+
+                    <TextView
+                        android:text="Search for words in your clue to see if they might indicate which wordplay device is in use."
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/White"
+                        android:textSize="14dp"
+                        android:gravity="" />
+
+                    <TextView
+                        android:text="Remember that this there are thousands of potential indicator words and the word from your clue could be missing from this list. It's also possible that words in your clue are being used differently to how the lookup suggests. Treat this lookup as rough guide and a source of inspiration, not a rule book."
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/White"
+                        android:textSize="14dp"
+                        android:gravity=""
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+    </ScrollView>
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@color/Alizarin"
         android:dividerHeight="10dp"
@@ -62,5 +112,5 @@
         android:layout_alignStart="@+id/list_header" >
     </ListView>
 
-</RelativeLayout>
+</LinearLayout>
 
