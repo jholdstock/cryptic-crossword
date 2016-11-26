@@ -14,7 +14,7 @@
 
     <style name="Clue" parent="Theme.AppCompat.Light">
         <item name="android:gravity">center</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_marginRight">15dp</item>
@@ -22,13 +22,13 @@
     </style>
 
     <style name="Solution" parent="Theme.AppCompat.Light">
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:layout_margin">10dp</item>
     </style>
 
     <style name="TutorialParagraph" parent="Theme.AppCompat.Light">
-        <item name="android:textSize">14dp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:layout_marginBottom">10dp</item>
         <item name="android:layout_marginTop">10dp</item>

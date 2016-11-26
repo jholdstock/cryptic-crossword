@@ -4,35 +4,72 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
-    android:layout_margin="10dp"
-    android:background="@drawable/white_border">
-
-    <TextView
-        android:text="Consumes a portion meat stew (4)"
-        android:id="@+id/clue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Clue"/>
+    android:layout_margin="10dp">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:id="@+id/clue_front"
+        android:background="@drawable/white_border"
+        android:minHeight="@dimen/clue_min_height">
 
         <TextView
-            android:text="Solution:"
-            android:layout_width="wrap_content"
+            android:text="Consumes a portion meat stew (4)"
+            android:id="@+id/clue_text_front"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Solution"/>
+            style="@style/Clue"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="REVEAL SOLUTION"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="normal|bold"
+                style="@style/Solution"
+                android:textColor="@color/Unselected_Page_Dot"
+                android:textSize="22sp"
+                android:layout_margin="8dp"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/clue_back"
+        android:background="@drawable/white_border"
+        android:visibility="gone"
+        android:minHeight="@dimen/clue_min_height">
 
         <TextView
-            android:text="EATS"
-            android:id="@+id/solution"
-            android:layout_width="wrap_content"
+            android:text="Consumes a portion meat stew (4)"
+            android:id="@+id/clue2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="normal|bold"
-            style="@style/Solution" />
+            style="@style/Clue"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:text="EATS"
+                android:id="@+id/solution_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                style="@style/Solution" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

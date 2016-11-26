@@ -138,8 +138,8 @@ public class ClueSolverActivity extends AppCompatActivity {
         for (SolvedClue clue: solvedClues) {
             View v = lInf.inflate(R.layout.view_clue, null);
 
-            TextView solutionView = (TextView) v.findViewById(R.id.solution);
-            TextView clueView = (TextView) v.findViewById(R.id.clue);
+            TextView solutionView = (TextView) v.findViewById(R.id.solution_text);
+            TextView clueView = (TextView) v.findViewById(R.id.clue_text_front);
 
             solutionView.setText(clue.getSolution());
             clueView.setText(clue.getClue());
