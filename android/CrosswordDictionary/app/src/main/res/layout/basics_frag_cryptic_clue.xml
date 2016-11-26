@@ -20,7 +20,7 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="Consumes a portion of meat stew (4)"
+            app:clue="[Consumes] a portion of m[eat s]tew (4)"
             app:solution="EATS"/>
 
               <TextView
@@ -32,19 +32,19 @@ The definition part will normally occur at the beginning or end of the clue. Par
               style="@style/TutorialParagraph"/>
 
         <TextView
-            android:text="The literal defintion in this clue is at the start, 'Consumes'"
+            android:text="The literal defintion in this clue is at the start, 'Consumes'."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <TextView
-            android:text="The rest of the clue 'a portion of meat stew' is a wordplay puzzle. The solution is literally a portion of the letters 'm EATS tew'"
+            android:text="The rest of the clue is a wordplay puzzle. The solution is literally a portion of the letters 'meat stew'"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
-            android:text="Cryptic clues can be trickier to solve, but because two mini-clues both to point the solution EATS, you can be quite sure that it is correct."
+            android:text="Cryptic clues can be trickier to solve at first, but because two mini-clues both to point the solution EATS, you can be quite sure that it is correct."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />

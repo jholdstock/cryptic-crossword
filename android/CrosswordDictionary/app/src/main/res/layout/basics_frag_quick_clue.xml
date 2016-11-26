@@ -30,7 +30,7 @@
             style="@style/TutorialParagraph"/>
 
         <TextView
-            android:text="In a traditional crossword, USES is another potential solution to this clue, so you would probably want to confirm the correct answer using an overlapping solution before writing your answer in."
+            android:text="In a traditional crossword, USES is another potential solution to this clue, so you would probably want to confirm the correct answer using an overlapping solution."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
