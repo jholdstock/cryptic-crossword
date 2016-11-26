@@ -18,18 +18,23 @@ public class ClueView extends GridLayout {
 
     private boolean clicked = false;
     private int flipTime = 650;
+    final private View front;
+    final private View back;
 
     public ClueView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         LayoutInflater.from(context).inflate(R.layout.view_clue, this);
 
+        back = findViewById(R.id.clue_back);
+        front = findViewById(R.id.clue_front);
+
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ClueView, 0, 0);
 
         try {
             String clue = a.getString(R.styleable.ClueView_clue);
-            setClue(clue);
+            if (clue != null) setClue(clue);
             String solution = a.getString(R.styleable.ClueView_solution);
-            setSolution(solution);
+            if (solution != null) setSolution(solution);
         } finally {
             a.recycle();
         }
@@ -45,16 +50,15 @@ public class ClueView extends GridLayout {
         });
     }
     public ClueView(Context context) {
-        this(context, null);
-    }
-    public ClueView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        this(context, null, 0);
+
+        back.setVisibility(VISIBLE);
+        front.setVisibility(GONE);
+        this.clicked = true;
     }
 
     private void flip() {
-        View back = findViewById(R.id.clue_back);
         flipIn(back);
-        View front = findViewById(R.id.clue_front);
         flipOut(front);
     }
 

@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">CCT</string>
-    <string name="title">Title</string>
-    <string name="search">Search</string>
     <string name="example">May indicate:</string>
     <string name="sample">Anagram</string>
-    <string name="search2">Search</string>
+    <string name="search_indicators">Indicators</string>
     <string name="full_list">Full list</string>
     <string name="devices">Devices</string>
     <string name="the_basics">The Basics</string>

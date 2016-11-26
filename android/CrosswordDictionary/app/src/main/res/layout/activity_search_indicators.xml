@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SearchActivity">
+    tools:context=".activities.SearchIndicatorsActivity"
+    android:background="@color/Alizarin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <LinearLayout
         android:orientation="vertical"
@@ -13,33 +17,37 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@color/Alizarin"
         android:layout_height="50dp"
         android:gravity="center">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginBottom="10dp">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_search"
-                android:id="@+id/imageView2"
-                android:layout_weight="0.00"
-                android:layout_marginRight="10dp" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_search" />
 
             <EditText
                 android:theme="@style/MyEditText"
                 android:layout_height="wrap_content"
                 android:id="@+id/search_box"
                 android:textColor="@android:color/white"
-                android:hint="Search..."
+                android:hint="Indicator..."
                 android:selectAllOnFocus="true"
                 android:textSize="18sp"
-                android:layout_width="250dp" />
+                android:layout_width="match_parent"
+                android:layout_weight="1" />
 
+            <Button
+                android:id="@+id/clear_button"
+                android:background="@drawable/delete"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
         </LinearLayout>
     </LinearLayout>
 

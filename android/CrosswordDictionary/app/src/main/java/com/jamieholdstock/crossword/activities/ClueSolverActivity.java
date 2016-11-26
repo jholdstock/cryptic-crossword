@@ -25,6 +25,7 @@ import com.jamieholdstock.crossword.intents.MyIntents;
 import com.jamieholdstock.crossword.service.ClueSolverService;
 import com.jamieholdstock.crossword.service.SolvedClue;
 import com.jamieholdstock.crossword.service.SolverSearchResults;
+import com.jamieholdstock.crossword.views.ClueView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -47,7 +48,7 @@ public class ClueSolverActivity extends AppCompatActivity {
             }
             else if(intent.getAction().equals(MyIntents.DRAW_SOLUTIONS)) {
                 SolverSearchResults solverSearchResults = (SolverSearchResults) intent.getExtras().get(IntentExtras.SOLUTIONS);
-                displaySolvedClues(solverSearchResults.getResults());
+                displaySolvedClues(context, solverSearchResults.getResults());
                 animator.stop();
                 waitingForService = false;
             }
@@ -127,7 +128,7 @@ public class ClueSolverActivity extends AppCompatActivity {
         ImageBugFixer.fix(R.id.error_img, R.mipmap.warning, v, getResources());
     }
 
-    private void displaySolvedClues(ArrayList<SolvedClue> solvedClues) {
+    private void displaySolvedClues(Context context, ArrayList<SolvedClue> solvedClues) {
         if (solvedClues.size() == 0) {
             displayError("No results found", "Check spelling and wording carefully");
             return;
@@ -136,13 +137,11 @@ public class ClueSolverActivity extends AppCompatActivity {
         Collections.reverse(solvedClues);
 
         for (SolvedClue clue: solvedClues) {
-            View v = lInf.inflate(R.layout.view_clue, null);
+            ClueView v = new ClueView(context);
 
-            TextView solutionView = (TextView) v.findViewById(R.id.solution_text);
-            TextView clueView = (TextView) v.findViewById(R.id.clue_text_front);
+            v.setSolution(clue.getSolution());
+            v.setClue(clue.getClue());
 
-            solutionView.setText(clue.getSolution());
-            clueView.setText(clue.getClue());
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);

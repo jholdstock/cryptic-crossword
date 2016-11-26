@@ -12,7 +12,7 @@ import com.jamieholdstock.crossword.WordList;
 import com.jamieholdstock.crossword.adapters.SearchAdapter;
 import com.jamieholdstock.crossword.database.DatabaseHelper;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchIndicatorsActivity extends AppCompatActivity {
 
     private ListView listView;
     private SearchAdapter myAppAdapter;
@@ -20,11 +20,11 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_search_indicators);
 
         DatabaseHelper myDbHelper = new DatabaseHelper(getBaseContext());
         WordList allWords = myDbHelper.getAllWords();
-        myAppAdapter = new SearchAdapter(allWords, SearchActivity.this);
+        myAppAdapter = new SearchAdapter(allWords, SearchIndicatorsActivity.this);
 
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(myAppAdapter);

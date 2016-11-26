@@ -14,7 +14,14 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_search" />
 
         <EditText
             android:theme="@style/MyEditText"
@@ -25,8 +32,6 @@
             android:selectAllOnFocus="true"
             android:textSize="18sp"
             android:layout_width="match_parent"
-            android:padding="10dp"
-            android:paddingBottom="10dp"
             android:layout_weight="1" />
 
         <Button
