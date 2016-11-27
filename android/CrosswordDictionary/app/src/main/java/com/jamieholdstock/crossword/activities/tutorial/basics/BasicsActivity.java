@@ -13,7 +13,7 @@ public class BasicsActivity extends FragmentSwiperActivity {
     @Override
     protected ArrayList<Fragment> getFragments() {
         return new ArrayList<Fragment>() {{
-            add(new FragCrosswordGrid(R.layout.basics_frag_crossword_grid));
+            add(new FragCrosswordGrid());
             add(new TutorialFragment(R.layout.basics_frag_quick_clue));
             add(new TutorialFragment(R.layout.basics_frag_cryptic_clue));
             add(new TutorialFragment(R.layout.basics_frag_indicators));

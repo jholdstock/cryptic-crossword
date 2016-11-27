@@ -57,7 +57,7 @@ public class ClueSolverService extends IntentService {
         }
 
         L.l("Service sending GET to " + solverUrl + query);
-        String html = null;
+        String html;
         try {
             html = Jsoup.connect(solverUrl + query).timeout(5000).execute().body();
             L.l("Service received non-error response");

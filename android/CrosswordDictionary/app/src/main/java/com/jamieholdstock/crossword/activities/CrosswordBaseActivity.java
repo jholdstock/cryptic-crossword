@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.jamieholdstock.crossword.R;
 
-public class CrosswordBaseActivity extends AppCompatActivity {
+public abstract class CrosswordBaseActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();

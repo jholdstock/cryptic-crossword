@@ -14,18 +14,14 @@ public class ButtonPressAnimator {
         this.srcActivity = srcActivity;
     }
 
-    public void slideRightToActivity(int buttonId, Class targetActivity) {
-        slideToActivity(buttonId, targetActivity, R.anim.slide_in_right, R.anim.slide_out_left);
-    }
-
-    private void slideToActivity(int buttonId, final Class targetActivity, final int in, final int out) {
+    public void slideRightToActivity(int buttonId, final Class targetActivity) {
         Button button = (Button) srcActivity.findViewById(buttonId);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), targetActivity);
                 v.getContext().startActivity(intent);
-                srcActivity.overridePendingTransition(in, out);
+                srcActivity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
     }
