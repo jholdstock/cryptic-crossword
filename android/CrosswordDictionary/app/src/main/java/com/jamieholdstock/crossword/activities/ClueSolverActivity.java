@@ -105,7 +105,6 @@ public class ClueSolverActivity extends CrosswordBaseActivity {
                 imm.showSoftInput(searchBox, InputMethodManager.SHOW_IMPLICIT);
             }
         });
-
     }
 
     @Override

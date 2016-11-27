@@ -13,7 +13,7 @@ import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.WordList;
 import com.jamieholdstock.crossword.activities.tutorial.TutorialFragment;
 import com.jamieholdstock.crossword.adapters.WordsAdapter;
-import com.jamieholdstock.crossword.database.DatabaseHelper;
+import com.jamieholdstock.crossword.datastore.DatabaseHelper;
 
 public class IndicatorFragments extends TutorialFragment {
 

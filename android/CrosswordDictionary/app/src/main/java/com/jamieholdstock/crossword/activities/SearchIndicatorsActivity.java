@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.WordList;
 import com.jamieholdstock.crossword.adapters.SearchIndicatorsAdapter;
-import com.jamieholdstock.crossword.database.DatabaseHelper;
+import com.jamieholdstock.crossword.datastore.DatabaseHelper;
 
 public class SearchIndicatorsActivity extends CrosswordBaseActivity {
 

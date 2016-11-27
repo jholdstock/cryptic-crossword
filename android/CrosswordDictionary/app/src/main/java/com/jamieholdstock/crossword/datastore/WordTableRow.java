@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossword.database;
+package com.jamieholdstock.crossword.datastore;
 
 import android.database.Cursor;
 
