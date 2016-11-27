@@ -2,7 +2,6 @@ package com.jamieholdstock.crossword.activities;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -15,13 +14,13 @@ import android.widget.TextView;
 
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.WordList;
-import com.jamieholdstock.crossword.adapters.SearchAdapter;
+import com.jamieholdstock.crossword.adapters.SearchIndicatorsAdapter;
 import com.jamieholdstock.crossword.database.DatabaseHelper;
 
-public class SearchIndicatorsActivity extends AppCompatActivity {
+public class SearchIndicatorsActivity extends CrosswordBaseActivity {
 
     private ListView listView;
-    private SearchAdapter myAppAdapter;
+    private SearchIndicatorsAdapter myAppAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,7 @@ public class SearchIndicatorsActivity extends AppCompatActivity {
 
         DatabaseHelper myDbHelper = new DatabaseHelper(getBaseContext());
         WordList allWords = myDbHelper.getAllWords();
-        myAppAdapter = new SearchAdapter(allWords, SearchIndicatorsActivity.this);
+        myAppAdapter = new SearchIndicatorsAdapter(allWords, SearchIndicatorsActivity.this);
 
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(myAppAdapter);
@@ -75,9 +74,4 @@ public class SearchIndicatorsActivity extends AppCompatActivity {
         });
     }
 
-   @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-    }
 }

@@ -11,13 +11,13 @@ import com.jamieholdstock.crossword.views.WordView;
 
 import java.util.Locale;
 
-public class SearchAdapter extends BaseAdapter {
+public class SearchIndicatorsAdapter extends BaseAdapter {
 
     private Context context;
     private WordList currentlyDisplayedList;
     private WordList fullList;
 
-    public SearchAdapter(WordList allWords, Context context) {
+    public SearchIndicatorsAdapter(WordList allWords, Context context) {
         this.context = context;
 
         currentlyDisplayedList = new WordList();

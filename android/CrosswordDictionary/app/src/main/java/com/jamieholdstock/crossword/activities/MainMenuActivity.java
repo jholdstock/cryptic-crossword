@@ -18,8 +18,8 @@ public class MainMenuActivity extends AppCompatActivity {
 
         ButtonPressAnimator anim = new ButtonPressAnimator(this);
         anim.slideRightToActivity(R.id.tutorial_button, TutorialMenuActivity.class);
-        anim.slideLeftToActivity(R.id.clue_solver_button, ClueSolverActivity.class);
-        anim.slideLeftToActivity(R.id.search_button, SearchIndicatorsActivity.class);
+        anim.slideRightToActivity(R.id.clue_solver_button, ClueSolverActivity.class);
+        anim.slideRightToActivity(R.id.search_button, SearchIndicatorsActivity.class);
 
         Animation fade = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         fade.setStartOffset(450);

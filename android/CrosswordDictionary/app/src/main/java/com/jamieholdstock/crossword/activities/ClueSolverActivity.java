@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +29,7 @@ import com.jamieholdstock.crossword.views.ClueView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ClueSolverActivity extends AppCompatActivity {
+public class ClueSolverActivity extends CrosswordBaseActivity {
 
     private boolean waitingForService = false;
     private LoadingAnimator animator;
@@ -158,11 +157,5 @@ public class ClueSolverActivity extends AppCompatActivity {
         context.startService(msgIntent);
         waitingForService = true;
         animator.start();
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

@@ -2,6 +2,7 @@ package com.jamieholdstock.crossword.activities.tutorial;
 
 import android.os.Bundle;
 
+import com.jamieholdstock.crossword.activities.CrosswordBaseActivity;
 import com.jamieholdstock.crossword.activities.tutorial.devices.DoubleDefinitionActivity;
 import com.jamieholdstock.crossword.activities.tutorial.devices.HiddenWordActivity;
 import com.jamieholdstock.crossword.activities.tutorial.devices.HomophoneActivity;
@@ -10,7 +11,7 @@ import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.activities.tutorial.devices.AcrosticActivity;
 import com.jamieholdstock.crossword.activities.tutorial.devices.AnagramActivity;
 
-public class DevicesMenuActivity extends TutorialActivity {
+public class DevicesMenuActivity extends CrosswordBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

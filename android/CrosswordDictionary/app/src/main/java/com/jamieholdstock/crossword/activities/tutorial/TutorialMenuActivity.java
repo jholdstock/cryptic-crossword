@@ -2,11 +2,12 @@ package com.jamieholdstock.crossword.activities.tutorial;
 
 import android.os.Bundle;
 
+import com.jamieholdstock.crossword.activities.CrosswordBaseActivity;
 import com.jamieholdstock.crossword.activities.utilities.ButtonPressAnimator;
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.activities.tutorial.basics.BasicsActivity;
 
-public class TutorialMenuActivity extends TutorialActivity {
+public class TutorialMenuActivity extends CrosswordBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

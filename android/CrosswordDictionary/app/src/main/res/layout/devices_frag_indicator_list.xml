@@ -18,7 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@color/Amethyst"
-        android:dividerHeight="10dp" >
+        android:dividerHeight="12dp"
+        android:layout_marginTop="10dp">
     </ListView>
 
 

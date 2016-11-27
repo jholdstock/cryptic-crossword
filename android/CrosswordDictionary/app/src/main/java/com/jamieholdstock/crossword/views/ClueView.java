@@ -18,11 +18,11 @@ public class ClueView extends GridLayout {
 
     private boolean clicked = false;
     private int flipTime = 650;
-    final private View front;
-    final private View back;
+    private final View front;
+    private final View back;
 
-    public ClueView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+    public ClueView(Context context, AttributeSet attrs) {
+        super(context, attrs, 0);
         LayoutInflater.from(context).inflate(R.layout.view_clue, this);
 
         back = findViewById(R.id.clue_back);
@@ -50,10 +50,10 @@ public class ClueView extends GridLayout {
         });
     }
     public ClueView(Context context) {
-        this(context, null, 0);
+        this(context, null);
 
-        back.setVisibility(VISIBLE);
         front.setVisibility(GONE);
+        back.setVisibility(VISIBLE);
         this.clicked = true;
     }
 

@@ -14,11 +14,6 @@ public class ButtonPressAnimator {
         this.srcActivity = srcActivity;
     }
 
-    public void slideLeftToActivity(int buttonId, Class targetActivity) {
-        slideToActivity(buttonId, targetActivity, R.anim.slide_in_left, R.anim.slide_out_right);
-
-    }
-
     public void slideRightToActivity(int buttonId, Class targetActivity) {
         slideToActivity(buttonId, targetActivity, R.anim.slide_in_right, R.anim.slide_out_left);
     }
