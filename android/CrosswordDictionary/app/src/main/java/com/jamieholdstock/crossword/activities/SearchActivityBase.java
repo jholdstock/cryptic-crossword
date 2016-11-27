@@ -18,12 +18,12 @@ import com.jamieholdstock.crossword.activities.utilities.ImageBugFixer;
 
 public abstract class SearchActivityBase extends CrosswordBaseActivity {
 
-    protected abstract int getLayoutId();
     protected abstract int getBackgroundColor();
     protected abstract String getSearchHint();
     protected abstract void onCreate();
     protected abstract void onSearchButtonPressed(View v);
     protected abstract boolean isSeachButtonVisible();
+    protected abstract String[] getIntro();
 
     protected EditText searchBox;
     protected Button searchButton;
@@ -33,7 +33,7 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+        setContentView(R.layout.activity_search);
 
         resultsPanel = (LinearLayout) findViewById(R.id.results_panel);
         searchBox = (EditText) findViewById(R.id.search_box);
@@ -45,6 +45,7 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         attachDeleteButtonListener();
         setBackgroundColor();
         setSearchHint();
+        setIntroText();
         hideSearchButton();
         onCreate();
     }
@@ -68,6 +69,15 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
                 onSearchButtonPressed(v);
             }
         });
+    }
+
+    private void setIntroText() {
+        TextView intro1 = (TextView) findViewById(R.id.intro1);
+        intro1.setText(getIntro()[0]);
+        TextView intro2 = (TextView) findViewById(R.id.intro2);
+        intro2.setText(getIntro()[1]);
+        TextView intro3 = (TextView) findViewById(R.id.intro3);
+        intro3.setText(getIntro()[2]);
     }
 
     private void hideSearchButton() {

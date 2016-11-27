@@ -46,8 +46,12 @@ public class ClueSolverActivity extends SearchActivityBase {
     };
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.activity_clue_solver;
+    protected String[] getIntro() {
+        return new String[]{
+                "How to use the clue solver",
+                "Type a full clue into the box above and attempt to look it up in a database of previously solved clues.",
+                "Clues can be reworded almost endlessly and new clues are being written every day, so don't expect this to work all the time. For brand new crosswords this may not work at all. "
+        };
     }
 
     @Override

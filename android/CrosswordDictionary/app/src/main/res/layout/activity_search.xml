@@ -79,28 +79,31 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="How to use the indicator lookup"
+                        android:text="How to use the clue solver"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/White"
+                        android:id="@+id/intro1"
                         android:textStyle="bold"
                         android:textSize="18sp"
                         android:layout_margin="10dp"
                         android:gravity="center_vertical|center" />
 
                     <TextView
-                        android:text="Search for words in your clue to see if they might indicate which wordplay device is in use."
+                        android:text="Type a full clue into the box above and attempt to look it up in a database of previously solved clues."
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/White"
+                        android:id="@+id/intro2"
                         android:textSize="14sp"
                         android:gravity="" />
 
                     <TextView
-                        android:text="Remember that this there are thousands of potential indicator words and the word from your clue could be missing from this list. It's also possible that words in your clue are being used differently to how the lookup suggests. Treat this lookup as rough guide and a source of inspiration, not a rule book."
+                        android:text="Clues can be reworded almost endlessly and new clues are being written every day, so don't expect this to work all the time. For brand new crosswords this may not work at all. "
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/White"
+                        android:id="@+id/intro3"
                         android:textSize="14sp"
                         android:gravity=""
                         android:layout_marginTop="20dp"
