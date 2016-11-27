@@ -57,4 +57,11 @@
         android:text="Double definitions"
         android:id="@+id/doubledef_button"
         style="@style/MenuButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\?"
+        android:id="@+id/questionmark_button"
+        style="@style/MenuButton" />
 </LinearLayout>

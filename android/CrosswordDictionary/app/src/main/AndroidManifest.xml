@@ -24,6 +24,7 @@
         <activity android:name=".activities.tutorial.devices.DoubleDefinitionActivity" />
         <activity android:name=".activities.tutorial.devices.HomophoneActivity" />
         <activity android:name=".activities.tutorial.devices.AcrosticActivity" />
+        <activity android:name=".activities.tutorial.devices.QuestionMarkActivity" />
         <activity android:name=".activities.SearchIndicatorsActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".activities.ClueSolverActivity"

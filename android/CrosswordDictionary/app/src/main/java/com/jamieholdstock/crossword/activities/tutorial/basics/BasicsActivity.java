@@ -17,7 +17,6 @@ public class BasicsActivity extends FragmentSwiperActivity {
             add(new TutorialFragment(R.layout.basics_frag_quick_clue));
             add(new TutorialFragment(R.layout.basics_frag_cryptic_clue));
             add(new TutorialFragment(R.layout.basics_frag_indicators));
-            add(new TutorialFragment(R.layout.basics_frag_question_mark));
         }};
     }
 

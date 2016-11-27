@@ -10,7 +10,6 @@
         android:orientation="vertical"
         android:background="@color/Amethyst"
         android:gravity="center">
-
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +39,6 @@
             android:layout_height="wrap_content"
             app:clue="Dollars for quarters? (4)"
             app:solution="RENT"/>
-
     </LinearLayout>
 
 </ScrollView>
