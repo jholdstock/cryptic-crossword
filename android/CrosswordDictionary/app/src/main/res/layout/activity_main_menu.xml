@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/search_indicators"
-            android:id="@+id/search_button"
+            android:id="@+id/search_indicators_button"
             style="@style/MenuButton" />
 
         <Button

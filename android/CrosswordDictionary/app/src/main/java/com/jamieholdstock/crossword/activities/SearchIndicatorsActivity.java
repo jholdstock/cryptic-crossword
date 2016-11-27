@@ -1,13 +1,11 @@
 package com.jamieholdstock.crossword.activities;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,16 +15,33 @@ import com.jamieholdstock.crossword.WordList;
 import com.jamieholdstock.crossword.adapters.SearchIndicatorsAdapter;
 import com.jamieholdstock.crossword.datastore.DatabaseHelper;
 
-public class SearchIndicatorsActivity extends CrosswordBaseActivity {
+public class SearchIndicatorsActivity extends SearchActivityBase {
 
     private ListView listView;
     private SearchIndicatorsAdapter myAppAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_indicators);
+    protected int getLayoutId() {
+        return R.layout.activity_search_indicators;
+    }
 
+    @Override
+    protected int getBackgroundColor() {
+        return R.color.Alizarin;
+    }
+
+    @Override
+    protected String getSearchHint() {
+        return "Indicator...";
+    }
+
+    @Override
+    protected boolean isSeachButtonVisible() {
+        return false;
+    }
+
+    @Override
+    protected void onCreate() {
         DatabaseHelper myDbHelper = new DatabaseHelper(getBaseContext());
         WordList allWords = myDbHelper.getAllWords();
         myAppAdapter = new SearchIndicatorsAdapter(allWords, SearchIndicatorsActivity.this);
@@ -51,16 +66,6 @@ public class SearchIndicatorsActivity extends CrosswordBaseActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
-            }
-        });
-
-        Button clearButton = (Button) findViewById(R.id.clear_button);
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                searchBox.setText("");
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.showSoftInput(searchBox, InputMethodManager.SHOW_IMPLICIT);
             }
         });
 

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SearchIndicatorsActivity"
-    android:background="@color/Alizarin"
     android:orientation="vertical"
+    android:id="@+id/activity_root"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
@@ -28,7 +26,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/search_box"
             android:textColor="@android:color/white"
-            android:hint="Indicator..."
             android:selectAllOnFocus="true"
             android:textSize="18sp"
             android:layout_width="match_parent"
@@ -40,6 +37,15 @@
             android:layout_width="25dp"
             android:layout_height="25dp" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_button"
+        android:text="Solve"
+        style="@style/MenuButton"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" />
 
     <ScrollView
         android:layout_width="match_parent"

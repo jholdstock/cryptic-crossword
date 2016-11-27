@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -29,7 +28,7 @@ import com.jamieholdstock.crossword.views.ClueView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ClueSolverActivity extends CrosswordBaseActivity {
+public class ClueSolverActivity extends SearchActivityBase {
 
     private boolean waitingForService = false;
     private LoadingAnimator animator;
@@ -55,9 +54,27 @@ public class ClueSolverActivity extends CrosswordBaseActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clue_solver);
+    protected int getLayoutId() {
+        return R.layout.activity_clue_solver;
+    }
+
+    @Override
+    protected String getSearchHint() {
+        return "Clue...";
+    }
+
+    @Override
+    protected int getBackgroundColor() {
+        return R.color.Nephritis;
+    }
+
+    @Override
+    protected boolean isSeachButtonVisible() {
+        return true;
+    }
+
+    @Override
+    protected void onCreate() {
         resultsPanel = (LinearLayout) findViewById(R.id.results_panel);
 
         lInf = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -72,13 +89,13 @@ public class ClueSolverActivity extends CrosswordBaseActivity {
         searchBox.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                Button button = (Button) findViewById(R.id.solve_clue_button);
+                Button button = (Button) findViewById(R.id.search_button);
                 button.callOnClick();
                 return true;
             }
         });
 
-        Button button = (Button) findViewById(R.id.solve_clue_button);
+        Button button = (Button) findViewById(R.id.search_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,15 +113,6 @@ public class ClueSolverActivity extends CrosswordBaseActivity {
         });
         animator = new LoadingAnimator(button);
 
-        Button clearButton = (Button) findViewById(R.id.clear_button);
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                searchBox.setText("");
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.showSoftInput(searchBox, InputMethodManager.SHOW_IMPLICIT);
-            }
-        });
     }
 
     @Override
