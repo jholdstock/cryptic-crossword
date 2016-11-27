@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.tutorial.basics.BasicsActivity" />
         <activity android:name=".activities.tutorial.TutorialMenuActivity" />
         <activity android:name=".activities.tutorial.DevicesMenuActivity" />
+        <activity android:name=".activities.tutorial.basics.BasicsActivity" />
+        <activity android:name=".activities.tutorial.advanced.AdvancedActivity" />
         <activity android:name=".activities.tutorial.devices.AnagramActivity" />
         <activity android:name=".activities.tutorial.devices.HiddenWordActivity" />
         <activity android:name=".activities.tutorial.devices.DoubleDefinitionActivity" />
@@ -29,7 +30,6 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".activities.ClueSolverActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-
 
         <service
             android:name=".service.ClueSolverService"

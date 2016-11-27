@@ -21,10 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="270dp"
             app:srcCompat="@drawable/grid"
-            android:id="@+id/imageView3" />
+            android:id="@+id/imageView3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
 
         <TextView
-            android:text="What makes cryptics different is their clues. Each clue is itself a miniature wordplay puzzle."
+            android:text="Answers are written into the grid in the usual fashion. To understand how cryptic crosswords are different we must examine the clues."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />

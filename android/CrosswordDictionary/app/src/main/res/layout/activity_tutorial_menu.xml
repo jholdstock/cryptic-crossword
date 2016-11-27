@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/the_basics"
-        android:id="@+id/solve_cryptics_button"
+        android:id="@+id/basics_button"
         style="@style/MenuButton" />
 
     <Button
@@ -36,5 +36,12 @@
         android:text="@string/devices"
         android:id="@+id/devices_button"
         style="@style/MenuButton"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Advanced"
+        android:id="@+id/advanced_button"
+        style="@style/MenuButton" />
 
 </LinearLayout>
