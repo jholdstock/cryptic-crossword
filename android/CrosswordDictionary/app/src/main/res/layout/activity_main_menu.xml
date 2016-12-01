@@ -64,6 +64,13 @@
             android:text="Clue Solver"
             android:id="@+id/clue_solver_button"
             style="@style/MenuButton" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Anagram Solver"
+            android:id="@+id/anagram_solver_button"
+            style="@style/MenuButton" />
     </LinearLayout>
 
 </LinearLayout>

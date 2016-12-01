@@ -11,12 +11,12 @@ public class LoadingAnimator {
     private String s4 = "●●●●";
 
     private int mIndex = 1;
-    private int delay = 400;
-    private Handler mHandler;
-    private TextView view;
+    private int delay = 250;
+    private final Handler mHandler;
+    private final TextView view;
 
     private CharSequence previousText;
-    private Typeface previous;
+    private Typeface previousTypeface;
 
     public LoadingAnimator(TextView view) {
         this.view = view;
@@ -29,7 +29,7 @@ public class LoadingAnimator {
         previousText = view.getText();
         view.setText(s1);
 
-        previous = view.getTypeface();
+        previousTypeface = view.getTypeface();
         view.setTypeface(Typeface.MONOSPACE);
 
         mHandler.removeCallbacks(characterAdder);
@@ -64,8 +64,8 @@ public class LoadingAnimator {
     };
 
     public void stop() {
-        view.setText(previousText);
-        view.setTypeface(previous);
         mHandler.removeCallbacks(characterAdder);
+        view.setText(previousText);
+        view.setTypeface(previousTypeface);
     }
 }

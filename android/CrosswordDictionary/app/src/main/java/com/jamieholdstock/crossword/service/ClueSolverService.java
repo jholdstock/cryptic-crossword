@@ -27,7 +27,7 @@ public class ClueSolverService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         String action = intent.getAction();
-        if (action.equals(MyIntents.SOLVE_CLUE)) {
+        if (action.equals(MyIntents.PERFORM_SEARCH)) {
             String clue = intent.getStringExtra(IntentExtras.SEARCH_TERM);
             solveClue(clue);
         }

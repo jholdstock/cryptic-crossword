@@ -1,6 +1,6 @@
 package com.jamieholdstock.crossword.datastore;
 
-import android.app.Activity;
+import android.content.res.Resources;
 
 import com.jamieholdstock.crossword.L;
 import com.jamieholdstock.crossword.R;
@@ -16,34 +16,33 @@ public class FullDictionary {
     private int hashMapSize = 315000 ;
     private HashMap<String, ArrayList<String>> dictionaryHM = new HashMap<String, ArrayList<String>>(hashMapSize);
 
-    public FullDictionary(Activity activity) {
-        L.l("Start");
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsA));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsB));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsC));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsD));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsE));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsF));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsG));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsH));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsI));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsJ));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsK));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsL));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsM));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsN));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsO));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsP));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsQ));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsR));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsS));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsT));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsU));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsV));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsW));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsX));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsY));
-        dictionaryByLetter.add(activity.getResources().getStringArray(R.array.wordsZ));
+    public FullDictionary(Resources res) {
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsA));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsB));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsC));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsD));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsE));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsF));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsG));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsH));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsI));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsJ));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsK));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsL));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsM));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsN));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsO));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsP));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsQ));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsR));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsS));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsT));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsU));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsV));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsW));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsX));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsY));
+        dictionaryByLetter.add(res.getStringArray(R.array.wordsZ));
 
         for (int i = 0 ; i < 26 ; i++) {
             for (int j =0 ; j < dictionaryByLetter.get(i).length ; j ++) {
@@ -75,23 +74,18 @@ public class FullDictionary {
         return new String(wordChars);
     }
 
-    public void searchAnagram(String input) {
-//        // Order letters, then check if hashset contains a match. If so, print the output options
-//        // Sort letters
-//        String inputSorted = sortWord(input);
-//        // Check if in HashMap
-//        if (dictionaryHM.containsKey(inputSorted)) {
-//            Log.d(LOG_TAG, "Match found for: " + inputSorted);
-//            ArrayList<String> answers = dictionaryHM.get(inputSorted);
-//            // Add results to resultsLinearLayout
-//            resultCount = 0 ;   // Set to 0 to allow for correct timing delays to entry animation
-//            for (String answer : answers) {
-//                Log.d(LOG_TAG, "An answer for " + input + " is: " + answer);
-//                addToResults(answer);
-//            }
-//        } else {
-//            Log.d(LOG_TAG, "No match found for: " + inputSorted + ", which originally came from " + input);
-//            addToResults(getString(R.string.no_match_found), false);
-//        }
+    public ArrayList<String> searchAnagram(String input) {
+        ArrayList<String> wordList = new ArrayList<>();
+
+        String inputSorted = sortWord(input);
+
+        if (dictionaryHM.containsKey(inputSorted)) {
+            ArrayList<String> answers = dictionaryHM.get(inputSorted);
+            for (String answer : answers) {
+                wordList.add(answer);
+            }
+        }
+
+        return wordList;
     }
 }

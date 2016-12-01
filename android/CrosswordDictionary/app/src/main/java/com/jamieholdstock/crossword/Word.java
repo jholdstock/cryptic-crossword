@@ -8,6 +8,10 @@ public class Word implements Serializable {
     private List<String> indicators;
     private String abbreviations;
 
+    public Word(String word) {
+        this(word, null, null);
+    }
+
     public Word(String word, List<String> indicators, String abbreviations) {
         this.word = word;
         this.indicators = indicators;
@@ -27,8 +31,7 @@ public class Word implements Serializable {
     public boolean hasAbbreviations() {
         return abbreviations != null;
     }
-
     public boolean hasIndicators() {
-        return indicators.size() > 0;
+        return indicators != null && indicators.size() > 0;
     }
 }
