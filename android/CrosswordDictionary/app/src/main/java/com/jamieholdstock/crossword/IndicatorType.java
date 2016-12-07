@@ -5,6 +5,7 @@ import com.jamieholdstock.crossword.activities.tutorial.devices.AnagramActivity;
 import com.jamieholdstock.crossword.activities.tutorial.devices.DeletionActivity;
 import com.jamieholdstock.crossword.activities.tutorial.devices.HiddenWordActivity;
 import com.jamieholdstock.crossword.activities.tutorial.devices.HomophoneActivity;
+import com.jamieholdstock.crossword.activities.tutorial.devices.ReversalActivity;
 
 public enum IndicatorType {
 
@@ -17,9 +18,9 @@ public enum IndicatorType {
     DeletionStartEnd("Deletion (start/end)", DeletionActivity.class),
     HiddenWord("Hidden Word", HiddenWordActivity.class),
     Homophone("Homophone", HomophoneActivity.class),
-    Reversal("Reversal", null),
-    ReversalAcross("Reversal (across)", null),
-    ReversalDown("Reveral (down)", null);
+    Reversal("Reversal", ReversalActivity.class),
+    ReversalAcross("Reversal (across)", ReversalActivity.class),
+    ReversalDown("Reveral (down)", ReversalActivity.class);
 
     private String displayName;
     private Class activityToLaunch;

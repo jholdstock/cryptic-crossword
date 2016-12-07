@@ -59,7 +59,13 @@ public class IndicatorFragments extends TutorialFragment {
     public static Fragment deletionFragment(Context context) {
         DatabaseHelper myDbHelper = new DatabaseHelper(context);
         WordList words = myDbHelper.getDeletionIndicators();
-        return new IndicatorFragments(words, prefix + "that a charade has had some letters deleted:");
+        return new IndicatorFragments(words, prefix + "that a charade has had some letters deleted to give the solution:");
+    }
+
+    public static Fragment reversalFragment(Context context) {
+        DatabaseHelper myDbHelper = new DatabaseHelper(context);
+        WordList words = myDbHelper.getReversalIndicators();
+        return new IndicatorFragments(words, prefix + "that a charade has been reversed to give the solution:");
     }
 
     @Override

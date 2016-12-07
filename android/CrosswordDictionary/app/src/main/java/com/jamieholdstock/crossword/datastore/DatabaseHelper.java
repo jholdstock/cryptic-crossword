@@ -40,6 +40,10 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         return runQuery("SELECT * FROM Word WHERE Word.Deletion = 1;");
     }
 
+    public WordList getReversalIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.Reversal = 1;");
+    }
+
     private WordList runQuery(String query) {
         Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
         WordTableRow tr = new WordTableRow(cursor);

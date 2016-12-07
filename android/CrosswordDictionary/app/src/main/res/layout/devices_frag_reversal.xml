@@ -10,7 +10,7 @@
         android:background="@color/Amethyst"
         android:gravity="center">
         <TextView
-            android:text="Double definition"
+            android:text="Reversal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
