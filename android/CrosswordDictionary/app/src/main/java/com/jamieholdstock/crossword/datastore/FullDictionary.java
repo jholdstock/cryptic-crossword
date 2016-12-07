@@ -75,8 +75,33 @@ public class FullDictionary {
         return new String(wordChars);
     }
 
+    public ArrayList<String> wordfit(String input) {
+        input = input.toLowerCase();
+        input = input.replaceAll(" ", "");
 
-    private ArrayList<String> processAnagram(String input) {
+        ArrayList<String> answers = new ArrayList<>() ;
+
+        List<String> dictionaryToSearch ;
+        if (input.charAt(0) == '.') {
+            dictionaryToSearch = dictionary ;
+        } else {
+            String alphabet = "abcdefghijklmnopqrstuvwxyz";
+            int index = alphabet.indexOf(input.charAt(0));
+            String[] dic = dictionaryByLetter.get(index);
+            dictionaryToSearch = Arrays.asList(dic);
+        }
+        for (String word : dictionaryToSearch) {
+            if (word != null && word.toLowerCase().matches(input)) {
+                answers.add(word);
+            }
+        }
+
+        return answers ;
+    }
+
+    public ArrayList<String> searchAnagram(String input) {
+        input = input.toLowerCase();
+        input = input.replaceAll(" ", "");
         ArrayList<String> wordList = new ArrayList<>();
 
         String inputSorted = sortWord(input);
@@ -89,41 +114,5 @@ public class FullDictionary {
         }
 
         return wordList;
-    }
-
-    private ArrayList<String> processWildCard(String input) {
-        ArrayList<String> answers = new ArrayList<>() ;
-
-        List<String> dictionaryToSearch ;
-        if (input.charAt(0) == '.') {
-            dictionaryToSearch = dictionary ;
-        } else {
-            String[] dic = dictionaryByLetter.get(getLetterIndex(input.charAt(0)));
-            dictionaryToSearch = Arrays.asList(dic);
-        }
-        for (String word : dictionaryToSearch) {
-            if (word != null && word.toLowerCase().matches(input)) {
-                answers.add(word);
-            }
-        }
-
-        return answers ;
-    }
-
-    private int getLetterIndex(char letter) {
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        return alphabet.indexOf(letter);
-    }
-
-    public ArrayList<String> searchAnagram(String input) {
-        input = input.toLowerCase();
-        input = input.replaceAll(" ", "");
-
-        if (input.contains(".")) {
-            return processWildCard(input);
-        } else {
-            return processAnagram(input);
-        }
-
     }
 }

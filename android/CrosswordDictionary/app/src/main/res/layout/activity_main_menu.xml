@@ -71,6 +71,13 @@
             android:text="Anagram Solver"
             android:id="@+id/anagram_solver_button"
             style="@style/MenuButton" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wordfit"
+            android:id="@+id/wordfit_button"
+            style="@style/MenuButton" />
     </LinearLayout>
 
 </LinearLayout>

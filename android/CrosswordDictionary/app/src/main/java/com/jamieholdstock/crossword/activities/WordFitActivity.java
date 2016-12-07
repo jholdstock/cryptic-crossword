@@ -13,14 +13,15 @@ import com.jamieholdstock.crossword.views.WordView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class AnagramSolverActivity extends SearchActivityBase {
+public class WordFitActivity extends SearchActivityBase {
+
 
     @Override
     protected String[] getIntro() {
         return new String[]{
-                "How to use the anagram solver",
-                "Enter letters in any order to search for possible anagrams",
-                ""
+                "How to use Wordfit",
+                "Use wordfit to search for words when you already have some of the letters.",
+                "Enter the letters you have and use . for the unknown letters. For example \"Cross.ord\""
         };
     }
 
@@ -48,8 +49,8 @@ public class AnagramSolverActivity extends SearchActivityBase {
             return;
         }
 
-        AnagramAsync anagramAsync = new AnagramAsync() ;
-        anagramAsync.execute(searchTerm);
+        WordFitAsync wordfitAsync = new WordFitAsync() ;
+        wordfitAsync.execute(searchTerm);
     }
 
     private boolean validateInput(String searchStringOriginal) {
@@ -82,7 +83,7 @@ public class AnagramSolverActivity extends SearchActivityBase {
         }
     }
 
-    private class AnagramAsync extends AsyncTask<String,Void,String> {
+    private class WordFitAsync extends AsyncTask<String,Void,String> {
         ArrayList<String> answers = new ArrayList<>();
 
         @Override

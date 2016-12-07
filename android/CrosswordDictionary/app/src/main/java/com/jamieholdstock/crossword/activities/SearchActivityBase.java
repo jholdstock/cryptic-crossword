@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.activities.utilities.ImageBugFixer;
 import com.jamieholdstock.crossword.activities.utilities.LoadingAnimator;
+import com.jamieholdstock.crossword.datastore.FullDictionary;
 
 public abstract class SearchActivityBase extends CrosswordBaseActivity {
 
@@ -24,11 +25,11 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
     protected abstract void onSearchButtonPressed(View v);
     protected abstract String[] getIntro();
 
+    private static FullDictionary fullDictionary;
     protected LoadingAnimator animator;
     protected EditText searchBox;
     protected Button searchButton;
     protected LinearLayout resultsPanel;
-    protected LayoutInflater lInf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,6 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         resultsPanel = (LinearLayout) findViewById(R.id.results_panel);
         searchBox = (EditText) findViewById(R.id.search_box);
         searchButton = (Button) findViewById(R.id.search_button);
-        lInf = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         animator = new LoadingAnimator(searchButton);
 
@@ -48,6 +48,13 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         setBackgroundColor();
         setSearchHint();
         setIntroText();
+    }
+
+    protected FullDictionary getDictionary() {
+        if (fullDictionary == null) {
+            fullDictionary = new FullDictionary(getResources());
+        }
+        return fullDictionary;
     }
 
     private void attachSearchBoxActionListener() {
@@ -102,6 +109,7 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
     }
 
     protected void displayError(String topMessage, String bottomMessage) {
+        LayoutInflater lInf = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v = lInf.inflate(R.layout.view_warning, null);
         TextView topText = (TextView) v.findViewById(R.id.top_message);
         topText.setText(topMessage);

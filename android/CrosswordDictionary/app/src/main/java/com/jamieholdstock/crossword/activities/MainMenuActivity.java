@@ -21,6 +21,7 @@ public class MainMenuActivity extends AppCompatActivity {
         anim.slideRightToActivity(R.id.clue_solver_button, ClueSolverActivity.class);
         anim.slideRightToActivity(R.id.search_indicators_button, SearchIndicatorsActivity.class);
         anim.slideRightToActivity(R.id.anagram_solver_button, AnagramSolverActivity.class);
+        anim.slideRightToActivity(R.id.wordfit_button, WordFitActivity.class);
 
         Animation fade = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         fade.setStartOffset(450);
