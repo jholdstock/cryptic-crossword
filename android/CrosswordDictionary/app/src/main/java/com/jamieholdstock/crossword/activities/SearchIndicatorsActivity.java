@@ -1,6 +1,7 @@
 package com.jamieholdstock.crossword.activities;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -45,7 +46,8 @@ public class SearchIndicatorsActivity extends SearchActivityBase {
     protected void onSearchButtonPressed(View v) {}
 
     @Override
-    protected void onCreate() {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         DatabaseHelper myDbHelper = new DatabaseHelper(getBaseContext());
         final WordList allWords = myDbHelper.getAllWords();
 

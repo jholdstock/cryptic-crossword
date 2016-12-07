@@ -33,16 +33,6 @@
         <activity android:name=".activities.ClueSolverActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 
-        <service
-            android:name=".service.ClueSolverService"
-            android:enabled="true"
-            android:exported="false" />
-
-        <service
-            android:name=".service.AnagramSolverService"
-            android:enabled="true"
-            android:exported="false" />
-
     </application>
 
 </manifest>

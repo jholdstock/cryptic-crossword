@@ -1,4 +1,4 @@
-package com.jamieholdstock.crossword.service;
+package com.jamieholdstock.crossword;
 
 public class SolvedClue {
     private String clue;

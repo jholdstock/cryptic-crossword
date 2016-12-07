@@ -1,49 +1,27 @@
 package com.jamieholdstock.crossword.activities;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.support.v4.content.LocalBroadcastManager;
+import android.os.AsyncTask;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.jamieholdstock.crossword.L;
 import com.jamieholdstock.crossword.R;
-import com.jamieholdstock.crossword.activities.utilities.LoadingAnimator;
-import com.jamieholdstock.crossword.intents.IntentExtras;
-import com.jamieholdstock.crossword.intents.MyIntents;
-import com.jamieholdstock.crossword.service.ClueSolverService;
-import com.jamieholdstock.crossword.service.SolvedClue;
-import com.jamieholdstock.crossword.service.SolverSearchResults;
+import com.jamieholdstock.crossword.SolvedClue;
+import com.jamieholdstock.crossword.SolverSearchResults;
 import com.jamieholdstock.crossword.views.ClueView;
 
+import org.jsoup.Jsoup;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class ClueSolverActivity extends SearchActivityBase {
 
     private boolean waitingForService = false;
-    private LoadingAnimator animator;
-    private LocalBroadcastManager bManager;
-
-    private BroadcastReceiver bReceiver = new BroadcastReceiver() {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if(intent.getAction().equals(MyIntents.DRAW_NETWORK_ERROR)) {
-                displayError("Error!", "Check internet connection and try again.");
-                animator.stop();
-                waitingForService = false;
-            }
-            else if(intent.getAction().equals(MyIntents.DRAW_SOLUTIONS)) {
-                SolverSearchResults solverSearchResults = (SolverSearchResults) intent.getExtras().get(IntentExtras.SOLUTIONS);
-                displaySearchResults(solverSearchResults.getResults());
-                animator.stop();
-                waitingForService = false;
-            }
-        }
-    };
 
     @Override
     protected String[] getIntro() {
@@ -70,33 +48,18 @@ public class ClueSolverActivity extends SearchActivityBase {
     }
 
     @Override
-    protected void onCreate() {
-        bManager = LocalBroadcastManager.getInstance(this);
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(MyIntents.DRAW_NETWORK_ERROR);
-        intentFilter.addAction(MyIntents.DRAW_SOLUTIONS);
-        bManager.registerReceiver(bReceiver, intentFilter);
-
-        animator = new LoadingAnimator(searchButton);
-    }
-
-    @Override
     protected void onSearchButtonPressed(View v) {
+        if (waitingForService) {
+            return;
+        }
         String searchTerm = searchBox.getText().toString();
 
         if (searchTerm.trim().equals("")) {
             return;
         }
-        resultsPanel.removeAllViews();
 
-        animator.start();
-        sendIntentToService(searchTerm);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        bManager.unregisterReceiver(bReceiver);
+        ClueSolverAsync clueSolverAsync = new ClueSolverAsync();
+        clueSolverAsync.execute(searchTerm);
     }
 
     private void displaySearchResults(ArrayList<SolvedClue> solvedClues) {
@@ -120,12 +83,54 @@ public class ClueSolverActivity extends SearchActivityBase {
         }
     }
 
-    private void sendIntentToService(String searchTerm) {
-        if (waitingForService) return;
-        Intent msgIntent = new Intent(getApplicationContext(), ClueSolverService.class);
-        msgIntent.setAction(MyIntents.PERFORM_SEARCH);
-        msgIntent.putExtra(IntentExtras.SEARCH_TERM, searchTerm);
-        getApplicationContext().startService(msgIntent);
-        waitingForService = true;
+    private class ClueSolverAsync extends AsyncTask<String,Void,String> {
+        SolverSearchResults stats;
+        boolean error = false;
+
+        private String solverUrl = "http://www.wordplays.com/crossword-solver/";
+        //    private String solverUrl = "http://10.0.2.2:8090/crossword-solver/";
+
+        @Override
+        protected void onPreExecute() {
+            animator.start();
+            resultsPanel.removeAllViews();
+            waitingForService = true;
+        }
+        @Override
+        protected String doInBackground(String... input) {
+            String query = null;
+            try {
+                query = URLEncoder.encode(input[0], "utf-8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+
+            L.l("Service sending GET to " + solverUrl + query);
+            String html = null;
+            try {
+                html = Jsoup.connect(solverUrl + query).timeout(5000).execute().body();
+                L.l("Service received non-error response");
+            } catch (IOException e) {
+                error = true;
+                L.l("Service received error response");
+            }
+
+            stats = new SolverSearchResults(html);
+            return null ;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            animator.stop();
+            waitingForService = false;
+
+            if (error) {
+                displayError("Error!", "Check internet connection and try again.");
+
+            } else {
+                displaySearchResults(stats.getResults());
+            }
+        }
     }
 }

@@ -15,16 +15,17 @@ import android.widget.TextView;
 
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.activities.utilities.ImageBugFixer;
+import com.jamieholdstock.crossword.activities.utilities.LoadingAnimator;
 
 public abstract class SearchActivityBase extends CrosswordBaseActivity {
 
     protected abstract int getBackgroundColor();
     protected abstract String getSearchHint();
-    protected abstract void onCreate();
     protected abstract void onSearchButtonPressed(View v);
     protected abstract boolean isSeachButtonVisible();
     protected abstract String[] getIntro();
 
+    protected LoadingAnimator animator;
     protected EditText searchBox;
     protected Button searchButton;
     protected LinearLayout resultsPanel;
@@ -40,6 +41,8 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         searchButton = (Button) findViewById(R.id.search_button);
         lInf = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        animator = new LoadingAnimator(searchButton);
+
         attachSearchBoxActionListener();
         attachSearchButtonListener();
         attachDeleteButtonListener();
@@ -47,7 +50,6 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         setSearchHint();
         setIntroText();
         hideSearchButton();
-        onCreate();
     }
 
     private void attachSearchBoxActionListener() {

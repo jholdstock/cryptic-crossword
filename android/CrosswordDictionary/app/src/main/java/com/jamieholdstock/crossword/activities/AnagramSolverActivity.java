@@ -1,20 +1,13 @@
 package com.jamieholdstock.crossword.activities;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.support.v4.content.LocalBroadcastManager;
+import android.os.AsyncTask;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.Word;
-import com.jamieholdstock.crossword.activities.utilities.LoadingAnimator;
-import com.jamieholdstock.crossword.intents.IntentExtras;
-import com.jamieholdstock.crossword.intents.MyIntents;
-import com.jamieholdstock.crossword.service.AnagramSolverService;
+import com.jamieholdstock.crossword.datastore.FullDictionary;
 import com.jamieholdstock.crossword.views.WordView;
 
 import java.util.ArrayList;
@@ -23,21 +16,7 @@ import java.util.Collections;
 public class AnagramSolverActivity extends SearchActivityBase {
 
     private boolean waitingForService = false;
-    private LoadingAnimator animator;
-    private LocalBroadcastManager bManager;
-
-    private BroadcastReceiver bReceiver = new BroadcastReceiver() {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-        if(intent.getAction().equals(MyIntents.DRAW_SOLUTIONS)) {
-            ArrayList<String> solverSearchResults = intent.getExtras().getStringArrayList(IntentExtras.SOLUTIONS);
-            displaySearchResults(solverSearchResults);
-            animator.stop();
-            waitingForService = false;
-        }
-        }
-    };
+    private FullDictionary fullDictionary;
 
     @Override
     protected String[] getIntro() {
@@ -64,32 +43,18 @@ public class AnagramSolverActivity extends SearchActivityBase {
     }
 
     @Override
-    protected void onCreate() {
-        bManager = LocalBroadcastManager.getInstance(this);
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(MyIntents.DRAW_SOLUTIONS);
-        bManager.registerReceiver(bReceiver, intentFilter);
-
-        animator = new LoadingAnimator(searchButton);
-    }
-
-    @Override
     protected void onSearchButtonPressed(View v) {
+        if (waitingForService) {
+            return;
+        }
         String searchTerm = searchBox.getText().toString();
 
         if (searchTerm.trim().equals("")) {
             return;
         }
-        resultsPanel.removeAllViews();
 
-        animator.start();
-        sendIntentToService(searchTerm);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        bManager.unregisterReceiver(bReceiver);
+        AnagramAsync anagramAsync = new AnagramAsync() ;
+        anagramAsync.execute(searchTerm);
     }
 
     private void displaySearchResults(ArrayList<String> solvedClues) {
@@ -112,12 +77,31 @@ public class AnagramSolverActivity extends SearchActivityBase {
         }
     }
 
-    private void sendIntentToService(String searchTerm) {
-        if (waitingForService) return;
-        Intent msgIntent = new Intent(getApplicationContext(), AnagramSolverService.class);
-        msgIntent.setAction(MyIntents.PERFORM_SEARCH);
-        msgIntent.putExtra(IntentExtras.SEARCH_TERM, searchTerm);
-        getApplicationContext().startService(msgIntent);
-        waitingForService = true;
+    private class AnagramAsync extends AsyncTask<String,Void,String> {
+
+        ArrayList<String> answers = new ArrayList<>();
+
+        @Override
+        protected void onPreExecute() {
+            animator.start();
+            resultsPanel.removeAllViews();
+            waitingForService = true;
+        }
+
+        @Override
+        protected String doInBackground(String... clue) {
+            if (fullDictionary == null) {
+                fullDictionary = new FullDictionary(getResources());
+            }
+            answers = fullDictionary.searchAnagram(clue[0]);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            animator.stop();
+            displaySearchResults(answers);
+            waitingForService = false;
+        }
     }
 }
