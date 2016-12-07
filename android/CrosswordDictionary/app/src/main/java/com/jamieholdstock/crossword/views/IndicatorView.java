@@ -1,14 +1,20 @@
 package com.jamieholdstock.crossword.views;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
+import com.jamieholdstock.crossword.IndicatorType;
 import com.jamieholdstock.crossword.R;
 
 public class IndicatorView extends GridLayout {
+
+    private IndicatorType type;
+
     public IndicatorView(Context context) {
         this(context, null);
     }
@@ -21,6 +27,18 @@ public class IndicatorView extends GridLayout {
         super(context, attrs, defStyle);
         LayoutInflater.from(context).inflate(R.layout.view_indicator, this);
         setBackgroundResource(R.drawable.indicator_background);
+
+        this.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), type.getActivityToLaunch());
+                v.getContext().startActivity(intent);
+            }
+        });
+    }
+
+    public void setIndicatorType(IndicatorType type) {
+        this.type = type;
     }
 
     public void setHeader(String text) {

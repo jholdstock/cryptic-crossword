@@ -2,14 +2,14 @@ package com.jamieholdstock.crossword.datastore;
 
 import android.database.Cursor;
 
+import com.jamieholdstock.crossword.IndicatorType;
 import com.jamieholdstock.crossword.Word;
 import com.jamieholdstock.crossword.WordList;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class WordTableRow {
-    private List<String> indicators;
+    private ArrayList<IndicatorType> indicators;
     private WordList items;
 
     public WordTableRow(Cursor cursor) {
@@ -20,18 +20,9 @@ public class WordTableRow {
             String abbr = cursor.getString(cursor.getColumnIndex("Abbr"));
             indicators = new ArrayList<>();
 
-            isIndicator(cursor, "Acrostic");
-            isIndicator(cursor, "Anagram");
-            isIndicator(cursor, "DeletionEnd");
-            isIndicator(cursor, "DeletionMiddle");
-            isIndicator(cursor, "Deletion");
-            isIndicator(cursor, "DeletionStart");
-            isIndicator(cursor, "DeletionStartEnd");
-            isIndicator(cursor, "HiddenWord");
-            isIndicator(cursor, "Homophone");
-            isIndicator(cursor, "Reversal");
-            isIndicator(cursor, "ReversalAcross");
-            isIndicator(cursor, "ReversalDown");
+            for (IndicatorType type : IndicatorType.values()) {
+                isIndicator(cursor, type);
+            }
 
             items.add(new Word(word, indicators, abbr));
         } while (cursor.moveToNext());
@@ -43,10 +34,11 @@ public class WordTableRow {
         return items;
     }
 
-    private void isIndicator(Cursor cursor, String indicatorType) {
-        int i = cursor.getInt(cursor.getColumnIndex(indicatorType));
+    private void isIndicator(Cursor cursor, IndicatorType type) {
+        String columnName = type.getColumnName();
+        int i = cursor.getInt(cursor.getColumnIndex(columnName));
         if (i == 1) {
-            indicators.add(indicatorType);
+            indicators.add(type);
         }
     }
 }

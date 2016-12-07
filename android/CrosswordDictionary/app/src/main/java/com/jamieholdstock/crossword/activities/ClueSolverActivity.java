@@ -74,7 +74,7 @@ public class ClueSolverActivity extends SearchActivityBase {
     }
 
     private class ClueSolverAsync extends AsyncTask<String,Void,String> {
-        SolverSearchResults stats;
+        SolverSearchResults answers;
         boolean error = false;
 
         private String solverUrl = "http://www.wordplays.com/crossword-solver/";
@@ -106,7 +106,7 @@ public class ClueSolverActivity extends SearchActivityBase {
                 L.l("Service received error response");
             }
 
-            stats = new SolverSearchResults(html);
+            answers = new SolverSearchResults(html);
             return null ;
         }
 
@@ -117,9 +117,8 @@ public class ClueSolverActivity extends SearchActivityBase {
 
             if (error) {
                 displayError("Error!", "Check internet connection and try again.");
-
             } else {
-                displaySearchResults(stats.getResults());
+                displaySearchResults(answers.getResults());
             }
         }
     }

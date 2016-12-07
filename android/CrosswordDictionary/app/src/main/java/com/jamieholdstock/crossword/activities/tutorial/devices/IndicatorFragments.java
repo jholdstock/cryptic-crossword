@@ -56,6 +56,12 @@ public class IndicatorFragments extends TutorialFragment {
         return new IndicatorFragments(words, prefix + "there is a homophone in a clue:");
     }
 
+    public static Fragment deletionFragment(Context context) {
+        DatabaseHelper myDbHelper = new DatabaseHelper(context);
+        WordList words = myDbHelper.getDeletionIndicators();
+        return new IndicatorFragments(words, prefix + "that a charade has had some letters deleted:");
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);

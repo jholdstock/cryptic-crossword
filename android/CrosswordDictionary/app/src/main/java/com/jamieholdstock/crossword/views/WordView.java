@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.jamieholdstock.crossword.IndicatorType;
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.Word;
 
@@ -23,16 +24,16 @@ public class WordView extends LinearLayout {
         LinearLayout indicatorContainer = (LinearLayout) findViewById(R.id.indicators_panel);
         indicatorContainer.removeAllViews();
         if (word.hasIndicators()) {
-            for (String indicator : word.getIndicators()) {
+            for (IndicatorType type : word.getIndicators()) {
                 IndicatorView indicatorView = new IndicatorView(indicatorContainer.getContext());
-                indicatorView.setMainText(indicator);
+                indicatorView.setMainText(type.getDisplayName());
                 indicatorView.setHeader("May Indicate");
+                indicatorView.setIndicatorType(type);
                 indicatorContainer.addView(indicatorView);
             }
         }
 
-        if (word.hasAbbreviations())
-        {
+        if (word.hasAbbreviations()) {
             IndicatorView abbrView = new IndicatorView(indicatorContainer.getContext());
             abbrView.setMainText(word.getAbbreviations());
             abbrView.setHeader("Abbreviation:");

@@ -36,6 +36,10 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         return runQuery("SELECT * FROM Word WHERE Word.Homophone = 1;");
     }
 
+    public WordList getDeletionIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.Deletion = 1;");
+    }
+
     private WordList runQuery(String query) {
         Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
         WordTableRow tr = new WordTableRow(cursor);

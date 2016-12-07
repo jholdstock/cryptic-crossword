@@ -1,18 +1,18 @@
 package com.jamieholdstock.crossword;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Word implements Serializable {
+public class Word {
     private String word;
-    private List<String> indicators;
+    private List<IndicatorType> indicators;
     private String abbreviations;
 
     public Word(String word) {
         this(word, null, null);
     }
 
-    public Word(String word, List<String> indicators, String abbreviations) {
+    public Word(String word, ArrayList<IndicatorType> indicators, String abbreviations) {
         this.word = word;
         this.indicators = indicators;
         this.abbreviations = abbreviations;
@@ -21,7 +21,7 @@ public class Word implements Serializable {
     public String getWord() {
         return word;
     }
-    public List<String> getIndicators() {
+    public List<IndicatorType> getIndicators() {
         return indicators;
     }
     public String getAbbreviations() {

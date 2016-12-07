@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.jamieholdstock.crossword.IndicatorType;
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.Word;
 import com.jamieholdstock.crossword.datastore.FullDictionary;
@@ -74,7 +75,7 @@ public class AnagramSolverActivity extends SearchActivityBase {
 
         for (String clue: solvedClues) {
             WordView v = new WordView(getApplicationContext());
-            Word word = new Word(clue, new ArrayList<String>(), null);
+            Word word = new Word(clue, new ArrayList<IndicatorType>(), null);
             v.displayWord(word);
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
@@ -90,6 +91,7 @@ public class AnagramSolverActivity extends SearchActivityBase {
         @Override
         protected void onPreExecute() {
             animator.start();
+            resultsPanel.removeAllViews();
             searchButton.setClickable(false);
         }
 
@@ -106,8 +108,8 @@ public class AnagramSolverActivity extends SearchActivityBase {
         @Override
         protected void onPostExecute(String result) {
             animator.stop();
-            displaySearchResults(answers);
             searchButton.setClickable(true);
+            displaySearchResults(answers);
         }
     }
 }

@@ -50,7 +50,7 @@ public class SearchIndicatorsActivity extends SearchActivityBase {
         searchIndicatorsAsync.execute(searchTerm);
     }
 
-    private void displaySolvedClues(Context context, WordList solvedClues) {
+    private void displaySearchResults(Context context, WordList solvedClues) {
         if (solvedClues.size() == 0) {
             displayError("No results found", "Check spelling carefully");
             return;
@@ -87,17 +87,15 @@ public class SearchIndicatorsActivity extends SearchActivityBase {
                 allWords = myDbHelper.getAllWords();
             }
 
-
             answers = allWords.filter(input[0]);
-
             return null ;
         }
 
         @Override
         protected void onPostExecute(String result) {
             animator.stop();
-            displaySolvedClues(getBaseContext(), answers);
             searchButton.setClickable(true);
+            displaySearchResults(getBaseContext(), answers);
         }
     }
 }

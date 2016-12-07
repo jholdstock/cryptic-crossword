@@ -64,4 +64,11 @@
         android:text="\?"
         android:id="@+id/questionmark_button"
         style="@style/MenuButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deletion"
+        android:id="@+id/deletion_button"
+        style="@style/MenuButton" />
 </LinearLayout>

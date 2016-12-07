@@ -26,6 +26,7 @@
         <activity android:name=".activities.tutorial.devices.HomophoneActivity" />
         <activity android:name=".activities.tutorial.devices.AcrosticActivity" />
         <activity android:name=".activities.tutorial.devices.QuestionMarkActivity" />
+        <activity android:name=".activities.tutorial.devices.DeletionActivity" />
         <activity android:name=".activities.AnagramSolverActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".activities.SearchIndicatorsActivity"
