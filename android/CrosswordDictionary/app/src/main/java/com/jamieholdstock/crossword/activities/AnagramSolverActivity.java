@@ -15,15 +15,14 @@ import java.util.Collections;
 
 public class AnagramSolverActivity extends SearchActivityBase {
 
-    private boolean waitingForService = false;
     private FullDictionary fullDictionary;
 
     @Override
     protected String[] getIntro() {
         return new String[]{
                 "How to use the anagram solver",
-                "Explain two modes",
-                "Anagram and word fit"
+                "Enter letters in any order to search for possible anagrams",
+                ""
         };
     }
 
@@ -38,23 +37,31 @@ public class AnagramSolverActivity extends SearchActivityBase {
     }
 
     @Override
-    protected boolean isSeachButtonVisible() {
-        return true;
-    }
-
-    @Override
     protected void onSearchButtonPressed(View v) {
-        if (waitingForService) {
+        String searchTerm = searchBox.getText().toString();
+        if (searchTerm.trim().equals("")) {
             return;
         }
-        String searchTerm = searchBox.getText().toString();
 
-        if (searchTerm.trim().equals("")) {
+        resultsPanel.removeAllViews();
+        boolean valid = validateInput(searchTerm);
+        if (!valid) {
+            displayError("Invalid characters", "Only letters are valid characters");
             return;
         }
 
         AnagramAsync anagramAsync = new AnagramAsync() ;
         anagramAsync.execute(searchTerm);
+    }
+
+    private boolean validateInput(String searchStringOriginal) {
+        for (char x : searchStringOriginal.toCharArray()) {
+            if (Character.isLetter(x) || x == '.') {
+            } else {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void displaySearchResults(ArrayList<String> solvedClues) {
@@ -78,14 +85,12 @@ public class AnagramSolverActivity extends SearchActivityBase {
     }
 
     private class AnagramAsync extends AsyncTask<String,Void,String> {
-
         ArrayList<String> answers = new ArrayList<>();
 
         @Override
         protected void onPreExecute() {
             animator.start();
-            resultsPanel.removeAllViews();
-            waitingForService = true;
+            searchButton.setClickable(false);
         }
 
         @Override
@@ -93,6 +98,7 @@ public class AnagramSolverActivity extends SearchActivityBase {
             if (fullDictionary == null) {
                 fullDictionary = new FullDictionary(getResources());
             }
+
             answers = fullDictionary.searchAnagram(clue[0]);
             return null;
         }
@@ -101,7 +107,7 @@ public class AnagramSolverActivity extends SearchActivityBase {
         protected void onPostExecute(String result) {
             animator.stop();
             displaySearchResults(answers);
-            waitingForService = false;
+            searchButton.setClickable(true);
         }
     }
 }

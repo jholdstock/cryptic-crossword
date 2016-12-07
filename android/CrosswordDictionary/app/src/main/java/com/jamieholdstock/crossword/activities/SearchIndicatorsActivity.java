@@ -1,9 +1,7 @@
 package com.jamieholdstock.crossword.activities;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.os.AsyncTask;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -17,6 +15,8 @@ import com.jamieholdstock.crossword.views.WordView;
 import java.util.Collections;
 
 public class SearchIndicatorsActivity extends SearchActivityBase {
+
+    private WordList allWords;
 
     @Override
     protected String[] getIntro() {
@@ -38,39 +38,16 @@ public class SearchIndicatorsActivity extends SearchActivityBase {
     }
 
     @Override
-    protected boolean isSeachButtonVisible() {
-        return false;
-    }
+    protected void onSearchButtonPressed(View v) {
+        String searchTerm = searchBox.getText().toString();
+        if (searchTerm.trim().equals("")) {
+            return;
+        }
 
-    @Override
-    protected void onSearchButtonPressed(View v) {}
+        resultsPanel.removeAllViews();
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        DatabaseHelper myDbHelper = new DatabaseHelper(getBaseContext());
-        final WordList allWords = myDbHelper.getAllWords();
-
-        searchBox.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                LinearLayout resultsPanel = (LinearLayout) findViewById(R.id.results_panel);
-                resultsPanel.removeAllViews();
-
-                WordList list = allWords.filter(charSequence.toString());
-                displaySolvedClues(getBaseContext(), list);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
+        SearchIndicatorsAsync searchIndicatorsAsync = new SearchIndicatorsAsync();
+        searchIndicatorsAsync.execute(searchTerm);
     }
 
     private void displaySolvedClues(Context context, WordList solvedClues) {
@@ -90,6 +67,37 @@ public class SearchIndicatorsActivity extends SearchActivityBase {
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.setMargins(0, 15, 0, 15);
             resultsPanel.addView(v, 0, params);
+        }
+    }
+
+    private class SearchIndicatorsAsync extends AsyncTask<String,Void,String> {
+
+        private WordList answers;
+
+        @Override
+        protected void onPreExecute() {
+            animator.start();
+            resultsPanel.removeAllViews();
+            searchButton.setClickable(false);
+        }
+        @Override
+        protected String doInBackground(String... input) {
+            if (allWords == null) {
+                DatabaseHelper myDbHelper = new DatabaseHelper(getBaseContext());
+                allWords = myDbHelper.getAllWords();
+            }
+
+
+            answers = allWords.filter(input[0]);
+
+            return null ;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            animator.stop();
+            displaySolvedClues(getBaseContext(), answers);
+            searchButton.setClickable(true);
         }
     }
 }

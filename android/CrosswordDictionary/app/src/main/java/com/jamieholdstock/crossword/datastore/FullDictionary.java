@@ -75,15 +75,6 @@ public class FullDictionary {
         return new String(wordChars);
     }
 
-    private boolean validateInput(String searchStringOriginal) {
-        for (char x : searchStringOriginal.toCharArray()) {
-            if (Character.isLetter(x) || x == '.') {
-            } else {
-                return false;
-            }
-        }
-        return true;
-    }
 
     private ArrayList<String> processAnagram(String input) {
         ArrayList<String> wordList = new ArrayList<>();
@@ -102,25 +93,18 @@ public class FullDictionary {
 
     private ArrayList<String> processWildCard(String input) {
         ArrayList<String> answers = new ArrayList<>() ;
-        boolean resultFound = false ;
 
         List<String> dictionaryToSearch ;
         if (input.charAt(0) == '.') {
             dictionaryToSearch = dictionary ;
         } else {
             String[] dic = dictionaryByLetter.get(getLetterIndex(input.charAt(0)));
-
             dictionaryToSearch = Arrays.asList(dic);
         }
         for (String word : dictionaryToSearch) {
             if (word != null && word.toLowerCase().matches(input)) {
-                resultFound = true ;
                 answers.add(word);
             }
-        }
-
-        if (!resultFound) {
-            return new ArrayList<String>();
         }
 
         return answers ;
@@ -134,12 +118,6 @@ public class FullDictionary {
     public ArrayList<String> searchAnagram(String input) {
         input = input.toLowerCase();
         input = input.replaceAll(" ", "");
-
-        boolean valid = validateInput(input);
-
-        if (!valid) {
-            return new ArrayList<String>() {{ add("Invalid input"); }};
-        }
 
         if (input.contains(".")) {
             return processWildCard(input);

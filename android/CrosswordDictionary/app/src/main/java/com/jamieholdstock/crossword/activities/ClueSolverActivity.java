@@ -21,8 +21,6 @@ import java.util.Collections;
 
 public class ClueSolverActivity extends SearchActivityBase {
 
-    private boolean waitingForService = false;
-
     @Override
     protected String[] getIntro() {
         return new String[]{
@@ -43,15 +41,7 @@ public class ClueSolverActivity extends SearchActivityBase {
     }
 
     @Override
-    protected boolean isSeachButtonVisible() {
-        return true;
-    }
-
-    @Override
     protected void onSearchButtonPressed(View v) {
-        if (waitingForService) {
-            return;
-        }
         String searchTerm = searchBox.getText().toString();
 
         if (searchTerm.trim().equals("")) {
@@ -94,7 +84,7 @@ public class ClueSolverActivity extends SearchActivityBase {
         protected void onPreExecute() {
             animator.start();
             resultsPanel.removeAllViews();
-            waitingForService = true;
+            searchButton.setClickable(false);
         }
         @Override
         protected String doInBackground(String... input) {
@@ -123,7 +113,7 @@ public class ClueSolverActivity extends SearchActivityBase {
         @Override
         protected void onPostExecute(String result) {
             animator.stop();
-            waitingForService = false;
+            searchButton.setClickable(true);
 
             if (error) {
                 displayError("Error!", "Check internet connection and try again.");

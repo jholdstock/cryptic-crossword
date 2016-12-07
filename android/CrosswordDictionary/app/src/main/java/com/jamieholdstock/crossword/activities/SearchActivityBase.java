@@ -22,7 +22,6 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
     protected abstract int getBackgroundColor();
     protected abstract String getSearchHint();
     protected abstract void onSearchButtonPressed(View v);
-    protected abstract boolean isSeachButtonVisible();
     protected abstract String[] getIntro();
 
     protected LoadingAnimator animator;
@@ -49,7 +48,6 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         setBackgroundColor();
         setSearchHint();
         setIntroText();
-        hideSearchButton();
     }
 
     private void attachSearchBoxActionListener() {
@@ -80,12 +78,6 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         intro2.setText(getIntro()[1]);
         TextView intro3 = (TextView) findViewById(R.id.intro3);
         intro3.setText(getIntro()[2]);
-    }
-
-    private void hideSearchButton() {
-        if (isSeachButtonVisible() == false) {
-            searchButton.setVisibility(View.GONE);
-        }
     }
 
     private void setSearchHint() {
