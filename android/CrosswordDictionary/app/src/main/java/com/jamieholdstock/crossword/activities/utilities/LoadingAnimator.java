@@ -15,21 +15,20 @@ public class LoadingAnimator {
     private final Handler mHandler;
     private final TextView view;
 
-    private CharSequence previousText;
-    private Typeface previousTypeface;
+    private final CharSequence initialText;
+    private final Typeface intialTypeFace;
 
     public LoadingAnimator(TextView view) {
         this.view = view;
         this.mHandler = new Handler();
+        intialTypeFace = view.getTypeface();
+        initialText = view.getText();
     }
 
     public void start() {
         mIndex = 1;
 
-        previousText = view.getText();
         view.setText(s1);
-
-        previousTypeface = view.getTypeface();
         view.setTypeface(Typeface.MONOSPACE);
 
         mHandler.removeCallbacks(characterAdder);
@@ -65,7 +64,7 @@ public class LoadingAnimator {
 
     public void stop() {
         mHandler.removeCallbacks(characterAdder);
-        view.setText(previousText);
-        view.setTypeface(previousTypeface);
+        view.setText(initialText);
+        view.setTypeface(intialTypeFace);
     }
 }

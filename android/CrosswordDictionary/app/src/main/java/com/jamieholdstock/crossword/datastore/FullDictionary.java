@@ -75,6 +75,7 @@ public class FullDictionary {
     }
 
     public ArrayList<String> searchAnagram(String input) {
+        input = input.replaceAll(" ", "");
         ArrayList<String> wordList = new ArrayList<>();
 
         String inputSorted = sortWord(input);
