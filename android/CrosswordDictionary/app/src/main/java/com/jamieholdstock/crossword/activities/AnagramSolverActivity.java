@@ -43,8 +43,8 @@ public class AnagramSolverActivity extends SearchActivityBase {
     protected String[] getIntro() {
         return new String[]{
                 "How to use the anagram solver",
-                "Obvious?!",
-                ""
+                "Explain two modes",
+                "Anagram and word fit"
         };
     }
 
