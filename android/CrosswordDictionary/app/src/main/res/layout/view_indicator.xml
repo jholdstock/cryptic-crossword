@@ -3,7 +3,8 @@
 
     <GridLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
@@ -12,7 +13,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/example"
             android:layout_row="0"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:textSize="14sp"
+            android:layout_gravity="center_vertical" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -20,10 +23,12 @@
             android:id="@+id/main_text"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/sample"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:gravity="center"
-            android:textSize="16sp" />
+            android:layout_row="0"
+            android:layout_column="1"
+            android:textSize="18sp"
+            android:layout_gravity="center_vertical"
+            android:textStyle="normal|bold"
+            android:paddingLeft="4dp" />
 
     </GridLayout>
 

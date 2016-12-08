@@ -23,7 +23,7 @@ public class SearchIndicatorsActivity extends SearchActivityBase {
         return new String[]{
                 "How to use the indicator lookup",
                 "Search for words in your clue to see if they might indicate which wordplay device is in use.",
-                "Remember that this there are thousands of potential indicator words and the word from your clue could be missing from this list. It's also possible that words in your clue are being used differently to how the lookup suggests. Treat this lookup as rough guide and a source of inspiration, not a rule book."
+                "Remember that words in your clue may be used differently to how this lookup suggests. Treat this as a rough guide and a source of inspiration, not a rule book."
         };
     }
 

@@ -21,7 +21,7 @@ public class WordFitActivity extends SearchActivityBase {
         return new String[]{
                 "How to use Wordfit",
                 "Use wordfit to search for words when you already have some of the letters.",
-                "Enter the letters you have and use . for the unknown letters. For example \"Cross.ord\""
+                "Enter the letters you already have and use . for the ones you don't. For example \"Cro.sword\""
         };
     }
 

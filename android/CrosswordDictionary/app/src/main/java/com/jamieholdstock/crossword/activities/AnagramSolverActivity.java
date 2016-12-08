@@ -94,7 +94,7 @@ public class AnagramSolverActivity extends SearchActivityBase {
 
         @Override
         protected String doInBackground(String... clue) {
-            answers = getDictionary().wordfit(clue[0]);
+            answers = getDictionary().anagram(clue[0]);
             return null;
         }
 

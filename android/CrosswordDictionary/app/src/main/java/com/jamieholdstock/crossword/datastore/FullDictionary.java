@@ -99,7 +99,7 @@ public class FullDictionary {
         return answers ;
     }
 
-    public ArrayList<String> searchAnagram(String input) {
+    public ArrayList<String> anagram(String input) {
         input = input.toLowerCase();
         input = input.replaceAll(" ", "");
         ArrayList<String> wordList = new ArrayList<>();

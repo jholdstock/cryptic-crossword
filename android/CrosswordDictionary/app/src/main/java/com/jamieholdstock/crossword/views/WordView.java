@@ -27,7 +27,7 @@ public class WordView extends LinearLayout {
             for (IndicatorType type : word.getIndicators()) {
                 IndicatorView indicatorView = new IndicatorView(indicatorContainer.getContext());
                 indicatorView.setMainText(type.getDisplayName());
-                indicatorView.setHeader("May Indicate");
+                indicatorView.setHeader("Could indicate:");
                 indicatorView.setIndicatorType(type);
                 indicatorContainer.addView(indicatorView);
             }
