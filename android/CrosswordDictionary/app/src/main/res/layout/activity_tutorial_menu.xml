@@ -13,22 +13,35 @@
     android:gravity="center">
 
     <TextView
-        android:text="Tutorial"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textStyle="normal|bold"
+        android:gravity="center_horizontal"
+        android:text="@string/tutorial"
         android:textColor="@color/White"
         android:textSize="40sp"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="40dp" />
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity=""
+        android:text="Use these tutorials to learn what cryptic crosswords are and how to solve them"
+        android:textAlignment="center"
+        android:textColor="@color/White"
+        android:textSize="14sp" />
 
     <Button
+        android:id="@+id/basics_button"
+        style="@style/MenuButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/the_basics"
-        android:id="@+id/basics_button"
-        style="@style/MenuButton" />
+        android:text="@string/the_basics" />
 
     <Button
         android:layout_width="wrap_content"
