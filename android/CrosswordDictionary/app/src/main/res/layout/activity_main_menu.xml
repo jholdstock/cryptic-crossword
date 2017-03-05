@@ -38,46 +38,52 @@
             android:layout_marginBottom="40dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_panel">
 
-        <Button
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tutorial"
-            android:id="@+id/tutorial_button"
-            style="@style/MenuButton" />
+            android:id="@+id/button_panel"
+            android:gravity="center">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/search_indicators"
-            android:id="@+id/search_indicators_button"
-            style="@style/MenuButton" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tutorial"
+                android:id="@+id/tutorial_button"
+                style="@style/MenuButton" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Clue Solver"
-            android:id="@+id/clue_solver_button"
-            style="@style/MenuButton" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_indicators"
+                android:id="@+id/search_indicators_button"
+                style="@style/MenuButton" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Anagram Solver"
-            android:id="@+id/anagram_solver_button"
-            style="@style/MenuButton" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clue Solver"
+                android:id="@+id/clue_solver_button"
+                style="@style/MenuButton" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Wordfit"
-            android:id="@+id/wordfit_button"
-            style="@style/MenuButton" />
-    </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anagram Solver"
+                android:id="@+id/anagram_solver_button"
+                style="@style/MenuButton" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wordfit"
+                android:id="@+id/wordfit_button"
+                style="@style/MenuButton" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

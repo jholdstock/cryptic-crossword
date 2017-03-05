@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="White">#FFF</color>
-    <color name="Gray">#DDD</color>
-    <color name="Black">#000000</color>
+    <color name="LightGray">#DDD</color>
+    <color name="Gray">#999</color>
+    <color name="Blackish">#616161</color>
+    <color name="Black">#000</color>
 
     <color name="Selected_Page_Dot">#CCFFFFFF</color>
     <color name="Unselected_Page_Dot">#4DFFFFFF</color>

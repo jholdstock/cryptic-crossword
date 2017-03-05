@@ -29,64 +29,81 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:gravity="center">
 
-            <Button
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Anagrams"
-                android:id="@+id/anagrams_button"
-                style="@style/MenuButton" />
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Acrostics"
-                android:id="@+id/acrostics_button"
-                style="@style/MenuButton" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Anagrams"
+                    android:id="@+id/anagrams_button"
+                    style="@style/MenuButton" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Homophones"
-                android:id="@+id/homophone_button"
-                style="@style/MenuButton" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Acrostics"
+                    android:id="@+id/acrostics_button"
+                    style="@style/MenuButton" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hidden Words"
-                android:id="@+id/hiddenword_button"
-                style="@style/MenuButton" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Homophones"
+                    android:id="@+id/homophone_button"
+                    style="@style/MenuButton" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Double definitions"
-                android:id="@+id/doubledef_button"
-                style="@style/MenuButton" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Double\ndefinitions"
+                    android:id="@+id/doubledef_button"
+                    style="@style/MenuButton" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="\?"
-                android:id="@+id/questionmark_button"
-                style="@style/MenuButton" />
+            </LinearLayout>
 
-            <Button
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Deletion"
-                android:id="@+id/deletion_button"
-                style="@style/MenuButton" />
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reversal"
-                android:id="@+id/reversal_button"
-                style="@style/MenuButton" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hidden Words"
+                    android:id="@+id/hiddenword_button"
+                    style="@style/MenuButton" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\?"
+                    android:id="@+id/questionmark_button"
+                    style="@style/MenuButton" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Deletion"
+                    android:id="@+id/deletion_button"
+                    style="@style/MenuButton" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reversal"
+                    android:id="@+id/reversal_button"
+                    style="@style/MenuButton" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

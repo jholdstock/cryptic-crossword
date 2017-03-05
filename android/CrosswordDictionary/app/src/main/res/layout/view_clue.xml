@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/clue_front"
-        android:background="@drawable/white_border"
+        android:background="@drawable/indicator_background"
         android:minHeight="@dimen/clue_min_height">
 
         <TextView
@@ -31,12 +31,7 @@
                 android:text="REVEAL SOLUTION"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                style="@style/Solution"
-                android:textColor="@color/Unselected_Page_Dot"
-                android:textSize="22sp"
-                android:layout_margin="8dp"
-                android:textAlignment="center" />
+                style="@style/RevealSolution" />
         </LinearLayout>
     </LinearLayout>
 
@@ -45,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/clue_back"
-        android:background="@drawable/white_border"
+        android:background="@drawable/indicator_background"
         android:visibility="gone"
         android:minHeight="@dimen/clue_min_height">
 

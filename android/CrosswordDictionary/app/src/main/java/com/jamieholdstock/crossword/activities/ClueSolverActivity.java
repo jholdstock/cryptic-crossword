@@ -100,13 +100,13 @@ public class ClueSolverActivity extends SearchActivityBase {
             String html = null;
             try {
                 html = Jsoup.connect(solverUrl + query).timeout(5000).execute().body();
-                L.l("Service received non-error response");
+                answers = new SolverSearchResults(html);
+                L.l("Clue solver response parsed");
             } catch (IOException e) {
                 error = true;
-                L.l("Service received error response");
+                L.l("Clue solver received error");
             }
 
-            answers = new SolverSearchResults(html);
             return null ;
         }
 
