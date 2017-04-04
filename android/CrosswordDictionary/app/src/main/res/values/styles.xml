@@ -54,11 +54,11 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/white_border</item>
         <item name="android:textColor">@color/White</item>
-        <item name="android:layout_marginBottom">20dp</item>
-        <item name="android:minWidth">120dip</item>
-        <item name="android:minHeight">60dip</item>
+        <item name="android:layout_marginBottom">18dp</item>
+        <item name="android:minWidth">110dip</item>
+        <item name="android:minHeight">54dip</item>
         <item name="android:typeface">sans</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textStyle">normal|bold</item>
     </style>

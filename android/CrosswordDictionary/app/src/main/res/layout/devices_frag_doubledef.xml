@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,7 +11,25 @@
         android:background="@color/Amethyst"
         android:gravity="center">
         <TextView
-            android:text="Double definition"
+            android:text="A double definition has two definitions of the same answer."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <com.jamieholdstock.crossword.views.ClueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:clue="[Put up with] [large animal] (4)"
+            app:solution="BEAR"/>
+
+        <TextView
+            android:text="Each half of the clue is a different definition of the word 'bear'."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="These clues can be deceptive. They are often quite short - they can be as small as two words. They clues don’t follow the usual 'definition + wordplay' pattern that is seen in most cryptic clues, they are instead 'definition + definition'."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,10 +11,29 @@
         android:background="@color/Amethyst"
         android:gravity="center">
         <TextView
-            android:text="Homophone"
+            android:text="Homophones are words that sound the same but have different meanings, such as 'night' and 'knight'."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+        <com.jamieholdstock.crossword.views.ClueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:clue="[Musical group] is prohibited, I hear (4)"
+            app:solution="BAND"/>
+
+        <TextView
+            android:text="The literal part of the clue is 'musical group'. 'I hear' is indicating an homophone. Another word for 'prohibited' is 'banned', which sounds like the answer 'band'"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="If a clue gives you a sense of listening, having heard something or speaking something aloud, you have probably found a homophone clue. Phrases such as 'so he said', 'it was announced' or 'according to rumour' are often used to indicate homophones."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
     </LinearLayout>
+
+
 
 </ScrollView>

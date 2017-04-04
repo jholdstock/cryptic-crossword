@@ -35,12 +35,6 @@
             app:clue="[Superior] [gambler] (6)"
             app:solution="BETTER"/>
 
-        <com.jamieholdstock.crossword.views.ClueView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:clue="[Put up with] [large animal] (4)"
-            app:solution="BEAR"/>
-
     </LinearLayout>
 
 </ScrollView>

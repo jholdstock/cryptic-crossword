@@ -14,26 +14,26 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="We hear [taxi cost] to be [reasonable] (4)"
+            app:solution="FAIR"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Octet] [had dinner] noisily (5)"
+            app:solution="EIGHT"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Part of play] heard, or otherwise [perceived] (4)"
+            app:solution="SEEN"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Massage] is a [requirement], according to hearsay (5)"
+            app:solution="KNEAD"/>
 
     </LinearLayout>
 
