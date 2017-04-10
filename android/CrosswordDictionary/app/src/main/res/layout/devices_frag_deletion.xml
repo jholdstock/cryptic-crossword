@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -9,11 +10,49 @@
         android:orientation="vertical"
         android:background="@color/Amethyst"
         android:gravity="center">
+
         <TextView
-            android:text="Deletion"
+            android:text="In deletion clues, part(s) of a word are removed to get the solution. This type of clue ususally consists of four parts, which will be explained with an example"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
+
+        <com.jamieholdstock.crossword.views.ClueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:clue="Plunderer loses head to go mad (5) "
+            app:solution="IRATE"/>
+
+        <TextView
+            android:text="1. Literal defintion of the solution - 'mad' leads us to the solution 'irate'"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="2. Wordplay leading to the word which needs letters deleting - 'Plunderer' in the clue gives us 'pirate'"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="3. Deletion indicator - the indicator here is 'loses', as in 'loses some letters' "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="4. Letters to be deleted - 'head' tell us to remove the first letter of the word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="Removing the head 'P' from 'PIRATE' gives us 'IRATE'"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
     </LinearLayout>
 
 </ScrollView>
