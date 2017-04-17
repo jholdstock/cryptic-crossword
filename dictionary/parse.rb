@@ -1,13 +1,14 @@
 require "pp"
 
-$a = Dir.entries(".")
+$files_in_dir = Dir.entries(".")
+$files_in_dir.delete_if {|i| i == "." || i == ".."}
 
 def getUniqueWordList
 	words = []
-	2.upto($a.length-1) do |i|
-		if ($a[i] =~ /indicators\.txt/)
+	$files_in_dir.each do |file_name|
+		if (file_name =~ /indicators\.txt/)
 			temp = []
-			File.readlines($a[i]).each do |line|
+			File.readlines(file_name).each do |line|
 				temp.push(line.strip)
 			end
 			temp.slice!(0) 
@@ -16,16 +17,17 @@ def getUniqueWordList
 					:word => word
 				});
 			end
-		end  
+		end
 	end
 	words.uniq!
+	return words
 end
 
 def addTagsToWords words
-	2.upto($a.length-1) do |i|
-		if ($a[i] =~ /indicators\.txt/)
+	$files_in_dir.each do |file_name|
+		if (file_name =~ /indicators\.txt/)
 			temp = []
-	 		File.readlines("#{$a[i]}").each do |line|
+	 		File.readlines(file_name).each do |line|
 				temp.push(line.strip)
 			end
 			tag = temp.slice!(0)
@@ -41,9 +43,9 @@ def addTagsToWords words
 end
 
 def addAbbrToWords words
-	2.upto($a.length-1) do |i|
-		if ($a[i] =~ /abbreviations_and_others\.txt/)
-	 		File.readlines("#{$a[i]}").each do |line|
+	$files_in_dir.each do |file_name|
+		if (file_name =~ /abbreviations_and_others\.txt/)
+	 		File.readlines(file_name).each do |line|
 				vals = line.split("=")
 				wrd = vals[0].strip
 				abbr = vals[1].strip
@@ -59,56 +61,81 @@ def addAbbrToWords words
 	return words
 end
 
+
+
+#
+# Parse input
+# 
+
 uniqueWords = getUniqueWordList
 $tags = []
 uniqueWords = addTagsToWords uniqueWords 
 uniqueWords = addAbbrToWords uniqueWords 
 
-$sql = <<-eos
-BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS 'android_metadata';
-CREATE TABLE 'android_metadata' ('locale' TEXT DEFAULT 'en_US');
-INSERT INTO 'android_metadata' VALUES ('en_US');
+#
+#  Construct output
+#
 
-DROP TABLE IF EXISTS 'Word';
-CREATE TABLE 'Word' (
-  '_id'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-  'Word'	TEXT NOT NULL UNIQUE,
-eos
+def getSqlPrep
+	sql = <<-eos
+	BEGIN TRANSACTION;
 
-def removeComma
-	$sql = $sql[0...-1]
-end
+	DROP TABLE IF EXISTS 'android_metadata';
+	CREATE TABLE 'android_metadata' ('locale' TEXT DEFAULT 'en_US');
+	INSERT INTO 'android_metadata' VALUES ('en_US');
 
-$tags.each do |tag|
-	$sql += "  '#{tag}' INTEGER NOT NULL,\n"
-end
+	DROP TABLE IF EXISTS 'Word';
+	CREATE TABLE 'Word' (
+	  '_id'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	  'Word'	TEXT NOT NULL UNIQUE,
+	eos
 
-$sql += "  'Abbr' TEXT);\n\n"
-
-$sql += "INSERT INTO 'Word' ('Word', "
-
-$tags.each do |tag|
-	$sql += "'#{tag}', "
-end
-
-$sql += "'Abbr') \nVALUES\n"
-
-uniqueWords.each do |word|
-	$sql += "  (\"#{word[:word].upcase}\", "
 	$tags.each do |tag|
-		$sql += word[tag] ? '1' : '0'
-		$sql += ", "
+		sql += "  '#{tag}' INTEGER NOT NULL,\n"
 	end
-	$sql += (word["Abbr"] ? "\"#{word["Abbr"]}\"" : "NULL")
-	$sql += "),\n"
+
+	sql += "  'Abbr' TEXT);\n\n"
+	return sql
 end
-removeComma
-removeComma
-$sql += ";\n"
 
 
-$sql += "COMMIT;"
+def addInsertions sql, words
+	sql += "INSERT INTO 'Word' ('Word', "
 
-puts $sql
+	$tags.each do |tag|
+		sql += "'#{tag}', "
+	end
+
+	sql += "'Abbr') \nVALUES\n"
+
+	words.each do |word|
+		sql += "  (\"#{word[:word].upcase}\", "
+		$tags.each do |tag|
+			sql += word[tag] ? '1' : '0'
+			sql += ", "
+		end
+		sql += (word["Abbr"] ? "\"#{word["Abbr"]}\"" : "NULL")
+		sql += "),\n"
+	end
+
+	sql = sql[0...-1]
+	sql = sql[0...-1]
+
+	sql += ";\n"
+	return sql
+end
+
+sql = getSqlPrep
+
+uniqueWords.each_slice(500) do |slice|
+	sql = addInsertions sql, slice
+end
+
+sql += "COMMIT;"
+
+output = File.open( "output.txt","w" )
+output << sql
+output.close
+
+puts sql

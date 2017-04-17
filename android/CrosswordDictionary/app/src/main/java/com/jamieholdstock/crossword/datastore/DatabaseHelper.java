@@ -37,7 +37,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
     }
 
     public WordList getAllDeletionIndicators() {
-        return runQuery("SELECT * FROM Word WHERE Word.Deletion = 1;");
+        return runQuery("SELECT * FROM Word WHERE Word.DeletionMiddle = 1 OR Word.Deletion = 1 OR Word.DeletionEnd = 1 OR Word.DeletionStart = 1 OR Word.DeletionStartEnd = 1 ;");
     }
 
     public WordList getReversalIndicators() {
