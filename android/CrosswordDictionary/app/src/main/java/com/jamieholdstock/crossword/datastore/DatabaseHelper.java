@@ -36,7 +36,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         return runQuery("SELECT * FROM Word WHERE Word.Homophone = 1;");
     }
 
-    public WordList getDeletionIndicators() {
+    public WordList getAllDeletionIndicators() {
         return runQuery("SELECT * FROM Word WHERE Word.Deletion = 1;");
     }
 

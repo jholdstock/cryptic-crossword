@@ -14,26 +14,26 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="Little shark edges away from diver's equipment (3)"
+            app:solution="CUB (from SCUBA)"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="Head off champion worker (7)"
+            app:solution="ARTISAN (from PARTISAN)"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="Circuits almost falling (4)"
+            app:solution="LAPS (from LAPSE)"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="Work the land, without first limb (3)"
+            app:solution="ARM (from FARM)"/>
 
     </LinearLayout>
 

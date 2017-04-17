@@ -58,7 +58,7 @@ public class IndicatorFragments extends TutorialFragment {
 
     public static Fragment deletionFragment(Context context) {
         DatabaseHelper myDbHelper = new DatabaseHelper(context);
-        WordList words = myDbHelper.getDeletionIndicators();
+        WordList words = myDbHelper.getAllDeletionIndicators();
         return new IndicatorFragments(words, prefix + "that a charade has had some letters deleted to give the solution:");
     }
 

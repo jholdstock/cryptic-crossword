@@ -24,28 +24,28 @@
             app:solution="IRATE"/>
 
         <TextView
-            android:text="1. Literal defintion of the solution - 'mad' leads us to the solution 'irate'"
+            android:text="1. Literal definition of the solution - 'mad' leads us to the solution 'irate'"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
+            style="@style/TutorialList" />
 
         <TextView
             android:text="2. Wordplay leading to the word which needs letters deleting - 'Plunderer' in the clue gives us 'pirate'"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
+            style="@style/TutorialList" />
 
         <TextView
             android:text="3. Deletion indicator - the indicator here is 'loses', as in 'loses some letters' "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
+            style="@style/TutorialList" />
 
         <TextView
             android:text="4. Letters to be deleted - 'head' tell us to remove the first letter of the word"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TutorialParagraph" />
+            style="@style/TutorialList" />
 
         <TextView
             android:text="Removing the head 'P' from 'PIRATE' gives us 'IRATE'"
@@ -53,6 +53,35 @@
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
+        <TextView
+            android:text="There are various types of deletion indicator:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="- Remove letters from the beginning of a word. Indicators like: 'beheaded', 'start off', 'without introduction'."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialList" />
+
+        <TextView
+            android:text="- Remove letters from the end of a word. Indicators like: 'back off', 'mostly', 'without end'."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialList" />
+
+        <TextView
+            android:text="- Remove letters from both edges of a word. Indicators like: 'losing margins', 'trimmed', 'without limits'."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialList" />
+
+        <TextView
+            android:text="- Remove letters from the centre of a word. Indicators like: 'cored', 'disheartened', 'empty'"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialList" />
     </LinearLayout>
 
 </ScrollView>

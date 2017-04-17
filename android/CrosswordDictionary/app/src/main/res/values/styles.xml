@@ -38,8 +38,17 @@
     <style name="TutorialParagraph" parent="Theme.AppCompat.Light">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/White</item>
-        <item name="android:layout_marginBottom">10dp</item>
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+    </style>
+
+    <style name="TutorialList" parent="TutorialParagraph">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
     </style>
 
     <style name="MyEditText" parent="Theme.AppCompat.Light">
