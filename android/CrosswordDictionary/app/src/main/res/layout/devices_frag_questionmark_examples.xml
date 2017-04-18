@@ -14,6 +14,12 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:clue="[Hair style] with comb in it? (7)"
+            app:solution="BEEHIVE"/>
+
+        <com.jamieholdstock.crossword.views.ClueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:clue=""
             app:solution=""/>
 
@@ -22,6 +28,12 @@
             android:layout_height="wrap_content"
             app:clue=""
             app:solution=""/>
+
+        <com.jamieholdstock.crossword.views.ClueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:clue="[Poor opportunities] for snooker players? (3,6)"
+            app:solution="BAD BREAKS"/>
 
     </LinearLayout>
 

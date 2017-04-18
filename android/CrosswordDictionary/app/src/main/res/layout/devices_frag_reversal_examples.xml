@@ -14,26 +14,26 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Go no further] putting the crockery up (4)"
+            app:solution="STOP"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Sketcher] went up to get [reward] (6)"
+            app:solution="DRAWER"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Turn] [to important person] making a comeback (5)"
+            app:solution="PIVOT"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="[Returned beer] [fit for a king] (5)"
+            app:solution="LAGER"/>
 
     </LinearLayout>
 
