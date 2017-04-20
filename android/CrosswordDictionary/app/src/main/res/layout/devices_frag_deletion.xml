@@ -20,7 +20,7 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="Plunderer loses head to go mad (5) "
+            app:clue="Plunderer loses head to go mad (5)"
             app:solution="IRATE"/>
 
         <TextView
@@ -36,7 +36,7 @@
             style="@style/TutorialList" />
 
         <TextView
-            android:text="3. Deletion indicator - the indicator here is 'loses', as in 'loses some letters' "
+            android:text="3. Deletion indicator - the indicator here is 'loses', as in 'loses some letters'"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialList" />

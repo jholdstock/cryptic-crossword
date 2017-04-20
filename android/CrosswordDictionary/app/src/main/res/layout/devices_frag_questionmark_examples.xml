@@ -20,14 +20,14 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="Mental block? (6,4)"
+            app:solution="RUBIKS CUBE"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="Hands up for an early lunch? (4)"
+            app:solution="NOON"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"

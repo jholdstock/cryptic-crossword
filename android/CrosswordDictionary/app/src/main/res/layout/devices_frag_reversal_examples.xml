@@ -20,8 +20,8 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="[Sketcher] went up to get [reward] (6)"
-            app:solution="DRAWER"/>
+            app:clue="Animal going round a shopping precinct (5)"
+            app:solution="LLAMA"/>
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"

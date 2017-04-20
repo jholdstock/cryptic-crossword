@@ -12,7 +12,7 @@
         android:gravity="center">
 
         <TextView
-            android:text="In the basic type of reversal clue, the cryptic part of the clue will lead to a word which needs to be reversed , together with an indication that a reversal is to be performed. For example:"
+            android:text="In reversal clues, part(s) of a word are reversed to get the solution. This type of clue ususally consists of three parts, which will be explained with an example"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
@@ -20,8 +20,38 @@
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="Going round stronghold, take a look (4)"
+            app:solution="PEEK"/>
+
+        <TextView
+            android:text="1. Literal definition of the solution - 'take a look'"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialList" />
+
+        <TextView
+            android:text="2. Wordplay leading to the word which needs letters deleting - In this case, 'stronghold' leads us to 'KEEP'"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialList" />
+
+        <TextView
+            android:text="3. Reversal indicator - the indicator here is 'Going round'"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialList" />
+
+        <TextView
+            android:text="Sometimes wordplay will lead you to a word which needs to be reversed. Sometimes it is a section of the clue itself which needs to be reversed:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TutorialParagraph" />
+
+        <com.jamieholdstock.crossword.views.ClueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:clue="[Sketcher] went up to get [reward] (6)"
+            app:solution="DRAWER"/>
 
     </LinearLayout>
 
