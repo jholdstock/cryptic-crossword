@@ -25,6 +25,10 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
     protected abstract void onSearchButtonPressed(View v);
     protected abstract String[] getIntro();
 
+    protected String getSearchButtonText() {
+        return "Solve";
+    }
+
     private static FullDictionary fullDictionary;
     protected LoadingAnimator animator;
     protected EditText searchBox;
@@ -48,6 +52,7 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         setBackgroundColor();
         setSearchHint();
         setIntroText();
+        setButtonText();
     }
 
     protected FullDictionary getDictionary() {
@@ -67,6 +72,11 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
             return true;
             }
         });
+    }
+    
+    private void setButtonText() {
+        Button search_button = (Button) findViewById(R.id.search_button);
+        search_button.setText(getSearchButtonText());
     }
 
     private void attachSearchButtonListener() {

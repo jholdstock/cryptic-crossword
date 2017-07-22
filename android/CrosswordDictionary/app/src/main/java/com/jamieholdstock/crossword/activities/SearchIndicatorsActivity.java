@@ -28,6 +28,11 @@ public class SearchIndicatorsActivity extends SearchActivityBase {
     }
 
     @Override
+    protected String getSearchButtonText() {
+        return "Search";
+    }
+
+    @Override
     protected int getBackgroundColor() {
         return R.color.Alizarin;
     }
