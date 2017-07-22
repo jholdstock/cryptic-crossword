@@ -67,7 +67,12 @@
                     android:text="Double\ndefinitions"
                     android:id="@+id/doubledef_button"
                     style="@style/MenuButton" />
-
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Charades"
+                    android:id="@+id/charade_button"
+                    style="@style/MenuButton" />
             </LinearLayout>
 
             <LinearLayout
@@ -106,6 +111,9 @@
                     style="@style/MenuButton" />
             </LinearLayout>
 
+
+
         </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

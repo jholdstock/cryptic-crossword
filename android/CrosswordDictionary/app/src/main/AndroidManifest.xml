@@ -28,6 +28,7 @@
         <activity android:name=".activities.tutorial.devices.QuestionMarkActivity" />
         <activity android:name=".activities.tutorial.devices.DeletionActivity" />
         <activity android:name=".activities.tutorial.devices.ReversalActivity" />
+        <activity android:name=".activities.tutorial.devices.CharadeActivity" />
         <activity android:name=".activities.AnagramSolverActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".activities.SearchIndicatorsActivity"

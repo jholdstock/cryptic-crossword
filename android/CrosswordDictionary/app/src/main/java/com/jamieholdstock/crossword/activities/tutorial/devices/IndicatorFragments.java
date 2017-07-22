@@ -32,6 +32,12 @@ public class IndicatorFragments extends TutorialFragment {
         return new IndicatorFragments(words, "Double definition clues do not regularly contain indicator words as they are normally just two literal definitions placed side by side");
     }
 
+    public static IndicatorFragments charadesFragment(Context context) {
+        DatabaseHelper myDbHelper = new DatabaseHelper(context);
+        WordList words = myDbHelper.getHiddenWordIndicators();
+        return new IndicatorFragments(words, prefix + "");
+    }
+
     public static IndicatorFragments hiddenWordFragment(Context context) {
         DatabaseHelper myDbHelper = new DatabaseHelper(context);
         WordList words = myDbHelper.getHiddenWordIndicators();
