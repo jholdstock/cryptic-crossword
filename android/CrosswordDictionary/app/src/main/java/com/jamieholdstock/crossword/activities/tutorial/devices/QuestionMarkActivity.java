@@ -14,7 +14,6 @@ public class QuestionMarkActivity extends DevicesActivity {
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_questionmark));
             add(new TutorialFragment(R.layout.devices_frag_questionmark_examples));
-            add(IndicatorFragments.anagramFragment(getBaseContext()));
         }};
     }
 }

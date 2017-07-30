@@ -5,6 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.jamieholdstock.crossword.R;
@@ -29,6 +32,10 @@ public abstract class FragmentSwiperActivity extends FragmentActivity {
         mPager.setAdapter(mPagerAdapter);
 
         final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
+        View view = LayoutInflater.from(this).inflate(R.layout.view_swiper_radiobutton, null);
+        radioGroup.addView(view);
+
         radioGroup.check(radioGroup.getChildAt(0).getId());
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

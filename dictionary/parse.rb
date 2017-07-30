@@ -44,7 +44,7 @@ end
 
 def addAbbrToWords words
 	$files_in_dir.each do |file_name|
-		if (file_name =~ /abbreviations_and_others\.txt/)
+		if (file_name =~ /charades\.txt/)
 	 		File.readlines(file_name).each do |line|
 				vals = line.split("=")
 				wrd = vals[0].strip

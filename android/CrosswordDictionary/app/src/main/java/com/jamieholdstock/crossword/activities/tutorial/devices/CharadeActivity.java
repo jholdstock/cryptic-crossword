@@ -14,7 +14,6 @@ public class CharadeActivity extends DevicesActivity {
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_charades));
             add(new TutorialFragment(R.layout.devices_frag_charades_examples));
-            add(IndicatorFragments.charadesFragment(getBaseContext()));
         }};
     }
 }

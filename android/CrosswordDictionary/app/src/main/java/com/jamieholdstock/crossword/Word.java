@@ -6,16 +6,12 @@ import java.util.List;
 public class Word {
     private String word;
     private List<IndicatorType> indicators;
-    private String abbreviations;
+    private String charades;
 
-    public Word(String word) {
-        this(word, null, null);
-    }
-
-    public Word(String word, ArrayList<IndicatorType> indicators, String abbreviations) {
+    public Word(String word, ArrayList<IndicatorType> indicators, String charades) {
         this.word = word;
         this.indicators = indicators;
-        this.abbreviations = abbreviations;
+        this.charades = charades;
     }
 
     public String getWord() {
@@ -24,12 +20,12 @@ public class Word {
     public List<IndicatorType> getIndicators() {
         return indicators;
     }
-    public String getAbbreviations() {
-        return abbreviations;
+    public String getCharades() {
+        return charades;
     }
 
-    public boolean hasAbbreviations() {
-        return abbreviations != null;
+    public boolean hasCharades() {
+        return charades != null;
     }
     public boolean hasIndicators() {
         return indicators != null && indicators.size() > 0;
