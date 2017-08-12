@@ -19,9 +19,4 @@ public class BasicsActivity extends FragmentSwiperActivity {
             add(new TutorialFragment(R.layout.basics_frag_indicators));
         }};
     }
-
-    @Override
-    protected int getActivityId() {
-        return R.layout.basics_activity;
-    }
 }

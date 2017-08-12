@@ -14,28 +14,28 @@
     android:gravity="center">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:id="@+id/title_container"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/title_container">
+        android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="112dp"
             android:layout_height="129dp"
-            app:srcCompat="@drawable/logo"
-            android:id="@+id/imageView" />
+            app:srcCompat="@drawable/logo" />
 
         <TextView
-            android:text="Cryptic\nCrossword\nTutor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/textView"
-            android:textStyle="normal|bold"
-            android:textColor="@color/White"
-            android:textSize="40sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:layout_marginBottom="40dp" />
+            android:text="Cryptic\nCrossword\nTutor"
+            android:textColor="@color/White"
+            android:textSize="35sp"
+            android:textStyle="normal|bold" />
     </LinearLayout>
 
 

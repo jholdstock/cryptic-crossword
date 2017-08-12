@@ -1,12 +1,19 @@
 package com.jamieholdstock.crossword.activities.tutorial;
 
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.AppCompatRadioButton;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -18,23 +25,31 @@ import java.util.ArrayList;
 public abstract class FragmentSwiperActivity extends FragmentActivity {
 
     protected abstract ArrayList<Fragment> getFragments();
-    protected abstract int getActivityId();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getActivityId());
+        setContentView(R.layout.swiper_activity);
 
-        ViewPager mPager = (ViewPager) findViewById(R.id.pager);
         ArrayList<Fragment> frags = getFragments();
-
         PagerAdapter mPagerAdapter = new SwipeAdapter(getSupportFragmentManager(), frags);
+        ViewPager mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mPagerAdapter);
 
         final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
-        View view = LayoutInflater.from(this).inflate(R.layout.view_swiper_radiobutton, null);
-        radioGroup.addView(view);
+        for (int i = 0; i < frags.size(); i++){
+            AppCompatRadioButton button = new AppCompatRadioButton(this);
+            button.setSupportButtonTintList(
+                    ContextCompat.getColorStateList(this,
+                            R.drawable.swiper_radio_button));
+            button.setClickable(false);
+
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(5, 5, 5, 5);
+
+            radioGroup.addView(button, layoutParams);
+        }
 
         radioGroup.check(radioGroup.getChildAt(0).getId());
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

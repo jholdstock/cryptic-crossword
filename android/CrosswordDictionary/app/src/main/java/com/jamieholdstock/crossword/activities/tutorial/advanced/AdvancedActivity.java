@@ -17,8 +17,4 @@ public class AdvancedActivity extends FragmentSwiperActivity {
         }};
     }
 
-    @Override
-    protected int getActivityId() {
-        return R.layout.advanced_activity;
-    }
 }
