@@ -53,14 +53,38 @@ public class IndicatorFragments extends TutorialFragment {
 
     public static Fragment deletionFragment(Context context) {
         DatabaseHelper myDbHelper = new DatabaseHelper(context);
-        WordList words = myDbHelper.getAllDeletionIndicators();
-        return new IndicatorFragments(words, prefix + "that a charade has had some letters deleted to give the solution:");
+        WordList words = myDbHelper.getDeletionIndicators();
+        return new IndicatorFragments(words, prefix + "that a charade has had some letters deleted:");
+    }
+
+    public static Fragment deletionMidFragment(Context context) {
+        DatabaseHelper myDbHelper = new DatabaseHelper(context);
+        WordList words = myDbHelper.getMidDeletionIndicators();
+        return new IndicatorFragments(words, prefix + "that a charade has had a group of letters removed from its center:");
+    }
+
+    public static Fragment deletionEndFragment(Context context) {
+        DatabaseHelper myDbHelper = new DatabaseHelper(context);
+        WordList words = myDbHelper.getEndDeletionIndicators();
+        return new IndicatorFragments(words, prefix + "that a charade has had one or both of its ends removed:");
     }
 
     public static Fragment reversalFragment(Context context) {
         DatabaseHelper myDbHelper = new DatabaseHelper(context);
         WordList words = myDbHelper.getReversalIndicators();
         return new IndicatorFragments(words, prefix + "that a charade has been reversed to give the solution:");
+    }
+
+    public static Fragment reversalDownFragment(Context context) {
+        DatabaseHelper myDbHelper = new DatabaseHelper(context);
+        WordList words = myDbHelper.getReversalDownIndicators();
+        return new IndicatorFragments(words, "These words or phrases may indicate a reversal if they are included in a down clue:");
+    }
+
+    public static Fragment reversalAcrossFragment(Context context) {
+        DatabaseHelper myDbHelper = new DatabaseHelper(context);
+        WordList words = myDbHelper.getReversalAcrossIndicators();
+        return new IndicatorFragments(words, "These words or phrases may indicate a reversal if they are included in an across clue:");
     }
 
     @Override

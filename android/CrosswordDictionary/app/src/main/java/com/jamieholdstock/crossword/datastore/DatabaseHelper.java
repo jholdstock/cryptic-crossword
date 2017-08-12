@@ -36,12 +36,28 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         return runQuery("SELECT * FROM Word WHERE Word.Homophone = 1;");
     }
 
-    public WordList getAllDeletionIndicators() {
-        return runQuery("SELECT * FROM Word WHERE Word.DeletionMiddle = 1 OR Word.Deletion = 1 OR Word.DeletionEnd = 1 OR Word.DeletionStart = 1 OR Word.DeletionStartEnd = 1 ;");
+    public WordList getDeletionIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.Deletion = 1;");
+    }
+
+    public WordList getEndDeletionIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.DeletionEnd = 1 OR Word.DeletionStart = 1 OR Word.DeletionStartEnd = 1 ;");
+    }
+
+    public WordList getMidDeletionIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.DeletionMiddle = 1;");
     }
 
     public WordList getReversalIndicators() {
         return runQuery("SELECT * FROM Word WHERE Word.Reversal = 1;");
+    }
+
+    public WordList getReversalAcrossIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.ReversalAcross = 1;");
+    }
+
+    public WordList getReversalDownIndicators() {
+        return runQuery("SELECT * FROM Word WHERE Word.ReversalDown = 1;");
     }
 
     private WordList runQuery(String query) {
