@@ -22,6 +22,7 @@ public class QuestionMarkActivity extends FragmentSwiperActivity {
             add(new SolvedClue("[Poor opportunities] for snooker players? (3,6)", "BAD BREAKS"));
             add(new SolvedClue("Spirited community? (5,4", "GHOST TOWN"));
             add(new SolvedClue("Dollars for quarters? (4)", "RENT"));
+            add(new SolvedClue("Can I be friendly? (7)", "AMIABLE"));
         }};
 
         return new ArrayList<Fragment>() {{

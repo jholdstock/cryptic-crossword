@@ -20,6 +20,7 @@ public class DoubleDefinitionActivity extends FragmentSwiperActivity {
             add(new SolvedClue("[Uses axe] on [meat cutlets] (5)", "CHOPS"));
             add(new SolvedClue("[Eastern European] [buff] (6)", "POLISH"));
             add(new SolvedClue("[Superior] [gambler] (6)", "BETTER"));
+            add(new SolvedClue("[Charm] ones [way in] (8)", "ENTRANCE"));
         }};
 
         return new ArrayList<Fragment>() {{
