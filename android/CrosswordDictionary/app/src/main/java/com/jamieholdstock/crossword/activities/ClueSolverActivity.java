@@ -61,7 +61,7 @@ public class ClueSolverActivity extends SearchActivityBase {
         Collections.reverse(solvedClues);
 
         for (SolvedClue clue: solvedClues) {
-            ClueView v = new ClueView(getApplicationContext());
+            ClueView v = new ClueView(getApplicationContext(), true);
 
             v.setSolution(clue.getSolution());
             v.setClue(clue.getClue());

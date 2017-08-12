@@ -3,6 +3,8 @@ package com.jamieholdstock.crossword.activities.tutorial.devices;
 import android.support.v4.app.Fragment;
 
 import com.jamieholdstock.crossword.R;
+import com.jamieholdstock.crossword.SolvedClue;
+import com.jamieholdstock.crossword.activities.tutorial.ClueListFragment;
 import com.jamieholdstock.crossword.activities.tutorial.FragmentSwiperActivity;
 import com.jamieholdstock.crossword.activities.tutorial.TutorialFragment;
 
@@ -12,9 +14,17 @@ public class QuestionMarkActivity extends FragmentSwiperActivity {
 
     @Override
     protected ArrayList<Fragment> getFragments() {
+
+        final ArrayList<SolvedClue> clues = new ArrayList<SolvedClue>(){{
+            add(new SolvedClue("[Hair style] with comb in it? (7)", "BEEHIVE"));
+            add(new SolvedClue("Mental block? (6,4)", "RUBIKS CUBE"));
+            add(new SolvedClue("Hands up for an early lunch? (4)", "NOON"));
+            add(new SolvedClue("[Poor opportunities] for snooker players? (3,6)", "BAD BREAKS"));
+        }};
+
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_questionmark));
-            add(new TutorialFragment(R.layout.devices_frag_questionmark_examples));
+            add(new ClueListFragment(clues));
         }};
     }
 }

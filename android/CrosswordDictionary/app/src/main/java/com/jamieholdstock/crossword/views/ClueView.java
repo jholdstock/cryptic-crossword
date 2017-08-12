@@ -49,12 +49,12 @@ public class ClueView extends GridLayout {
             }
         });
     }
-    public ClueView(Context context) {
+    public ClueView(Context context, boolean clicked) {
         this(context, null);
 
         front.setVisibility(GONE);
         back.setVisibility(VISIBLE);
-        this.clicked = true;
+        this.clicked = clicked;
     }
 
     private void flip() {
