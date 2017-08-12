@@ -20,6 +20,8 @@ public class QuestionMarkActivity extends FragmentSwiperActivity {
             add(new SolvedClue("Mental block? (6,4)", "RUBIKS CUBE"));
             add(new SolvedClue("Hands up for an early lunch? (4)", "NOON"));
             add(new SolvedClue("[Poor opportunities] for snooker players? (3,6)", "BAD BREAKS"));
+            add(new SolvedClue("Spirited community? (5,4", "GHOST TOWN"));
+            add(new SolvedClue("Dollars for quarters? (4)", "RENT"));
         }};
 
         return new ArrayList<Fragment>() {{

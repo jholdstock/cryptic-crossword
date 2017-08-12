@@ -11,35 +11,24 @@
         android:background="@color/Amethyst"
         android:gravity="center">
 
-        <com.jamieholdstock.crossword.views.ClueView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:clue="Two in chemical water? (9)"
-            app:solution="SUBSCRIPT"/>
-
         <TextView
-            android:text="Punctuation in cryptic clues is usually added to distract the solver so can often be ignored. One exception to this rule is the question mark. A question mark often means that you have a clue which demands particular lateral thought, or a quirky interpretation of the words. In this example the clue is referring to 'chemical water' - usually written as H₂O containing a subscript 'two'"
+            android:text="Punctuation in cryptic clues is usually added to distract the solver so it can often be ignored. One exception to this rule is the question mark. Question mark clues don't have to follow the normal rules and some crossword setters use this as an opportunity to share their sense of humour."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <TextView
-            android:text="Sometimes a setter may use question marks and exclamation marks interchangeably. Many setters like to include humourous puns in their question mark clues:"
+            android:text="Anything goes in question mark clues, they may demand lateral thought or a quirky interpretation of the words. The clues may involve puns or wordplay."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
-        <com.jamieholdstock.crossword.views.ClueView
+        <TextView
+            android:text="One trick used by setters is to pronounce words in unfamiliar ways. 'Wicked thing' sounds like the description of a witch, but could be referring to a candle - something which contains a wick. 'A great flower' might initially sound like a plant, but could refer to a river - something which flows."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue="Spirited community? (5,4)"
-            app:solution="GHOST TOWN"/>
+            style="@style/TutorialParagraph"/>
 
-        <com.jamieholdstock.crossword.views.ClueView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:clue="Dollars for quarters? (4)"
-            app:solution="RENT"/>
     </LinearLayout>
 
 </ScrollView>

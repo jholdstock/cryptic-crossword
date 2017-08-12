@@ -67,12 +67,14 @@
                     android:text="Double\ndefinitions"
                     android:id="@+id/doubledef_button"
                     style="@style/MenuButton" />
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Charades"
-                    android:id="@+id/charade_button"
+                    android:text="\?"
+                    android:id="@+id/questionmark_button"
                     style="@style/MenuButton" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -92,8 +94,8 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="\?"
-                    android:id="@+id/questionmark_button"
+                    android:text="Charades"
+                    android:id="@+id/charade_button"
                     style="@style/MenuButton" />
 
                 <Button
