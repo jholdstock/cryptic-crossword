@@ -25,7 +25,7 @@ public class DoubleDefinitionActivity extends FragmentSwiperActivity {
 
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_doubledef));
-            add(new ClueListFragment(clues));
+            add(new ClueListFragment(clues, "Here are some examples of double definition clues:"));
         }};
     }
 }

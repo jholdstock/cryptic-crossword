@@ -27,7 +27,7 @@ public class CharadeActivity extends FragmentSwiperActivity {
             add(new TutorialFragment(R.layout.devices_frag_char_roman_num));
             add(new TutorialFragment(R.layout.devices_frag_char_phonetic));
             add(new TutorialFragment(R.layout.devices_frag_char_science));
-            add(new ClueListFragment(clues));
+            add(new ClueListFragment(clues, "Here are some examples of charade clues:"));
         }};
     }
 }

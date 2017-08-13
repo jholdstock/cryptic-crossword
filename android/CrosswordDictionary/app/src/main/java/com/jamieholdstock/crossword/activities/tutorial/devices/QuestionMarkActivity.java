@@ -27,7 +27,7 @@ public class QuestionMarkActivity extends FragmentSwiperActivity {
 
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_questionmark));
-            add(new ClueListFragment(clues));
+            add(new ClueListFragment(clues, "Here are some examples of question mark clues:"));
         }};
     }
 }

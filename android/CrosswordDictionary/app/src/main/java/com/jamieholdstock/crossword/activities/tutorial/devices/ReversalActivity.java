@@ -24,7 +24,7 @@ public class ReversalActivity extends FragmentSwiperActivity {
 
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_reversal));
-            add(new ClueListFragment(clues));
+            add(new ClueListFragment(clues, "Here are some examples of reversal clues:"));
             add(IndicatorFragments.reversalFragment(getBaseContext()));
             add(IndicatorFragments.reversalAcrossFragment(getBaseContext()));
             add(IndicatorFragments.reversalDownFragment(getBaseContext()));

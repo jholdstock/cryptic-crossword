@@ -25,7 +25,7 @@ public class AcrosticActivity extends FragmentSwiperActivity {
 
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_acrostic));
-            add(new ClueListFragment(clues));
+            add(new ClueListFragment(clues, "Here are some examples of acrostic clues:"));
             add(IndicatorFragments.acrosticFragment(getBaseContext()));
         }};
     }

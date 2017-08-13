@@ -24,7 +24,7 @@ public class HiddenWordActivity extends FragmentSwiperActivity {
 
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_hiddenword));
-            add(new ClueListFragment(clues));
+            add(new ClueListFragment(clues, "Here are some examples of hidden word clues:"));
             add(IndicatorFragments.hiddenWordFragment(getBaseContext()));
         }};
     }

@@ -24,7 +24,7 @@ public class DeletionActivity extends FragmentSwiperActivity {
 
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_deletion));
-            add(new ClueListFragment(clues));
+            add(new ClueListFragment(clues, "Here are some examples of deletion clues:"));
             add(IndicatorFragments.deletionMidFragment(getBaseContext()));
             add(IndicatorFragments.deletionEndFragment(getBaseContext()));
             add(IndicatorFragments.deletionFragment(getBaseContext()));
