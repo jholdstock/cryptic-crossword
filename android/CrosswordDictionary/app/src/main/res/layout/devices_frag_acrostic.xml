@@ -13,8 +13,6 @@
 
         <TextView
             android:text="The acrostic device asks the solver to take the initial letters of a string of words in the clue to form the solution."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <com.jamieholdstock.crossword.views.ClueView
@@ -25,26 +23,18 @@
 
         <TextView
             android:text="The literal part of the clue is 'to cry'."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="'starts' is an indicator suggesting to take the first letters of the words 'Black and white lamb'."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="Acrostic indicators will often reference 'top', 'initial', 'start', 'beginning' or 'head'."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="Note that similarly, words like 'last', 'ultimate' or 'final' could indicate an acrostic using the last letters."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
     </LinearLayout>
 

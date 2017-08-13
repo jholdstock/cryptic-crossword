@@ -12,20 +12,14 @@
 
         <TextView
             android:text="Pay attention to the tense of clues. If a definition terminates in –ing or –ed, or is a plural, the solution should usually take the same form."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <TextView
             android:text="Think about different ways each word in the clue can be interpreted. 'Spanner' could refer to a tool or a to bridge. 'Layer' could refer to a rock, but could also be describing a bird which lays eggs. 'Tower' is a type of building but also a car pulling a trailer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <TextView
             android:text="In advanced cryptic crosswords the clues may make use of multiple devices."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
     </LinearLayout>
 

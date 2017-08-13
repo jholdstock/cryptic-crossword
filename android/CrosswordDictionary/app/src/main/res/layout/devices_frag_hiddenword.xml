@@ -13,8 +13,6 @@
 
         <TextView
             android:text="In this type of clue the solution is actually embedded in the clue, hidden inside a longer word or phrase. For example:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <com.jamieholdstock.crossword.views.ClueView
@@ -25,14 +23,10 @@
 
         <TextView
             android:text="'Pole' is the literal clue, as in the NORTH pole. The phrase 'coming from' is indicating that the answer is actually contained within 'Pakistan or Thailand'."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="This type of clue will nearly always contain a word or phrase to indicate that the solution is hidden. Typical indicators are things like: 'buried in', 'part of', 'within' or 'concealed'. Common words such as 'in' or 'from' may also serve as hidden word indicators."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
     </LinearLayout>

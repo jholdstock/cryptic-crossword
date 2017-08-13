@@ -13,8 +13,6 @@
 
         <TextView
             android:text="Anagrams are words formed by re-arranging the letters of other words or phrases. For example TALE can become LATE, OUTSIDE can be turned into TEDIOUS, and NICE LOVE can be re-arranged into VIOLENCE."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <com.jamieholdstock.crossword.views.ClueView
@@ -25,20 +23,14 @@
 
         <TextView
             android:text="'More fortunate' is another way of saying luckier."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="'like cur' is an anagram of luckier."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="Anagram indicators are commonly words such as 'bizarrely', 'confused', 'different' or 'scrambled' - words which loosely mean unusual or modified. 'Out' and 'about' are sometimes used but this can depend on the crossword setter."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
     </LinearLayout>
 

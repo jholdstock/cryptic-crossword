@@ -8,8 +8,6 @@
 
     <TextView
         android:text="Here are some words and phrases which could indicate "
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/indicator_list_heading"
         style="@style/TutorialParagraph" />
 

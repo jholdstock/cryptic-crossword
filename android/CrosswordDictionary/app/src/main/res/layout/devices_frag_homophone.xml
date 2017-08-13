@@ -12,8 +12,6 @@
         android:gravity="center">
         <TextView
             android:text="Homophones are words that sound the same but have different meanings, such as 'night' and 'knight'."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
@@ -23,14 +21,10 @@
 
         <TextView
             android:text="The literal part of the clue is 'musical group'. 'I hear' is indicating an homophone. Another word for 'prohibited' is 'banned', which sounds like the answer 'band'"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="If a clue gives you a sense of listening, having heard something or speaking something aloud, you have probably found a homophone clue. Phrases such as 'so he said', 'it was announced' or 'according to rumour' are often used to indicate homophones."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
     </LinearLayout>
 

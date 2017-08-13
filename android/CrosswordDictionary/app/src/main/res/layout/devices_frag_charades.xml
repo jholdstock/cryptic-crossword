@@ -12,23 +12,32 @@
         android:gravity="center">
 
         <TextView
-            android:text=""
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:text="Charades are individual words in a clue which represent letters or words from the solution. The answer is formed by joining individually clued words to make a larger word. This is a very common cryptic device and you will come across charade clues in every cryptic crossword."
             style="@style/TutorialParagraph" />
 
         <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:clue=""
-            app:solution=""/>
+            app:clue="Outlaw leader [managing money] (7)"
+            app:solution="BANKING"/>
 
         <TextView
-            android:text=""
+            android:text="In the example above, 'Outlaw' is a charade for 'ban' and 'leader' is a charade for 'king'."
+            style="@style/TutorialParagraph" />
+
+        <TextView
+            android:text="It is very common for charade clues to use a number of abbreviations or acronyms to construct the solution instead of using whole words. This is particularly common in more difficult crosswords."
+            style="@style/TutorialParagraph" />
+
+        <com.jamieholdstock.crossword.views.ClueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:clue="[Ten] in [accident and emergency] make a [tool] (3)"
+            app:solution="AXE"/>
+
+        <TextView
+            android:text="'Ten' can be written as 'X' in roman numerals, and 'accident and emergency' can be abbreviated to 'A&amp;E'. Putting these letters together gives us the solution 'AXE'"
             style="@style/TutorialParagraph" />
 
     </LinearLayout>
-
 </ScrollView>

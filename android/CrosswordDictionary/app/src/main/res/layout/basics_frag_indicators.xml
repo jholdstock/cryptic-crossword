@@ -13,8 +13,6 @@
 
         <TextView
             android:text="Cryptic clues employ a variety of wordplay devices, the cryptic part of the previous clue used a 'hidden word' device - the solution was hidden inside the clue. Sometimes 'indicator' words can aid the solver in identifying which device is in use."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <com.jamieholdstock.crossword.views.ClueView
@@ -25,20 +23,14 @@
 
         <TextView
             android:text="In this example, the literal definition part of the clue is 'canapé'."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <TextView
             android:text="The word 'disorderly' is indicating that an anagram device has been used. The remaining letters of the clue 'piper eats' are an anagram of APPETISER."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="The word 'disorderly' is just one example of a word which might indicate that an anagram. The words 'crazy', 'drunk', 'confused', or 'rearranged' could also have been used in this clue. There are hundreds of potential anagram indicators so it is best to try and identify the intent of the word in the clue, rather than attempt to memorize the full list."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
     </LinearLayout>

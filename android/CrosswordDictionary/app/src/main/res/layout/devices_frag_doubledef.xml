@@ -12,8 +12,6 @@
         android:gravity="center">
         <TextView
             android:text="A double definition has two definitions of the same answer."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <com.jamieholdstock.crossword.views.ClueView
@@ -24,20 +22,14 @@
 
         <TextView
             android:text="Each half of the clue is a different definition of the word 'bear'."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="These clues can be deceptive. They are often quite short - they can be as small as two words. They clues don’t follow the usual 'definition + wordplay' pattern that is seen in most cryptic clues, they are instead 'definition + definition'."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <TextView
             android:text="Double definition clues do not usually contain indicator words as they are often just two literal definitions placed side by side."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
     </LinearLayout>

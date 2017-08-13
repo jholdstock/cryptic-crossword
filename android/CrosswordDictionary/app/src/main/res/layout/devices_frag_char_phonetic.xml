@@ -13,17 +13,7 @@
 
         <TextView
             style="@style/TutorialParagraph"
-            android:text="One of the most common sources of charades is the set of roman numerals. In the following example the word 'Fifty' corresponds to the letter 'L', while the word 'consumed' leads us to 'ATE'." />
-
-        <com.jamieholdstock.crossword.views.ClueView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:clue="Fifty consumed [after hours] (4)"
-            app:solution="LATE" />
-
-        <TextView
-            style="@style/TutorialParagraph"
-            android:text="Learning the full set of roman numerals will help greatly when it comes to solving cryptics." />
+            android:text="The NATO phonetic alphabet or 'radio alphabet' is another tool often used by crossword setters. These clues might have an indicator like 'on the radio', 'over the phone' or 'broadcast', but it's worth being able to recognise these words as often there will be no indicator at all." />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,17 +27,90 @@
                     <TextView
                         style="@style/TutorialTableHeader"
                         android:textAlignment="center"
-                        android:text="Number" />
+                        android:text="Word" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableHeader"
                         android:textAlignment="center"
-                        android:text="Roman\nNumeral" />
+                        android:text="Letter" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Alpha" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="A" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Bravo" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="B" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="1" />
+                        android:text="Charlie" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="C" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Delta" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="D" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Echo" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="E" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Foxtrot" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="F" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Golf" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="G" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Hotel" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="H" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="India" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
@@ -56,56 +119,38 @@
                 <TableRow style="@style/TutorialTableRow_Dark">
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="2" />
+                        android:text="Juliet" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="II" />
+                        android:text="J" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="3" />
+                        android:text="Kilo" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="III" />
+                        android:text="K" />
                 </TableRow>
                 <TableRow style="@style/TutorialTableRow_Dark">
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="4" />
+                        android:text="Lima" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="IV" />
+                        android:text="L" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="5" />
+                        android:text="Mike" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="V" />
-                </TableRow>
-                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="6" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="VI" />
-                </TableRow>
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="7" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="VII" />
+                        android:text="M" />
                 </TableRow>
             </TableLayout>
 
@@ -115,35 +160,107 @@
                     <TextView
                         style="@style/TutorialTableHeader"
                         android:textAlignment="center"
-                        android:text="Number" />
+                        android:text="Word" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableHeader"
                         android:textAlignment="center"
-                        android:text="Roman\nNumeral" />
+                        android:text="Letter" />
                 </TableRow>
                 <TableRow style="@style/TutorialTableRow_Dark">
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="8" />
+                        android:text="November" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="VIII" />
+                        android:text="N" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="9" />
+                        android:text="Oscar" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="IX" />
+                        android:text="O" />
                 </TableRow>
                 <TableRow style="@style/TutorialTableRow_Dark">
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="10" />
+                        android:text="Papa" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="P" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Quebec" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Q" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Romeo" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="R" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Sierra" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="S" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Tango" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="T" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Uniform" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="U" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Victor" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="V" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Whiskey" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="W" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="X" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
@@ -152,187 +269,24 @@
                 <TableRow>
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="50" />
+                        android:text="Yankee" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="L" />
+                        android:text="Y" />
                 </TableRow>
                 <TableRow style="@style/TutorialTableRow_Dark">
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="100" />
+                        android:text="Zulu" />
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="C" />
-                </TableRow>
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="500" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="D" />
-                </TableRow>
-                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="1000" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="M" />
+                        android:text="Z" />
                 </TableRow>
             </TableLayout>
         </LinearLayout>
 
-        <TextView
-            style="@style/TutorialParagraph"
-            android:text="Roman numerals can also be combined to give multiple letters" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <TableLayout
-                style="@style/TutorialTableLayout">
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableHeader"
-                        android:textAlignment="center"
-                        android:text="Number" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableHeader"
-                        android:textAlignment="center"
-                        android:text="Roman\nNumeral" />
-                </TableRow>
-                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="11" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="XI" />
-                </TableRow>
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="40" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="XL" />
-                </TableRow>
-                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="51" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="LI" />
-                </TableRow>
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="55" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="LV" />
-                </TableRow>
-                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="60" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="LX" />
-                </TableRow>
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="90" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="XC" />
-                </TableRow>
-            </TableLayout>
-            <TableLayout
-                style="@style/TutorialTableLayout">
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableHeader"
-                        android:textAlignment="center"
-                        android:text="Number" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableHeader"
-                        android:textAlignment="center"
-                        android:text="Roman\nNumeral" />
-                </TableRow>
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="101" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="CI" />
-                </TableRow>
-                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="200" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="CC" />
-                </TableRow>
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="400" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="CD" />
-                </TableRow>
-                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="600" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="DC" />
-                </TableRow>
-                <TableRow>
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="1001" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="MI" />
-                </TableRow>
-                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="2000" />
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="MM" />
-                </TableRow>
-            </TableLayout>
-        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

@@ -13,8 +13,6 @@
 
         <TextView
             android:text="This is a traditional crossword clue:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
         <com.jamieholdstock.crossword.views.ClueView
@@ -25,14 +23,10 @@
 
         <TextView
             android:text="The solution is a literal definition of the clue - another word which has the same meaning. The number in brackets tells you how many letters are in the solution. Sometimes there may be multiple numbers in the brackets indicating that the solution contains multiple words."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <TextView
             android:text="In a traditional crossword, USES is another potential solution to this clue, so you would probably want to confirm the correct answer using an overlapping solution."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph" />
 
     </LinearLayout>

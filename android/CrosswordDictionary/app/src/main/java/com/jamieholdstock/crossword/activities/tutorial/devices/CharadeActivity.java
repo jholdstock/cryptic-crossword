@@ -16,7 +16,7 @@ public class CharadeActivity extends FragmentSwiperActivity {
     protected ArrayList<Fragment> getFragments() {
 
         final ArrayList<SolvedClue> clues = new ArrayList<SolvedClue>(){{
-            add(new SolvedClue("", ""));
+            add(new SolvedClue("[Little river]'s [carbon] [stink] (5)", "CREEK (C + REEK)"));
             add(new SolvedClue("", ""));
             add(new SolvedClue("", ""));
             add(new SolvedClue("", ""));
@@ -26,6 +26,7 @@ public class CharadeActivity extends FragmentSwiperActivity {
             add(new TutorialFragment(R.layout.devices_frag_charades));
             add(new TutorialFragment(R.layout.devices_frag_char_roman_num));
             add(new TutorialFragment(R.layout.devices_frag_char_phonetic));
+            add(new TutorialFragment(R.layout.devices_frag_char_science));
             add(new ClueListFragment(clues));
         }};
     }

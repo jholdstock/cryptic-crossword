@@ -13,20 +13,14 @@
 
         <TextView
             android:text="Punctuation in cryptic clues is usually added to distract the solver so it can often be ignored. One exception to this rule is the question mark. Question mark clues don't have to follow the normal rules and some crossword setters use this as an opportunity to share their sense of humour."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <TextView
             android:text="Anything goes in question mark clues, they may demand lateral thought or a quirky interpretation of the words. The clues may involve puns or wordplay."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
         <TextView
             android:text="One trick used by setters is to pronounce words in unfamiliar ways. 'Wicked thing' sounds like the description of a witch, but could be referring to a candle - something which contains a wick. 'A great flower' might initially sound like a plant, but could refer to a river - something which flows."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="@style/TutorialParagraph"/>
 
     </LinearLayout>
