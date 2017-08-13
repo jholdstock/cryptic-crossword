@@ -5,6 +5,7 @@
     <color name="Gray">#999</color>
     <color name="Blackish">#616161</color>
     <color name="Black">#000</color>
+    <color name="Black_Trans">#3e000000</color>
 
     <color name="Selected_Page_Dot">#CCFFFFFF</color>
     <color name="Unselected_Page_Dot">#4DFFFFFF</color>

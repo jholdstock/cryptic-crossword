@@ -35,9 +35,43 @@
         <item name="android:layout_margin">10dp</item>
     </style>
 
-    <style name="TutorialParagraph" parent="Theme.AppCompat.Light">
+    <style name="TutorialText" parent="Theme.AppCompat.Light">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="TutorialTableHeader" parent="TutorialText">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/table_cell_underline</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="TutorialTableLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="TutorialTableDivider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/White</item>
+    </style>
+
+    <style name="TutorialTableCell" parent="TutorialText">
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TutorialTableRow_Dark">
+        <item name="android:background">@color/Black_Trans</item>
+    </style>
+
+    <style name="TutorialParagraph" parent="TutorialText">
         <item name="android:layout_marginBottom">12dp</item>
         <item name="android:layout_marginTop">12dp</item>
     </style>
