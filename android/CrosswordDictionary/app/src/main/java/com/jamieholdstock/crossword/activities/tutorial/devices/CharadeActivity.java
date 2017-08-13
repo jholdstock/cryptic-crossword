@@ -25,6 +25,7 @@ public class CharadeActivity extends FragmentSwiperActivity {
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.devices_frag_charades));
             add(new TutorialFragment(R.layout.devices_frag_char_roman_num));
+            add(new TutorialFragment(R.layout.devices_frag_char_phonetic));
             add(new ClueListFragment(clues));
         }};
     }

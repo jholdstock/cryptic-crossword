@@ -62,8 +62,7 @@
     </style>
 
     <style name="TutorialTableCell" parent="TutorialText">
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:paddingTop">5dp</item>
+        <item name="android:padding">5dp</item>
         <item name="android:gravity">center</item>
     </style>
 

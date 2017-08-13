@@ -36,7 +36,7 @@ public class WordView extends LinearLayout {
         if (word.hasCharades()) {
             IndicatorView abbrView = new IndicatorView(indicatorContainer.getContext());
             abbrView.setMainText(word.getCharades());
-            abbrView.setHeader("Abbreviation:");
+            abbrView.setHeader("Charade:");
             indicatorContainer.addView(abbrView);
         }
 
