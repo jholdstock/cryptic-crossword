@@ -12,7 +12,7 @@
         android:gravity="center">
 
         <TextView
-            android:text="Charades are individual words in a clue which represent letters or words from the solution. The answer is formed by joining individually clued words to make a larger word. This is a very common cryptic device and you will come across charade clues in every cryptic crossword."
+            android:text="Charades are individual words in a clue which represent letters or words from the solution. The answer is formed by joining individually clued words to make a larger word. This is perhaps the most common cryptic device and you will come across charade clues in every cryptic crossword."
             style="@style/TutorialParagraph" />
 
         <com.jamieholdstock.crossword.views.ClueView

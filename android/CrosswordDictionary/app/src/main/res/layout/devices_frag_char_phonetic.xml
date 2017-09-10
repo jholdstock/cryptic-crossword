@@ -13,7 +13,7 @@
 
         <TextView
             style="@style/TutorialParagraph"
-            android:text="The NATO phonetic alphabet or 'radio alphabet' is another tool often used by crossword setters. These clues might have an indicator like 'on the radio', 'over the phone' or 'broadcast', but it's worth being able to recognise these words as often there will be no indicator at all." />
+            android:text="The NATO phonetic alphabet or 'radio alphabet' is another tool often used by crossword setters. These clues might have an indicator like 'on the radio', 'over the phone' or 'broadcast', but it's worth being able to recognise these words because often there will be no indicator at all." />
 
         <LinearLayout
             android:layout_width="match_parent"

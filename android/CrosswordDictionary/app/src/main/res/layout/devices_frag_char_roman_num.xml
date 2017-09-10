@@ -190,7 +190,7 @@
 
         <TextView
             style="@style/TutorialParagraph"
-            android:text="Roman numerals can also be combined to give multiple letters" />
+            android:text="Roman numerals can also be combined to give multiple letters. Here are just a few examples:" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

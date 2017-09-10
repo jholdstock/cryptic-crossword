@@ -236,16 +236,6 @@
                         android:text="Fe" />
                 </TableRow>
 
-                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="Copper" />
-
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="Cu" />
-                </TableRow>
             </TableLayout>
 
             <TableLayout style="@style/TutorialTableLayout">
@@ -265,14 +255,13 @@
                 <TableRow style="@style/TutorialTableRow_Dark">
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="Zinc" />
+                        android:text="Copper" />
 
                     <View style="@style/TutorialTableDivider" />
                     <TextView
                         style="@style/TutorialTableCell"
-                        android:text="Zn" />
+                        android:text="Cu" />
                 </TableRow>
-
                 <TableRow>
                     <TextView
                         style="@style/TutorialTableCell"
@@ -282,7 +271,8 @@
                     <TextView
                         style="@style/TutorialTableCell"
                         android:text="Sn" />
-                </TableRow>                <TableRow style="@style/TutorialTableRow_Dark">
+                </TableRow>                
+                <TableRow style="@style/TutorialTableRow_Dark">
                     <TextView
                         style="@style/TutorialTableCell"
                         android:text="Tungsten" />
@@ -302,7 +292,8 @@
                     <TextView
                         style="@style/TutorialTableCell"
                         android:text="Ag" />
-                </TableRow>                <TableRow style="@style/TutorialTableRow_Dark">
+                </TableRow>                
+                <TableRow style="@style/TutorialTableRow_Dark">
                     <TextView
                         style="@style/TutorialTableCell"
                         android:text="Gold" />
@@ -322,18 +313,8 @@
                     <TextView
                         style="@style/TutorialTableCell"
                         android:text="Pt" />
-                </TableRow>                <TableRow style="@style/TutorialTableRow_Dark">
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="Lead" />
-
-                    <View style="@style/TutorialTableDivider" />
-                    <TextView
-                        style="@style/TutorialTableCell"
-                        android:text="Pb" />
-                </TableRow>
-
-                <TableRow>
+                </TableRow>                
+                <TableRow style="@style/TutorialTableRow_Dark">
                     <TextView
                         style="@style/TutorialTableCell"
                         android:text="Uranium" />
