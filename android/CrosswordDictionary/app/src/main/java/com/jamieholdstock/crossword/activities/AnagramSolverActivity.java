@@ -71,7 +71,7 @@ public class AnagramSolverActivity extends SearchActivityBase {
         Collections.reverse(words);
 
         for (String clue: words) {
-            WordView v = new WordView(getApplicationContext());
+            WordView v = new WordView(getApplicationContext(), this);
             Word word = new Word(clue);
             v.displayWord(word);
 

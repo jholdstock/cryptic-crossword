@@ -64,7 +64,7 @@ public class SearchIndicatorsActivity extends SearchActivityBase {
         Collections.reverse(solvedClues);
 
         for (Word word: solvedClues) {
-            WordView v = new WordView(context);
+            WordView v = new WordView(context, this);
 
             v.displayWord(word);
 

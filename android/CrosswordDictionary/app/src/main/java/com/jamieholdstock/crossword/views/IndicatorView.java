@@ -17,8 +17,6 @@ import static android.R.attr.left;
 
 public class IndicatorView extends GridLayout {
 
-    private IndicatorType type;
-
     public IndicatorView(Context context) {
         this(context, null);
     }
@@ -32,27 +30,9 @@ public class IndicatorView extends GridLayout {
         LayoutInflater.from(context).inflate(R.layout.view_indicator, this);
         setBackgroundResource(R.drawable.indicator_background);
 
-
         GridLayout.MarginLayoutParams lp = new GridLayout.MarginLayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         lp.setMargins(0,10,0,10);
         setLayoutParams(lp);
-
-        this.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent;
-                if (type == null) {
-                    intent = new Intent(v.getContext(), CharadeActivity.class);
-                } else {
-                    intent = new Intent(v.getContext(), type.getActivityToLaunch());
-                }
-                v.getContext().startActivity(intent);
-            }
-        });
-    }
-
-    public void setIndicatorType(IndicatorType type) {
-        this.type = type;
     }
 
     public void setHeader(String text) {
