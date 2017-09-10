@@ -25,18 +25,19 @@ public class WordList extends ArrayList<Word> {
     }
 
     public WordList filter(String charText) {
-        charText = charText.toLowerCase(Locale.getDefault());
+        charText = charText.toLowerCase(Locale.getDefault()).replaceAll("'", "");
+
         WordList list = new WordList();
 
         if (charText.length() > 0) {
             for (Word word : this) {
-                String theWord = word.getWord().toLowerCase(Locale.getDefault());
+                String theWord = word.getWord().toLowerCase(Locale.getDefault()).replaceAll("'", "");
                 if (theWord.startsWith(charText)) {
                     list.add(word);
                 }
             }
             for (Word word : this) {
-                String theWord = word.getWord().toLowerCase(Locale.getDefault());
+                String theWord = word.getWord().toLowerCase(Locale.getDefault()).replaceAll("'", "");
                 if (theWord.contains(charText) && theWord.startsWith(charText) == false) {
                     list.add(word);
                 }
