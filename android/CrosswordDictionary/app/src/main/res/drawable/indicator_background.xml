@@ -8,9 +8,4 @@
     <stroke
         android:color="#CCC"
         android:width="2dp" />
-    <padding
-        android:top="6dp"
-        android:bottom="10dp"
-        android:left="10dp"
-        android:right="10dp" />
 </shape>

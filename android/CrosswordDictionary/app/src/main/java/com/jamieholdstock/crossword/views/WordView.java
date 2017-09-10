@@ -33,11 +33,11 @@ public class WordView extends LinearLayout {
             }
         }
 
-        if (word.hasCharades()) {
-            IndicatorView abbrView = new IndicatorView(indicatorContainer.getContext());
-            abbrView.setMainText(word.getCharades());
-            abbrView.setHeader("Charade:");
-            indicatorContainer.addView(abbrView);
+        for (String charade : word.getCharades()) {
+            IndicatorView charadeView = new IndicatorView(indicatorContainer.getContext());
+            charadeView.setMainText(charade);
+            charadeView.setHeader("Charade:");
+            indicatorContainer.addView(charadeView);
         }
 
     }

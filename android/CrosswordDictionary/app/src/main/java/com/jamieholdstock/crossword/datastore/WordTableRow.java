@@ -6,39 +6,40 @@ import com.jamieholdstock.crossword.IndicatorType;
 import com.jamieholdstock.crossword.Word;
 import com.jamieholdstock.crossword.WordList;
 
-import java.util.ArrayList;
-
 public class WordTableRow {
-    private ArrayList<IndicatorType> indicators;
-    private WordList items;
+    private WordList list;
 
     public WordTableRow(Cursor cursor) {
-        items = new WordList();
-        cursor.moveToFirst();
-        do {
-            String word = cursor.getString(cursor.getColumnIndex("Word"));
-            String abbr = cursor.getString(cursor.getColumnIndex("Abbr"));
-            indicators = new ArrayList<>();
+        list = new WordList();
+        if (cursor.moveToFirst()) {
+            do {
+                String s = cursor.getString(cursor.getColumnIndex("Word"));
 
-            for (IndicatorType type : IndicatorType.values()) {
-                isIndicator(cursor, type);
-            }
+                Word word = list.getWord(s);
+                if (word == null){
+                    word = new Word(s);
 
-            items.add(new Word(word, indicators, abbr));
-        } while (cursor.moveToNext());
+                    for (IndicatorType type : IndicatorType.values()) {
+                        String columnName = type.getColumnName();
+                        int i = cursor.getInt(cursor.getColumnIndex(columnName));
+                        if (i == 1) {
+                            word.addIndicator(type);
+                        }
+                    }
 
-        items.sort();
+                    list.add(word);
+                }
+
+                String charade = cursor.getString(cursor.getColumnIndex("Charade"));
+                if (charade != null) {
+                    word.addCharade(charade);
+                }
+            } while (cursor.moveToNext());
+        }
+        list.sort();
     }
 
     public WordList getWordList() {
-        return items;
-    }
-
-    private void isIndicator(Cursor cursor, IndicatorType type) {
-        String columnName = type.getColumnName();
-        int i = cursor.getInt(cursor.getColumnIndex(columnName));
-        if (i == 1) {
-            indicators.add(type);
-        }
+        return list;
     }
 }

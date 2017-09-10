@@ -15,6 +15,15 @@ public class WordList extends ArrayList<Word> {
         });
     }
 
+    public Word getWord(String word) {
+        for (Word existingWord : this) {
+            if (existingWord.getWord().equals(word)) {
+                return existingWord;
+            }
+        }
+        return null;
+    }
+
     public WordList filter(String charText) {
         charText = charText.toLowerCase(Locale.getDefault());
         WordList list = new WordList();

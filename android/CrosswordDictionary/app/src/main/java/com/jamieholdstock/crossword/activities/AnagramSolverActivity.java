@@ -72,7 +72,7 @@ public class AnagramSolverActivity extends SearchActivityBase {
 
         for (String clue: words) {
             WordView v = new WordView(getApplicationContext());
-            Word word = new Word(clue, new ArrayList<IndicatorType>(), null);
+            Word word = new Word(clue);
             v.displayWord(word);
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
