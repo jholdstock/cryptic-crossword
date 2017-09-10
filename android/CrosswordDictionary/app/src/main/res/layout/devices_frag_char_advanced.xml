@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Amethyst"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="The clue word can hint at the word or words to be abbreviated rather than giving the word itself. For example:"
+            style="@style/TutorialParagraph" />
+
+
+        <TextView
+            android:text="- 'About' for C or CA, abbreviations of 'circa', meaning 'about'. 'About' can also be abbreviated to RE, for 'regarding'."
+            style="@style/TutorialList" />
+
+        <TextView
+            android:text="- 'Say' for EG, used to mean 'for example'."
+            style="@style/TutorialList" />
+
+
+        <TextView
+            style="@style/TutorialParagraph"
+            android:text="The abbreviation is not always a short form of the word used in the clue. More obscure clue words of this variety include:" />
+
+        <TextView
+            android:text="- 'Knight' for N (the symbol used in chess notation)"
+            style="@style/TutorialList" />
+        <TextView
+            android:text="- 'Model' for T, referring to the Model T."
+            style="@style/TutorialList" />
+        <TextView
+            android:text="- 'Current': for AC (alternating current) or I (the symbol used in physics and electronics)"
+            style="@style/TutorialList" />
+        <TextView
+            android:text="- 'Beginner' or synonyms such as 'novice' or 'student' for L, as in L-plate."
+            style="@style/TutorialList" />
+        <TextView
+            android:text="- 'Bend' for S or U (as in 'S-bend' and 'U-bend')"
+            style="@style/TutorialList" />
+        <TextView
+            android:text="- 'Books' for OT or NT, as in Old Testament or New Testament."
+            style="@style/TutorialList" />
+        <TextView
+            android:text="- 'Sailor' for AB, abbreviation of able-bodied."
+            style="@style/TutorialList" />
+        <TextView
+            android:text="- 'French' for 'LE' or 'Spanish' for 'EL'"
+            style="@style/TutorialList" />
+
+        <TextView
+            style="@style/TutorialParagraph"
+            android:text="Some further sources of charades:"/>
+
+        <TextView
+            android:text="- Any conventional abbreviations found in a standard dictionary"
+            style="@style/TutorialList" />
+        <TextView
+            android:text="- Country codes: 'Switzerland' can indicate the letters CH"
+            style="@style/TutorialList" />
+        <TextView
+            android:text="- Conventional abbreviations for US cities and states: for example, New York can indicate NY and 'California' CA or CAL."
+            style="@style/TutorialList" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TableLayout
+                style="@style/TutorialTableLayout">
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableHeader"
+                        android:textAlignment="center"
+                        android:text="Word" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableHeader"
+                        android:textAlignment="center"
+                        android:text="Letter" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Alpha" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="A" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Bravo" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="B" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Charlie" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="C" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Delta" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="D" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Echo" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="E" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Foxtrot" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="F" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Golf" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="G" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Hotel" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="H" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="India" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="I" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Juliet" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="J" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Kilo" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="K" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Lima" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="L" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Mike" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="M" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                style="@style/TutorialTableLayout">
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableHeader"
+                        android:textAlignment="center"
+                        android:text="Word" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableHeader"
+                        android:textAlignment="center"
+                        android:text="Letter" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="November" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="N" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Oscar" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="O" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Papa" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="P" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Quebec" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Q" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Romeo" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="R" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Sierra" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="S" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Tango" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="T" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Uniform" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="U" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Victor" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="V" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Whiskey" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="W" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="X" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="X" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Yankee" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Y" />
+                </TableRow>
+                <TableRow style="@style/TutorialTableRow_Dark">
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Zulu" />
+                    <View style="@style/TutorialTableDivider" />
+                    <TextView
+                        style="@style/TutorialTableCell"
+                        android:text="Z" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
