@@ -76,6 +76,14 @@
         <item name="android:layout_marginTop">12dp</item>
     </style>
 
+    <style name="TutorialHeader" parent="TutorialText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
     <style name="TutorialList" parent="TutorialParagraph">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

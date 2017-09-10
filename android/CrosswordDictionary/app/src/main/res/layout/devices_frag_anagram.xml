@@ -12,6 +12,10 @@
         android:gravity="center">
 
         <TextView
+            android:text="Anagrams"
+            style="@style/TutorialHeader" />
+
+        <TextView
             android:text="Anagrams are words formed by re-arranging the letters of other words or phrases. For example TALE can become LATE, OUTSIDE can be turned into TEDIOUS, and NICE LOVE can be re-arranged into VIOLENCE."
             style="@style/TutorialParagraph" />
 

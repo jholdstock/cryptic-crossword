@@ -12,6 +12,10 @@
         android:gravity="center">
 
         <TextView
+            android:text="Acrostics"
+            style="@style/TutorialHeader" />
+
+        <TextView
             android:text="The acrostic device asks the solver to take the initial letters of a string of words in the clue to form the solution."
             style="@style/TutorialParagraph" />
 

@@ -12,6 +12,10 @@
         android:gravity="center">
 
         <TextView
+            android:text="Deletion"
+            style="@style/TutorialHeader" />
+
+        <TextView
             android:text="In deletion clues, part(s) of a word are removed to get the solution. This type of clue ususally consists of four parts, which will be explained with an example"
             style="@style/TutorialParagraph" />
 

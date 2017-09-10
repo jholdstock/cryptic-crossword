@@ -11,6 +11,11 @@
         android:background="@color/Amethyst"
         android:gravity="center">
 
+
+        <TextView
+            android:text="\?"
+            style="@style/TutorialHeader" />
+
         <TextView
             android:text="Punctuation in cryptic clues is usually added to distract the solver so it can often be ignored. One exception to this rule is the question mark. Question mark clues don't have to follow the normal rules and some crossword setters use this as an opportunity to share their sense of humour."
             style="@style/TutorialParagraph"/>

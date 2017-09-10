@@ -10,6 +10,11 @@
         android:orientation="vertical"
         android:background="@color/Amethyst"
         android:gravity="center">
+
+        <TextView
+            android:text="Homophones"
+            style="@style/TutorialHeader" />
+
         <TextView
             android:text="Homophones are words that sound the same but have different meanings, such as 'night' and 'knight'."
             style="@style/TutorialParagraph" />

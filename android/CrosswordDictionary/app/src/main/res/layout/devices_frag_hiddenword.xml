@@ -12,6 +12,10 @@
         android:gravity="center">
 
         <TextView
+            android:text="Hidden Words"
+            style="@style/TutorialHeader" />
+
+        <TextView
             android:text="In this type of clue the solution is actually embedded in the clue, hidden inside a longer word or phrase. For example:"
             style="@style/TutorialParagraph" />
 

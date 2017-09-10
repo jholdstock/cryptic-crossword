@@ -10,6 +10,11 @@
         android:orientation="vertical"
         android:background="@color/Amethyst"
         android:gravity="center">
+
+        <TextView
+            android:text="Double Definitions"
+            style="@style/TutorialHeader" />
+
         <TextView
             android:text="A double definition has two definitions of the same answer."
             style="@style/TutorialParagraph" />

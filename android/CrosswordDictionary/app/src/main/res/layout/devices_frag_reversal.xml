@@ -12,6 +12,10 @@
         android:gravity="center">
 
         <TextView
+            android:text="Reversal"
+            style="@style/TutorialHeader" />
+
+        <TextView
             android:text="In reversal clues, part(s) of a word are reversed to get the solution. This type of clue ususally consists of three parts, which will be explained with an example"
             style="@style/TutorialParagraph" />
 
