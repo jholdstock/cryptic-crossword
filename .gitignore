@@ -94,3 +94,4 @@ $RECYCLE.BIN/
 /android/CrosswordDictionary/app/proguard-rules.pro
 /android/CrosswordDictionary/projectFilesBackup/.idea
 /dictionary/output.txt
+/dictionary/test*.txt

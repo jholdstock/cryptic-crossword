@@ -3,19 +3,29 @@ require "pp"
 $files_in_dir = Dir.entries(".")
 $files_in_dir.delete_if {|i| i == "." || i == ".."}
 
-def getUniqueWordList
+def loadIndicatorWords
 	words = []
 	$files_in_dir.each do |file_name|
 		if (file_name =~ /indicators\.txt/)
-			temp = []
+			lines = []
 			File.readlines(file_name).each do |line|
-				temp.push(line.strip)
+				next if line == nil
+				lines.push(line.strip)
 			end
-			temp.slice!(0) 
-			temp.each do |word|
-				words.push({
-					:word => word
-				});
+
+			indicator_type = lines.slice!(0)
+			$indicator_types.push indicator_type
+
+			lines.each do |line|
+				line.upcase!
+				word = words.select {|s| s[:word] == line }[0]
+				if !word
+					word = {
+						:word => line
+					}
+					words.push(word);
+				end
+				word[indicator_type] = true
 			end
 		end
 	end
@@ -23,37 +33,24 @@ def getUniqueWordList
 	return words
 end
 
-def addTagsToWords words
-	$files_in_dir.each do |file_name|
-		if (file_name =~ /indicators\.txt/)
-			temp = []
-	 		File.readlines(file_name).each do |line|
-				temp.push(line.strip)
-			end
-			tag = temp.slice!(0)
-			$tags.push tag
-			temp.each do |reading|
-				word = words.select {|s| s[:word] == reading }[0]
-				word[tag] = true
-			end
-
-	 	end  
-	end
-	return words
-end
-
-def addAbbrToWords words
+def loadCharadeWords 
+	words = []
 	$files_in_dir.each do |file_name|
 		if (file_name =~ /charades\.txt/)
 	 		File.readlines(file_name).each do |line|
+				next if line == nil
 				vals = line.split("=")
-				wrd = vals[0].strip
-				abbr = vals[1].strip
+				wrd = vals[0].strip.upcase
+				charade = vals[1].strip.upcase
 				word = words.select {|s| s[:word] == wrd }[0]
 				if (word)
-					word["Abbr"] = abbr
+					if word[:charades].include? charade
+
+					else
+						word[:charades].push charade
+					end
 				else
-					words.push({:word => wrd, "Abbr" => abbr});
+					words.push({:word => wrd, :charades => [charade]});
 				end
 			end
 	 	end  
@@ -62,20 +59,53 @@ def addAbbrToWords words
 end
 
 
+def mergeWordLists charades, indicators
+	charades.each do |charade|
+		already_exists = indicators.select {|s| s[:word] == charade[:word] }[0]
+		if already_exists
+			already_exists[:charades] = charade[:charades]
+		else
+			indicators.push charade
+		end
+	end
+	return indicators
+end
 
 #
 # Parse input
 # 
 
-uniqueWords = getUniqueWordList
-$tags = []
-uniqueWords = addTagsToWords uniqueWords 
-uniqueWords = addAbbrToWords uniqueWords 
+$indicator_types = []
+indicatorWords = loadIndicatorWords
+
+puts "Indicators"
+pp $indicator_types
+pp indicatorWords
+puts 
+
+charadeWords = loadCharadeWords
+
+puts "Charades"
+pp charadeWords
+puts
+
+uniqueWords = mergeWordLists charadeWords, indicatorWords
+
+puts
+puts "Merged"
+pp uniqueWords
+puts
 
 
 #
 #  Construct output
 #
+
+def remove_last_2 sql
+	sql = sql[0...-1]
+	sql = sql[0...-1]
+	return sql	
+end
 
 def getSqlPrep
 	sql = <<-eos
@@ -87,15 +117,30 @@ def getSqlPrep
 
 	DROP TABLE IF EXISTS 'Word';
 	CREATE TABLE 'Word' (
-	  '_id'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	  'Word'	TEXT NOT NULL UNIQUE,
+	  Id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	  Word	TEXT NOT NULL UNIQUE,
 	eos
 
-	$tags.each do |tag|
-		sql += "  '#{tag}' INTEGER NOT NULL,\n"
+	$indicator_types.each do |indicator_type|
+		sql += "  '#{indicator_type}' INTEGER NOT NULL,\n"
 	end
 
-	sql += "  'Abbr' TEXT);\n\n"
+	sql = remove_last_2 sql
+
+	sql += ");\n\n"
+
+	sql += <<-eos
+	DROP TABLE IF EXISTS 'Charade';
+	CREATE TABLE 'Charade' (
+	  Id 		INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	  Charade 	TEXT NOT NULL,
+	  Word_Id 	INTEGER NOT NULL,
+
+	  UNIQUE (Charade, Word_Id),
+	  FOREIGN KEY(Word_id) REFERENCES Word(Id));
+
+	 eos
+
 	return sql
 end
 
@@ -103,26 +148,28 @@ end
 def addInsertions sql, words
 	sql += "INSERT INTO 'Word' ('Word', "
 
-	$tags.each do |tag|
-		sql += "'#{tag}', "
+	$indicator_types.each do |indicator_type|
+		sql += "'#{indicator_type}', "
 	end
 
-	sql += "'Abbr') \nVALUES\n"
+	sql = remove_last_2 sql
+
+	sql += ") \nVALUES\n"
 
 	words.each do |word|
-		sql += "  (\"#{word[:word].upcase}\", "
-		$tags.each do |tag|
-			sql += word[tag] ? '1' : '0'
+		sql += "  (\"#{word[:word]}\", "
+		$indicator_types.each do |indicator_type|
+			sql += word[indicator_type] ? '1' : '0'
 			sql += ", "
 		end
-		sql += (word["Abbr"] ? "\"#{word["Abbr"]}\"" : "NULL")
+		sql = remove_last_2 sql
+
 		sql += "),\n"
 	end
 
-	sql = sql[0...-1]
-	sql = sql[0...-1]
+	sql = remove_last_2 sql
 
-	sql += ";\n"
+	sql += ";\n\n"
 	return sql
 end
 
@@ -130,6 +177,15 @@ sql = getSqlPrep
 
 uniqueWords.each_slice(500) do |slice|
 	sql = addInsertions sql, slice
+end
+
+uniqueWords.each do |word|
+	if word[:charades]
+		word[:charades].each do |charade|
+			sql += "INSERT INTO Charade (Charade, Word_Id) \n"
+			sql += "SELECT \"#{charade}\", Id FROM Word WHERE Word.Word = \"#{word[:word]}\";\n\n"
+		end
+	end
 end
 
 sql += "COMMIT;"
