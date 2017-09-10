@@ -68,7 +68,6 @@
                 <ImageView
                     android:layout_width="71dp"
                     android:layout_height="89dp"
-                    android:id="@+id/error_img"
                     app:srcCompat="@drawable/info"
                     android:cropToPadding="false"
                     android:adjustViewBounds="false" />

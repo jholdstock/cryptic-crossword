@@ -1,36 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <GridLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:gravity="center"
         android:paddingBottom="10dp"
-        android:layout_gravity="center">
+        android:paddingTop="10dp">
 
-        <TextView
+        <ImageView
+            android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/header_text"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/example"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:textSize="14sp"
-            android:layout_gravity="center_vertical" />
+            android:adjustViewBounds="false"
+            android:alpha="0"
+            android:cropToPadding="false"
+            android:src="@drawable/info"
+            android:tint="@color/Gray" />
 
-        <TextView
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/main_text"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/sample"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:textSize="18sp"
-            android:layout_gravity="center_vertical"
-            android:textStyle="normal|bold"
-            android:paddingLeft="4dp" />
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/example"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/main_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dp"
+                android:text="@string/sample"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:paddingRight="10dp"
+            android:src="@drawable/info"
+            android:tint="@color/Gray" />
 
     </GridLayout>
 
