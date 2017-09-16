@@ -44,8 +44,6 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         searchBox = (EditText) findViewById(R.id.search_box);
         searchButton = (Button) findViewById(R.id.search_button);
 
-        animator = new LoadingAnimator(searchButton);
-
         attachSearchBoxActionListener();
         attachSearchButtonListener();
         attachDeleteButtonListener();
@@ -53,6 +51,8 @@ public abstract class SearchActivityBase extends CrosswordBaseActivity {
         setSearchHint();
         setIntroText();
         setButtonText();
+
+        animator = new LoadingAnimator(searchButton);
     }
 
     protected FullDictionary getDictionary() {

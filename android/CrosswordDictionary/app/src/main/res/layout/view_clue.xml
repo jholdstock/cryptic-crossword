@@ -33,18 +33,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="REVEAL SOLUTION"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/clue_back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/clue_back"
         android:background="@drawable/indicator_background"
-        android:visibility="gone"
-        android:minHeight="@dimen/clue_min_height">
+        android:minHeight="@dimen/clue_min_height"
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/clue2"
@@ -55,18 +56,19 @@
             android:textAlignment="center" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/solution_text"
                 style="@style/Solution"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="EATS"
                 android:textAlignment="center"
+                android:textSize="20sp"
                 android:textStyle="normal|bold" />
         </LinearLayout>
     </LinearLayout>
