@@ -20,6 +20,7 @@ public class AnagramActivity extends FragmentSwiperActivity {
             add(new SolvedClue("[Stinging insect] damaged [paws] (4)", "WASP"));
             add(new SolvedClue("[Teach] about [swindler] (5)", "CHEAT"));
             add(new SolvedClue("[Lisa] mistaken to [travel the sea] (4)", "SAIL"));
+            add(new SolvedClue("[Lap] dancing [friend] (3)", "PAL"));
             add(new SolvedClue("[Musical group] unsettled the [carthorse] (9)", "ORCHESTRA"));
         }};
 

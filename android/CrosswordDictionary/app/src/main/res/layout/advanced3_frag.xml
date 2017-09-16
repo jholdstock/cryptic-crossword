@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/Amethyst"
+        android:gravity="center">
+
+        <TextView
+            android:text="- A decent puzzle has some easy clues, strategically placed, to get things going – and the harder clues must all yield eventually. Begin by scanning through the clues when you start a new crossword, and often you can spot a couple of easy ones early on. It can be very time consuming and even demoralising to intensely study the clues one by one without looking ahead for easier ones first. Even finding a single letter in the solution can sometimes greatly simplify an otherwise complex clue."
+            style="@style/TutorialParagraph"/>
+
+        <TextView
+            android:text="- Sometimes the clues and/or solutions of a crossword will follow a particular theme. A famous setter named Araucaria of The Guardian broke news of his cancer diagnosis to his loyal solvers via a crossword. The puzzle had a supplementary narrative beginning 'Araucaria has 18 down of the 19, which is being treated with 13 15'. Those who solved the puzzle found the answer to 18 down was 'cancer', to 19 'oesophagus', and to 13 and 15 'palliative' and 'care'. Other clues had answers such as 'Macmillan Nurse', 'stent', 'chemotherapy', 'endoscopy' and 'sunset'."
+            style="@style/TutorialParagraph"/>
+    </LinearLayout>
+
+</ScrollView>

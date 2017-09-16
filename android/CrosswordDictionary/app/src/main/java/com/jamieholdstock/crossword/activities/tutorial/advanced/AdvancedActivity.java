@@ -14,6 +14,8 @@ public class AdvancedActivity extends FragmentSwiperActivity {
     protected ArrayList<Fragment> getFragments() {
         return new ArrayList<Fragment>() {{
             add(new TutorialFragment(R.layout.advanced_frag));
+            add(new TutorialFragment(R.layout.advanced2_frag));
+            add(new TutorialFragment(R.layout.advanced3_frag));
         }};
     }
 

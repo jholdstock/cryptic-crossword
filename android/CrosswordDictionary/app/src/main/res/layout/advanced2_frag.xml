@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/Amethyst"
+        android:gravity="center">
+
+
+        <TextView
+            android:text="In advanced cryptic crosswords there may be multiple devices combined into a single clue. Here is an example which includes deletion, charades, reversal and anagram:"
+            style="@style/TutorialParagraph"/>
+
+        <com.jamieholdstock.crossword.views.ClueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:clue="Very sad unfinished story about rising smoke (8)"
+            app:solution="TRAGICAL"/>
+
+        <TextView
+            android:text="This breaks down as follows"
+            style="@style/TutorialParagraph"/>
+
+        <TextView
+            android:text="- 'Very sad' is the definition"
+            style="@style/TutorialList"/>
+
+        <TextView
+            android:text="'- unfinished story' gives 'tal' ('tale' with one letter missing; i.e., unfinished)"
+            style="@style/TutorialList"/>
+
+        <TextView
+            android:text="'- rising smoke' gives 'ragic' (a 'cigar' is a smoke and this is a down clue so 'rising' indicates that 'cigar' should be written up the page; i.e., backwards)"
+            style="@style/TutorialList"/>
+
+        <TextView
+            android:text="'- about' means that the letters of 'tal' should be put either side of 'ragic', giving 'tragical'"
+            style="@style/TutorialList"/>
+
+    </LinearLayout>
+
+</ScrollView>
