@@ -1,8 +1,5 @@
 package com.jamieholdstock.crossword.activities.tutorial;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,11 +7,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatRadioButton;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.jamieholdstock.crossword.R;
@@ -42,7 +36,7 @@ public abstract class FragmentSwiperActivity extends FragmentActivity {
             AppCompatRadioButton button = new AppCompatRadioButton(this);
             button.setSupportButtonTintList(
                     ContextCompat.getColorStateList(this,
-                            R.drawable.swiper_radio_button));
+                            R.color.White));
             button.setClickable(false);
 
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
