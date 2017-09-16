@@ -40,10 +40,6 @@ The definition part will normally occur at the beginning or end of the clue. Par
             style="@style/TutorialParagraph" />
 
         <TextView
-            android:text="Cryptic clues can be trickier to solve at first, but because both the literal clue and the wordplay clue point to the solution 'EATS', you can be quite sure that it is correct."
-            style="@style/TutorialParagraph" />
-
-        <TextView
             android:text="What the clue appears to say when read normally (the surface reading) is almost always a distraction and usually has nothing to do with the clue answer. The challenge is to find the way of reading the clue that leads to the solution."
             style="@style/TutorialParagraph" />
 

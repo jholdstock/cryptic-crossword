@@ -26,7 +26,7 @@
             app:solution="NORTH"/>
 
         <TextView
-            android:text="'Pole' is the literal clue, as in the NORTH pole. The phrase 'coming from' is indicating that the answer is actually contained within 'Pakistan or Thailand'."
+            android:text="'Pole' is the literal clue, as in the North Pole. The phrase 'coming from' is indicating that the answer is actually coming from within 'Pakistan or Thailand'."
             style="@style/TutorialParagraph" />
 
         <TextView

@@ -31,15 +31,15 @@
             style="@style/TutorialList"/>
 
         <TextView
-            android:text="'- unfinished story' gives 'tal' ('tale' with one letter missing; i.e., unfinished)"
+            android:text="- 'unfinished story' gives 'tal' ('tale' with one letter missing; i.e., unfinished)"
             style="@style/TutorialList"/>
 
         <TextView
-            android:text="'- rising smoke' gives 'ragic' (a 'cigar' is a smoke and this is a down clue so 'rising' indicates that 'cigar' should be written up the page; i.e., backwards)"
+            android:text="- 'rising smoke' gives 'ragic' (a 'cigar' is a smoke and this is a down clue so 'rising' indicates that 'cigar' should be written up the page; i.e., backwards)"
             style="@style/TutorialList"/>
 
         <TextView
-            android:text="'- about' means that the letters of 'tal' should be put either side of 'ragic', giving 'tragical'"
+            android:text="- 'about' means that the letters of 'tal' should be put either side of 'ragic', giving 'tragical'"
             style="@style/TutorialList"/>
 
     </LinearLayout>

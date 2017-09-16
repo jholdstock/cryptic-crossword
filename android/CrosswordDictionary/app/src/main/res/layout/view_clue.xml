@@ -15,11 +15,12 @@
         android:minHeight="@dimen/clue_min_height">
 
         <TextView
-            android:text="Consumes a portion meat stew (4)"
             android:id="@+id/clue_text_front"
+            style="@style/Clue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Clue"/>
+            android:text="Consumes a portion meat stew (4)"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -28,10 +29,11 @@
             android:layout_gravity="center_horizontal">
 
             <TextView
-                android:text="REVEAL SOLUTION"
+                style="@style/RevealSolution"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/RevealSolution" />
+                android:text="REVEAL SOLUTION"
+                android:textAlignment="center" />
         </LinearLayout>
     </LinearLayout>
 
@@ -45,11 +47,12 @@
         android:minHeight="@dimen/clue_min_height">
 
         <TextView
-            android:text="Consumes a portion meat stew (4)"
             android:id="@+id/clue2"
+            style="@style/Clue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Clue"/>
+            android:text="Consumes a portion meat stew (4)"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -58,12 +61,13 @@
             android:gravity="center">
 
             <TextView
-                android:text="EATS"
                 android:id="@+id/solution_text"
+                style="@style/Solution"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textStyle="normal|bold"
-                style="@style/Solution" />
+                android:text="EATS"
+                android:textAlignment="center"
+                android:textStyle="normal|bold" />
         </LinearLayout>
     </LinearLayout>
 

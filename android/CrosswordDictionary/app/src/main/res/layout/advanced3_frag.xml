@@ -12,7 +12,7 @@
         android:gravity="center">
 
         <TextView
-            android:text="- A decent puzzle has some easy clues, strategically placed, to get things going – and the harder clues must all yield eventually. Begin by scanning through the clues when you start a new crossword, and often you can spot a couple of easy ones early on. It can be very time consuming and even demoralising to intensely study the clues one by one without looking ahead for easier ones first. Even finding a single letter in the solution can sometimes greatly simplify an otherwise complex clue."
+            android:text="- Most well written puzzles will have some easy clues, strategically placed, to get things going – and the harder clues become easier later on as more letters are revealed. Begin by scanning through the clues when you start a new crossword, and often you can spot a couple of easy ones early on. It can be very time consuming and even demoralising to intensely study the clues one by one without looking ahead for easier ones first. Even finding a single letter in the solution can sometimes greatly simplify an otherwise complex clue."
             style="@style/TutorialParagraph"/>
 
         <TextView
