@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,12 +8,13 @@
     android:layout_margin="10dp">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/clue_front"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/indicator_background"
-        android:minHeight="@dimen/clue_min_height">
+        android:orientation="vertical"
+        android:paddingBottom="10sp"
+        android:paddingTop="5sp">
 
         <TextView
             android:id="@+id/clue_text_front"
@@ -23,10 +25,10 @@
             android:textAlignment="center" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
 
             <TextView
                 style="@style/RevealSolution"
@@ -41,10 +43,11 @@
     <LinearLayout
         android:id="@+id/clue_back"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/indicator_background"
-        android:minHeight="@dimen/clue_min_height"
         android:orientation="vertical"
+        android:paddingBottom="10sp"
+        android:paddingTop="5sp"
         android:visibility="gone">
 
         <TextView
@@ -57,7 +60,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
 
