@@ -11,6 +11,7 @@ import com.jamieholdstock.crossword.SolvedClue;
 import com.jamieholdstock.crossword.SolverSearchResults;
 import com.jamieholdstock.crossword.views.ClueView;
 
+import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
@@ -18,6 +19,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
 
 public class ClueSolverActivity extends SearchActivityBase {
 
@@ -77,8 +79,10 @@ public class ClueSolverActivity extends SearchActivityBase {
         SolverSearchResults answers;
         boolean error = false;
 
-        private String solverUrl = "http://www.wordplays.com/crossword-solver/";
-        //    private String solverUrl = "http://10.0.2.2:8090/crossword-solver/";
+        private String baseUrl = "https://www.wordplays.com/";
+        private String solverUrl = baseUrl + "crossword-solver/";
+
+        // private String solverUrl = "http://10.0.2.2:8090/crossword-solver/";
 
         @Override
         protected void onPreExecute() {
@@ -99,7 +103,9 @@ public class ClueSolverActivity extends SearchActivityBase {
             L.l("Service sending GET to " + solverUrl + query);
             String html = null;
             try {
-                html = Jsoup.connect(solverUrl + query).timeout(5000).execute().body();
+                Response res = Jsoup.connect(baseUrl).execute();
+                Map<String, String> cookies = res.cookies();
+                html = Jsoup.connect(solverUrl + query).cookies(cookies).timeout(5000).execute().body();
                 answers = new SolverSearchResults(html);
                 L.l("Clue solver response parsed");
             } catch (IOException e) {
