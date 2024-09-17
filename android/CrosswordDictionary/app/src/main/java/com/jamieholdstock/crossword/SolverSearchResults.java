@@ -33,7 +33,7 @@ public class SolverSearchResults {
 
     private ArrayList<String> getSolutions(Element table) {
         ArrayList<String> solutions = new ArrayList<>();
-        Iterator<Element> ite = table.select("td a").iterator();
+        Iterator<Element> ite = table.select("tr.clue td a:not(.definition)").iterator();
         while(ite.hasNext()) {
             String value = ite.next().text();
             solutions.add(value);
@@ -43,7 +43,7 @@ public class SolverSearchResults {
 
     private ArrayList<String> getClues(Element table) {
         ArrayList<String> clues = new ArrayList<>();
-        Iterator<Element> ite = table.select("td[class=clue]").iterator();
+        Iterator<Element> ite = table.select("tr.clue td.clue").iterator();
         while(ite.hasNext()) {
             String value = ite.next().text();
             clues.add(value);

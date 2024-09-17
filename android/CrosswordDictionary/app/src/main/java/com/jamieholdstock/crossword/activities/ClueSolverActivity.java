@@ -11,6 +11,7 @@ import com.jamieholdstock.crossword.SolvedClue;
 import com.jamieholdstock.crossword.SolverSearchResults;
 import com.jamieholdstock.crossword.views.ClueView;
 
+import org.jsoup.Connection;
 import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
 
@@ -100,20 +101,38 @@ public class ClueSolverActivity extends SearchActivityBase {
                 System.exit(1);
             }
 
-            L.l("Service sending GET to " + solverUrl + query);
-            String html = null;
+            L.l("Connecting to " + baseUrl);
+            org.jsoup.Connection conn = Jsoup.connect(baseUrl);
             try {
-                Response res = Jsoup.connect(baseUrl).execute();
-                Map<String, String> cookies = res.cookies();
-                html = Jsoup.connect(solverUrl + query).cookies(cookies).timeout(5000).execute().body();
-                answers = new SolverSearchResults(html);
-                L.l("Clue solver response parsed");
-            } catch (IOException e) {
-                error = true;
-                L.l("Clue solver received error");
+                conn.execute();
+            } catch (Exception e) {
+                // The initial connection is expected to fail with 401 response. Ignore.
             }
 
-            return null ;
+            Map<String, String> cookies = null;
+            try {
+                cookies = conn.newRequest().execute().cookies();
+            } catch (Exception e) {
+                error = true;
+                L.l("Failed to get cookies");
+
+                e.printStackTrace();
+                return null;
+            }
+
+
+            // Make the actual request.
+            try {
+                String html = Jsoup.connect(solverUrl + query).cookies(cookies).timeout(5000).execute().body();
+                answers = new SolverSearchResults(html);
+            } catch (Exception e) {
+                error = true;
+                L.l("Failed to get solutions");
+                e.printStackTrace();
+                return null;
+            }
+
+            return null;
         }
 
         @Override

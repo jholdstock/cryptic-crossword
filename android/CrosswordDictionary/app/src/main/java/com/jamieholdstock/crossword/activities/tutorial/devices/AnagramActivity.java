@@ -1,6 +1,6 @@
 package com.jamieholdstock.crossword.activities.tutorial.devices;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.jamieholdstock.crossword.R;
 import com.jamieholdstock.crossword.SolvedClue;
@@ -8,7 +8,6 @@ import com.jamieholdstock.crossword.activities.tutorial.ClueListFragment;
 import com.jamieholdstock.crossword.activities.tutorial.FragmentSwiperActivity;
 import com.jamieholdstock.crossword.activities.tutorial.TutorialFragment;
 
-import java.io.Console;
 import java.util.ArrayList;
 
 public class AnagramActivity extends FragmentSwiperActivity {

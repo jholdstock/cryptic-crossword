@@ -1,6 +1,6 @@
 package com.jamieholdstock.crossword.activities;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.jamieholdstock.crossword.R;
 
